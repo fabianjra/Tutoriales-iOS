@@ -22,6 +22,7 @@
 		3953FE9E2890D93000C2B693 /* TabViewCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953FE9D2890D93000C2B693 /* TabViewCustom.swift */; };
 		3953FEA12890DB7600C2B693 /* FavoriteTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953FEA02890DB7600C2B693 /* FavoriteTabView.swift */; };
 		400A6BF728E3EEB20043E006 /* Rects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400A6BF628E3EEB20043E006 /* Rects.swift */; };
+		40974C8F28E4167600889636 /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40974C8E28E4167600889636 /* Arc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		3953FE9D2890D93000C2B693 /* TabViewCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewCustom.swift; sourceTree = "<group>"; };
 		3953FEA02890DB7600C2B693 /* FavoriteTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTabView.swift; sourceTree = "<group>"; };
 		400A6BF628E3EEB20043E006 /* Rects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rects.swift; sourceTree = "<group>"; };
+		40974C8E28E4167600889636 /* Arc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				400A6BF628E3EEB20043E006 /* Rects.swift */,
+				40974C8E28E4167600889636 /* Arc.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			files = (
 				3953FE762890D71E00C2B693 /* ContentView.swift in Sources */,
 				3944FDAD289E06DE000CE26D /* StatesWrappers.swift in Sources */,
+				40974C8F28E4167600889636 /* Arc.swift in Sources */,
 				400A6BF728E3EEB20043E006 /* Rects.swift in Sources */,
 				39110E2328935FBB008B1E4E /* ToolbarView.swift in Sources */,
 				3953FE742890D71E00C2B693 /* ComponentesSwiftUIApp.swift in Sources */,
