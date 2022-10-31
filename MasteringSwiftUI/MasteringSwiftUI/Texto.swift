@@ -18,6 +18,7 @@ struct Texto: View {
             //Markdown Text
             Text("**Texto con markdown** *this is markdown*")
             Text("[click this link](http://fotosrodriguez.com) para ir a la web")
+                
             
             Text("Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! ")
                 .fontWeight(.bold)
