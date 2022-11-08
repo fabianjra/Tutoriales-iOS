@@ -8,9 +8,26 @@
 import SwiftUI
 
 //Capa Modelo:
-struct CountriesModel: Codable {
-    let name: String
-    let code: String
+//Codable protocol is composed of Encodable and Decodable.
+
+/*
+ Encoding The process of converting your custom type instances to other representation such as JSON and pList is known as Encoding or Serialization. For encoding, custom types conform to Encodable protocol.
+
+ Decoding The process of converting data in representation such as JSON or pList to instance of your custom type is known as Decoding or Deserialization. For decoding, custom types conform to Decodable protocol.
+
+ Codable To support both encoding and decoding, custom types can conform to Codable protocol which conforms to both Encodable and Decodable.
+ 
+ to Read more about Codable, Decoding and Encoding:
+ https://medium.com/@manojkarkie/encodable-and-decodable-in-swift-4-747328a7c7c5
+ */
+struct CountriesModel: Decodable {
+    let nameCountry: String
+    let codeCountry: String
+    
+    enum CodingKeys: String, CodingKey {
+        case nameCountry = "name"
+        case codeCountry = "code"
+    }
     
     static func loadJson() -> [CountriesModel]? {
         
@@ -54,7 +71,7 @@ struct Searchable: View {
         }else{
             //La posicion cero: $0
             //Busque el contenido que contenga SearchText.
-            return viewModel.countries.filter{$0.name.uppercased()
+            return viewModel.countries.filter{$0.nameCountry.uppercased()
                     .contains(searchText.uppercased())
             }
         }
@@ -66,12 +83,12 @@ struct Searchable: View {
             
             List{
                 Section{
-                    ForEach(results, id: \.code) { result in
+                    ForEach(results, id: \.codeCountry) { result in
                         
                         HStack{
-                            Text(result.code)
-                            Text(result.name)
-                            Text(flag(country: result.code))
+                            Text(result.codeCountry)
+                            Text(result.nameCountry)
+                            Text(flag(country: result.codeCountry))
                         }
                     }
                 }

@@ -24,6 +24,7 @@
 		4051C0BC29106D6A00B438B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4051C0BF29106D6A00B438B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4051C0C129106D6A00B438B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40602842291ADC92000C169F /* Generales.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Generales.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		4051C0B229106D6800B438B0 /* Pruebas-UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				40602842291ADC92000C169F /* Generales.playground */,
 				4051C0B329106D6800B438B0 /* AppDelegate.swift */,
 				4051C0B529106D6800B438B0 /* SceneDelegate.swift */,
 				4051C0B729106D6800B438B0 /* ViewController.swift */,

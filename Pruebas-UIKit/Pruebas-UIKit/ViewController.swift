@@ -25,6 +25,9 @@ class ViewController: UIViewController {
         
         //Para practica de constraints por codigo.
         createButton(view)
+        
+        //OTROS:
+        higherOrderFunction()
     }
 
     //2: Called before "ContentView" is added to app's view hierarchy.
@@ -146,5 +149,81 @@ class ViewController: UIViewController {
             contraintTopLabel.isActive = false
         }
     }
+    
+    
+    //MARK: - Higher-Order Function:
+    
+    /*
+     In mathematics and computer science, a higher-order function is a function that does at least one of the following:
+
+     – takes one or more functions as arguments (i.e. procedural parameters),
+
+     – returns a function as its result.
+
+     All other functions are first-order functions.
+     */
+    
+    //Higher order functions are based on closures.
+    
+    /*
+     Higher order functions are applied to arrays, dictionaries and sets in swift.
+     In simple way we use higher order functions in place of writing so many for loops to loop through arrays, dictionaries and sets.
+     
+     List of higher order functions:
+     
+     Map
+     CompactMap
+     FlatMap
+     Reduce
+     Filter
+     Contains
+     Sorted
+     ForEach
+     removeAll
+     */
+    private func higherOrderFunction(){
+        
+        let fruits = [
+            "apple",
+            "orange",
+            "cherry"
+        ]
+
+        var uppercasedFruits = fruits.map { $0.uppercased() }
+        
+        print("********************************************")
+        print("Uppercased: ", uppercasedFruits)
+        print("********************************************")
+        
+        
+        /*
+         If we want to remove some occurrence of any sub string from a string or any element from collection which matches the condition then we can use removeAll
+         */
+        uppercasedFruits.removeAll(where: { $0 == "APPLE" })
+        
+        print("********************************************")
+        print("removedApple: ", uppercasedFruits)
+        print("********************************************")
+        
+        
+        /*
+         for each works like for loop in swift,
+         only difference is we can’t use continue or break inside for loop , so it will make sure we go through each and every element of collection
+         */
+        var lowerCasedClosure: [String] = []
+        var lowerCasedSymbol: [String] = []
+        
+        //Con closure item
+        uppercasedFruits.forEach { item in
+            lowerCasedClosure.append(item.lowercased())
+        }
+        
+        uppercasedFruits.forEach { lowerCasedSymbol.append($0.lowercased()) }
+        
+        print("********************************************")
+        print("lowerCasedSymbol: ", lowerCasedSymbol)
+        print("********************************************")
+    }
+    
 }
 
