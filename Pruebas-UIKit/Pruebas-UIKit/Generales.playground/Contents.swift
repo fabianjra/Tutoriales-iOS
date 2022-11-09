@@ -28,11 +28,11 @@ private func Optionals(){
 
 /*
  In mathematics and computer science, a higher-order function is a function that does at least one of the following:
-
+ 
  – takes one or more functions as arguments (i.e. procedural parameters),
-
+ 
  – returns a function as its result.
-
+ 
  All other functions are first-order functions.
  */
 
@@ -55,10 +55,10 @@ private func Optionals(){
  removeAll
  */
 
-var arrayString = ["fabian", "josue", "rodriguez", "alvarez"]
+var arrayString = ["fabian", "", "rodriguez", "alvarez", "pedro", "alfonso", "alvarado", "facundo", "roberto", "", "patricio"]
 var arrayInt = [25, 30, 22, 10, 100, 1, 481]
-var arrayCombinado: [Any] = ["texto1", 50, true, 60.11, false, "texto final 2"]
-var arrayConNulos: [Any?] = [nil, 101, true, 5.9, nil, "texto con contenido"]
+var arrayCombinado: [Any] = ["texto1", 50, true, 60.11, false, "texto final 2", false, "entre boleanos", true, 50]
+var arrayConNulos: [Any?] = [nil, 101, true, 5.9, nil, "texto con contenido", false, "entre boleanos", true, 50]
 
 
 private func CONCAT(){
@@ -86,7 +86,7 @@ private func higherOrder_Map(){
 }
 //higherOrder_Map()
 
- // ------------------------------------------------------------------------------------------ //
+// ------------------------------------------------------------------------------------------ //
 
 //CompactMap:
 /*
@@ -107,15 +107,15 @@ private func higherOrder_CompactMap(){
 private func higherOrder_FlatMap(){
     
     //When we have multidimensional collections and wants to merge them as one then we can use flatmap.
-    //var multiDimensionalArray : [[Any]] = [[1,2,true], ["fabian",5,6],[7,"josue",9]]
-    let multiDimensionalArray = [arrayString, arrayCombinado].joined()
-    var singleArray = multiDimensionalArray.compactMap { $0 }
+    var multiDimensionalArray : [[Any]] = [[1,2,true], ["fabian",5,6],[7,"josue",9]]
+    //let multiDimensionalArray = [arrayString, arrayCombinado].joined()
+    var singleArray = multiDimensionalArray.flatMap { $0 }
     print(singleArray)
     
     /*
-    If we have 2 single arrays and wants to merge them as multi dimensional array,
-    then also we can use map and flatmap combined.
-    */
+     If we have 2 single arrays and wants to merge them as multi dimensional array,
+     then also we can use map and flatmap combined.
+     */
     let resultArray = arrayString.map { first in
         
         arrayInt.map { second in
@@ -123,9 +123,131 @@ private func higherOrder_FlatMap(){
             (first, second)
         }
     }.flatMap { $0 }
-
+    
     print(resultArray)
 }
-higherOrder_FlatMap()
+//higherOrder_FlatMap()
 
 // ------------------------------------------------------------------------------------------ //
+
+//Reduce:
+private func higherOrder_Reduce(){
+    
+    //reduce function takes a collection and converts it into a single value.
+    var sumArrayElements : [Int] = [1,1,1,2]
+    
+    /*
+     It always takes 2 values , first value is the result of the previous operation provided in the closure. Second values is the each value from the collection. After reduce , we have braces with value 0 like reduce(0) , 0 is the initial/first value in the closure, change 0 value to another value and see the results , then we can clearly understand what is initial value.
+     */
+    //Empieza con un numero, el cual usa como base para empezar a sumarle.
+    var sumValue = sumArrayElements.reduce(2) { firstValue, secondValue in
+        
+        return firstValue + secondValue
+    }
+    
+    //we can write above function in short way: $0 = firstValue. $1 = secondValue.
+    var anotherSumValue = sumArrayElements.reduce(2) { $0 + $1 }
+    print(anotherSumValue)
+    
+    print(sumValue)
+}
+//higherOrder_Reduce()
+
+// ------------------------------------------------------------------------------------------ //
+
+//Filter:
+//To apply filters in the collection , we use filter function.
+private func higherOrder_Filter(){
+    
+    //Filtrar solo por tipos booleanos
+    var soloBooleanos = arrayCombinado.filter{ $0 as? Bool == true}
+    print(soloBooleanos)
+    
+    var multiplesValidaciones = arrayCombinado.filter{ ($0 as? String)?.isEmpty == false && $0 as? String == "texto1" }
+    print(multiplesValidaciones)
+}
+//higherOrder_Filter()
+
+// ------------------------------------------------------------------------------------------ //
+
+//Contains:
+//To check if the collection elements contains provided value we use Contains
+private func higherOrder_Contains(){
+    
+    var filtrado = arrayString.filter{ $0.isEmpty || $0.contains("ro") }
+    
+    /*
+     var filtrado = arrayString.filter { String in
+     String.isEmpty || String.contains("ro")
+     }
+     */
+    
+    print(filtrado) //["", "rodriguez", "pedro", "roberto", ""]
+}
+//higherOrder_Contains()
+
+// ------------------------------------------------------------------------------------------ //
+
+//Sorted:
+//To sort elements either in ascending or descending order we use sorted function
+private func higherOrder_Sorted(){
+    
+    // default sort is ascending order
+    let sortedString = arrayString.sorted()
+    print(sortedString)
+    
+    // we can also write in this way
+    let mySorterArray = arrayInt.sorted { $0 < $1 }
+    print(mySorterArray)
+    
+    // another way to write , which is simpler way is
+    let descSortArray = arrayInt.sorted(by: <)
+    print(descSortArray)
+}
+//higherOrder_Sorted()
+
+// ------------------------------------------------------------------------------------------ //
+
+//ForEach:
+//for each works like for loop in swift, only difference is we can’t use continue or break inside for loop,
+//so it will make sure we go through each and every element of collection
+private func higherOrder_ForEach(){
+    
+    var upperCased: [String] = []
+    
+    arrayString.forEach {
+        
+        if $0.isEmpty == false {
+            upperCased.append( $0.uppercased() )
+        }
+    }
+    
+    print(upperCased)
+}
+//higherOrder_ForEach()
+
+// ------------------------------------------------------------------------------------------ //
+
+//RemoveAll:
+/*
+ If we want to remove some occurrence of any sub string from a string or any element from collection which matches
+ the condition then we can use removeAll
+ */
+private func higherOrder_RemoveAll(){
+    
+    //Remove Even numbers
+    arrayInt.removeAll(where: {$0 % 2 != 0})
+    print(arrayInt)
+    
+    //Remove Odd numbers
+    arrayInt.removeAll(where: {$0 % 2 == 0})
+    print(arrayInt)
+    
+    //Remove boolean types and nil
+    arrayConNulos.removeAll(where: { $0 is Bool || $0 == nil })
+    //print(arrayConNulos)
+    
+    arrayConNulos.forEach{ print($0!) } //ForceUnwrap, se eliminaron los nulos.
+    
+}
+higherOrder_RemoveAll()
