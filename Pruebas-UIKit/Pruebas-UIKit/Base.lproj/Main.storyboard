@@ -87,6 +87,21 @@
             </objects>
             <point key="canvasLocation" x="111.59420289855073" y="-2.0089285714285712"/>
         </scene>
+        <!--Second View Controller-->
+        <scene sceneID="2ez-sz-MW1">
+            <objects>
+                <viewController id="UW5-yQ-gVS" customClass="SecondViewController" customModule="Pruebas_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sDO-cR-8xt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bis-v3-MIx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9cz-Od-TKO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1029" y="-2"/>
+        </scene>
     </scenes>
     <resources>
         <image name="gear" catalog="system" width="128" height="122"/>

@@ -192,7 +192,7 @@ private func delayTask(){
      Message printed after 4 seconds
      */
 }
-delayTask()
+//delayTask()
 
 //MARK: - HIGHER-ORDER FUNCTION:
 
@@ -304,7 +304,7 @@ private func higherOrder_FlatMap(){
 private func higherOrder_Reduce(){
     
     //reduce function takes a collection and converts it into a single value.
-    var sumArrayElements : [Int] = [1,1,1,2]
+    var sumArrayElements : [Int] = [1,1,1,2,3,5]
     
     /*
      It always takes 2 values , first value is the result of the previous operation provided in the closure. Second values is the each value from the collection. After reduce , we have braces with value 0 like reduce(0) , 0 is the initial/first value in the closure, change 0 value to another value and see the results , then we can clearly understand what is initial value.
@@ -314,14 +314,17 @@ private func higherOrder_Reduce(){
         
         return firstValue + secondValue
     }
+    print(sumValue)
     
     //we can write above function in short way: $0 = firstValue. $1 = secondValue.
     var anotherSumValue = sumArrayElements.reduce(2) { $0 + $1 }
     print(anotherSumValue)
     
-    print(sumValue)
+    
+    var reduceToString = sumArrayElements.reduce("") { String($0) + String($1) }
+    print(reduceToString)
 }
-//higherOrder_Reduce()
+higherOrder_Reduce()
 
 // ------------------------------------------------------------------------------------------ //
 
