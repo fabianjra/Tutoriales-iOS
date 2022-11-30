@@ -194,6 +194,23 @@ private func delayTask(){
 }
 //delayTask()
 
+/*
+ Using DispatchGroup
+ */
+private func usingDisptachGroup(){
+    
+}
+
+func say(_ text: String, completion: @escaping ) {
+    let delay = Double.random(in: 1...2)
+    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+        print(text)
+        completion()
+    }
+}
+
+say("efe")
+
 //MARK: - HIGHER-ORDER FUNCTION:
 
 /*
@@ -301,30 +318,40 @@ private func higherOrder_FlatMap(){
 // ------------------------------------------------------------------------------------------ //
 
 //Reduce:
-private func higherOrder_Reduce(){
+private func higherOrder_Reduce() -> String{
     
     //reduce function takes a collection and converts it into a single value.
-    var sumArrayElements : [Int] = [1,1,1,2,3,5]
+    var sumArrayElements : [Int] = [0,1,2,3,4,5]
     
     /*
      It always takes 2 values , first value is the result of the previous operation provided in the closure. Second values is the each value from the collection. After reduce , we have braces with value 0 like reduce(0) , 0 is the initial/first value in the closure, change 0 value to another value and see the results , then we can clearly understand what is initial value.
      */
     //Empieza con un numero, el cual usa como base para empezar a sumarle.
-    var sumValue = sumArrayElements.reduce(2) { firstValue, secondValue in
+    let sumValue = sumArrayElements.reduce(2) { firstValue, secondValue in
         
         return firstValue + secondValue
     }
-    print(sumValue)
+    //print(sumValue)
     
     //we can write above function in short way: $0 = firstValue. $1 = secondValue.
-    var anotherSumValue = sumArrayElements.reduce(2) { $0 + $1 }
-    print(anotherSumValue)
+    let anotherSumValue = sumArrayElements.reduce(2) { $0 + $1 }
+    //print(anotherSumValue)
     
     
-    var reduceToString = sumArrayElements.reduce("") { String($0) + String($1) }
-    print(reduceToString)
+    let result = sumArrayElements.reduce("") { partialResult, item in
+        
+        print(partialResult)
+        //print(item)
+        
+        return partialResult + "\(item)"
+    }
+    print(result)
+    
+    //You can use both String or description to get the string value.
+    return sumArrayElements.reduce("") { $0 + String($1)  }
 }
-higherOrder_Reduce()
+//print(higherOrder_Reduce())
+//higherOrder_Reduce()
 
 // ------------------------------------------------------------------------------------------ //
 
