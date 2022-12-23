@@ -109,6 +109,7 @@ class ViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(text, for: .normal)
         button.backgroundColor = .blue
+        button.addTarget(self, action: #selector(navigate), for: .touchUpInside)
         
         return button
     }
@@ -120,6 +121,15 @@ class ViewController: UIViewController {
         view.backgroundColor = .green
         
         return view
+    }
+    
+    //Button Function
+    @objc func navigate() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        
+        nextViewController.modalPresentationStyle = .overFullScreen
+        self.present(nextViewController, animated:true, completion:nil)
     }
 }
 
