@@ -7,6 +7,9 @@
 
 import UIKit
 
+//SECCION 2: ANCHORS
+//Se dividió la seccion en 2 viewControllers, para separar la introduccion de los laboratorios.
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {

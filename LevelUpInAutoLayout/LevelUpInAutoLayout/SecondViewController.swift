@@ -7,34 +7,46 @@
 
 import UIKit
 
+//SECCION 2: ANCHORS
+//Se dividió la seccion en 2 viewControllers, para separar la introduccion de los laboratorios.
+
 class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //1:
+        //7. Lab: SafeAreaGuides
         //setupViews_safeAreaLayoutGuide()
         
-        //2:
+        //************************************//
+        
+        //8. Lab: Default Margin Guides
         //setupViews()
         
-        //3:
-        setuoView2()
+        //************************************//
+        
+        //9. Lab: Layout Margins as Spacer Guides
+        //setuoView2()
+        
+        //************************************//
+        
+        //10. Lab: ReadbleContent Guides
+        setupView3()
     }
     
-    //1:
+    //7. Lab: SafeAreaGuides
     func setupViews_safeAreaLayoutGuide(){
-        let topLabel = makeLabel(withText: "Top", size: 32)
+        let topLabel = makeLabel(withText: "Top", size: 32, color: .yellow)
         
         view.addSubview(topLabel)
         
         //Challenge:
-        let bottomLabel = makeLabel(withText: "Bottom", size: 40)
+        let bottomLabel = makeLabel(withText: "Bottom", size: 40, color: .yellow)
         view.addSubview(bottomLabel)
         
         //Sides label
-        let leadingLabel = makeLabel(withText: "Leading", size: 40)
-        let trailingLabel = makeLabel(withText: "Trailing", size: 40)
+        let leadingLabel = makeLabel(withText: "Leading", size: 40, color: .yellow)
+        let trailingLabel = makeLabel(withText: "Trailing", size: 40, color: .yellow)
         view.addSubview(leadingLabel)
         view.addSubview(trailingLabel)
         
@@ -50,7 +62,7 @@ class SecondViewController: UIViewController {
             bottomLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             bottomLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
-
+        
         //Classic way to activate a constraint: .isActive = true
         //In this case, is not necessesary to use "safeAreaLayoutGuide", because that is for top and bottom, but you are free to use it.
         leadingLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
@@ -60,17 +72,20 @@ class SecondViewController: UIViewController {
         trailingLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
-    func makeLabel(withText text: String, size: CGFloat) -> UILabel {
+    func makeLabel(withText text: String, size: CGFloat, color: UIColor) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
-        label.backgroundColor = .yellow
+        label.backgroundColor = color
         label.font = UIFont.systemFont(ofSize: size)
         
         return label
     }
     
-    //2: Auto Layout: Using "LayoutGuide", en lugar de "safeAreaGuide".
+    //***********************************************************************************************************************************//
+    
+    //8. Lab: Default Margin Guides
+    //Auto Layout: Using "LayoutGuide", en lugar de "safeAreaGuide".
     //La principal diferencia es que "LayoutGuide" agrega un margen a los bordes del rectangulo.
     //Al inicio, se usaban "Spacer Views", ahora eso se reemplazó con los LayoutGuides.
     func setupViews(){
@@ -87,7 +102,10 @@ class SecondViewController: UIViewController {
         ])
     }
     
-    //3: LayoutGuides: Creacion de 2 botones alineados mediante "LayoutGuide".
+    //***********************************************************************************************************************************//
+    
+    //9. Lab: Layout Margins as Spacer Guides
+    //LayoutGuides: Creacion de 2 botones alineados mediante "LayoutGuide".
     //Se agregan espacios entre los botones, en leading, middle y trailing para hacer espacios iguales, a demas del margin a los extremos.
     func setuoView2(){
         
@@ -154,7 +172,7 @@ class SecondViewController: UIViewController {
         
         let button = UIButton(configuration: configuration, primaryAction: nil)
         button.translatesAutoresizingMaskIntoConstraints = false
-
+        
         return button
     }
     
@@ -167,6 +185,37 @@ class SecondViewController: UIViewController {
         button.backgroundColor = color
         
         return button
+    }
+    
+    //***********************************************************************************************************************************//
+    
+    //10. Lab: ReadbleContent Guides
+    //Se utiliza para texto: Ajusta el texto a la altura y anchura de la vista asignada en el Layout.
+    func setupView3(){
+        
+//        let redView = UIView()
+//        redView.translatesAutoresizingMaskIntoConstraints = false
+//        redView.backgroundColor = .red
+//
+        //Add texto for the "readableContentGuide"
+        let label = makeLabel(withText: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas Letraset, las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.", size: 20, color: .yellow)
+        
+        //view.addSubview(redView)
+        view.addSubview(label)
+        
+        NSLayoutConstraint.activate([
+            //redView:
+//            redView.topAnchor.constraint(equalTo: view.readableContentGuide.topAnchor),
+//            redView.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor),
+//            redView.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor),
+//            redView.bottomAnchor.constraint(equalTo: view.readableContentGuide.bottomAnchor),
+//
+            //Label:
+            label.topAnchor.constraint(equalTo: view.readableContentGuide.topAnchor),
+            label.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor),
+            label.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor),
+            label.bottomAnchor.constraint(equalTo: view.readableContentGuide.bottomAnchor)
+        ])
     }
 }
 
