@@ -2,15 +2,19 @@
 <Workspace
    version = "1.0">
    <Group
-      location = "group:DesignChallenges"
-      name = "DesignChallenges">
+      location = "group:LevelUpInAutoLayout-UdemyCourse"
+      name = "LevelUpInAutoLayout-UdemyCourse">
       <FileRef
-         location = "group:BasicAnchors/BasicAnchors.xcodeproj">
+         location = "group:LevelUpInAutoLayout/LevelUpInAutoLayout.xcodeproj">
       </FileRef>
+      <Group
+         location = "group:/Users/f.rodriguezalvarez/Sources/Personal/Tutoriales-iOS/LevelUpInAutoLayout-UdemyCourse/DesignChallenges"
+         name = "DesignChallenges">
+         <FileRef
+            location = "group:BasicAnchors/BasicAnchors.xcodeproj">
+         </FileRef>
+      </Group>
    </Group>
-   <FileRef
-      location = "group:LevelUpInAutoLayout/LevelUpInAutoLayout.xcodeproj">
-   </FileRef>
    <FileRef
       location = "group:Pruebas-UIKit/Pruebas-UIKit.xcodeproj">
    </FileRef>
