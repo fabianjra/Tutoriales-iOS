@@ -3,6 +3,7 @@
 Proyectos y codigo basado en cursos de Udemy, libros y tutoriales de Youtube.
 Algunos codigos de ejemplos son ligeramente cambiados a sus videos originales para efectos de aprendizaje.
 
+<p>&nbsp;</p>
 
 ## Proyectos:
 
@@ -12,13 +13,14 @@ Algunos codigos de ejemplos son ligeramente cambiados a sus videos originales pa
 - [Udemy: LevelUpInAutoLayout](#LevelUpInAutoLayout-UdemyCourse)
 - [Udemy: RxSwift](#RxSwift)
 
+<p>&nbsp;</p>
 
 ### ComponentesSwiftUI
 
 Componentes de SwiftUI con ejemplos explicados por el youtuber Victor Roldan Dev.
-Link del canal en youtube: https://www.youtube.com/@VictorRoldanDev
+[Link del canal en youtube de Victor Roldan DEV](https://www.youtube.com/@VictorRoldanDev).
 
-**Componentes**
+**Componentes:**
 - Shapes
 - Searchable
 - TabViews
@@ -26,6 +28,7 @@ Link del canal en youtube: https://www.youtube.com/@VictorRoldanDev
 - StatesWrappers
 - ObservablesWrappers
 
+<p>&nbsp;</p>
 
 ### Pruebas-UIKit
 
@@ -38,6 +41,7 @@ Ejemplos de codigo para UIKit y generalidades como
 
 Se agregó un Playground para codigo de ejemplo sobre `Grand Central Dispatch`.
 
+<p>&nbsp;</p>
 
 ### MasteringSwiftUI
 
@@ -45,6 +49,7 @@ Componentes generales.
 
 Libro sobre SwiftUI por Simon NG (almacenado en mediafire, link web + /file/chrmfh0cxvhrs1m/Mastering_swiftUI_Simon_NG.pdf/file).
 
+<p>&nbsp;</p>
 
 ### LevelUpInAutoLayout-UdemyCourse
 
@@ -54,6 +59,7 @@ Workspace compuesto por proyectos:
 - LevelUpInAutoLayout: Proyecto general.
 - DesignChallenges (Basic anchors): Challenges para crear vistas.
 
+<p>&nbsp;</p>
 
 ### RxSwift
 
