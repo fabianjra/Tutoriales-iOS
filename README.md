@@ -79,15 +79,15 @@ Se le asigna una anchura, pero en caso de necesitarlo, puede ampliarse o reducir
 
 - Priorities decide:
 
-UILayoutPriority:
-.required: 1000 (anchors)
-.defaultHight: 750 (intrinsic size) optional. (I can being compressed)
-.defaultLow: 250 (intrinsic size) optional. (I can stretch)
+**UILayoutPriority:**
+- .required: 1000 (anchors)
+- .defaultHight: 750 (intrinsic size) optional. (I can being compressed)
+- .defaultLow: 250 (intrinsic size) optional. (I can stretch)
 
-- Resolver conflictos:
-*By hugging myself a bit less, I make myself more stretchable, setting defaultLow from 250, to 249.
+**Resolver conflictos:**
+*By hugging myself a bit less, I make myself more stretchable, setting defaultLow from 250, to 249.*
 
-RESUME: 
+**RESUME:** 
 - InstrinsicContentSize constraints are optionals.
 - We Adjust them through CHCR.
 - They can be overridden with anchors.
