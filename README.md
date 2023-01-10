@@ -59,6 +59,39 @@ Workspace compuesto por proyectos:
 - LevelUpInAutoLayout: Proyecto general.
 - DesignChallenges (Basic anchors): Challenges para crear vistas.
 
+## Intrinsic Content Size:
+
+Its the natural size of an iOS control wants to be (default size of a control).
+
+- “CHCR” Give us the ability to flex our controls:
+
+Example: Label and size is (50, 20)
+
+- Content Hugging: “hug” `<= 50`
+*Es decirle que no va a permitir que se amplíe hasta cierto punto. Lo “abraza”.*
+*Im not gonna let you grow.*
+
+- Compression Resistance:  “resist” `>= 50`
+*Es decirle que resista, para que no permita encogerse tanto. Lo retiene desde andetro, como si estuveira extendiendo lo brazos*
+*Im not gonna let you shrink.*
+
+Se le asigna una anchura, pero en caso de necesitarlo, puede ampliarse o reducirse un poco a conveniencia.
+
+- Priorities decide:
+
+UILayoutPriority:
+.required: 1000 (anchors)
+.defaultHight: 750 (intrinsic size) optional. (I can being compressed)
+.defaultLow: 250 (intrinsic size) optional. (I can stretch)
+
+- Resolver conflictos:
+*By hugging myself a bit less, I make myself more stretchable, setting defaultLow from 250, to 249.
+
+RESUME: 
+- InstrinsicContentSize constraints are optionals.
+- We Adjust them through CHCR.
+- They can be overridden with anchors.
+
 <p>&nbsp;</p>
 
 ### RxSwift

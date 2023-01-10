@@ -61,11 +61,11 @@
 				400FC52229521FB100D8332E /* AppDelegate.swift */,
 				400FC52429521FB100D8332E /* SceneDelegate.swift */,
 				400FC52629521FB100D8332E /* ViewController.swift */,
+				402030A1295643C8001F614A /* SecondViewController.swift */,
 				400FC52829521FB100D8332E /* Main.storyboard */,
 				400FC52B29521FB200D8332E /* Assets.xcassets */,
 				400FC52D29521FB200D8332E /* LaunchScreen.storyboard */,
 				400FC53029521FB200D8332E /* Info.plist */,
-				402030A1295643C8001F614A /* SecondViewController.swift */,
 			);
 			path = LevelUpInAutoLayout;
 			sourceTree = "<group>";
