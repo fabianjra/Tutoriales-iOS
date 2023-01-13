@@ -20,7 +20,12 @@ class Section3_IntrinsicContentSize_VC: UIViewController {
         //************************************************//
         
         //17. Lab: Content Hugging & Compression Resistance
-        setupViews_17()
+        //setupViews_17()
+        
+        //************************************************//
+        
+        //18. Working with Images
+        setupViews_18()
     }
     
     func setupViews_16(){
@@ -95,6 +100,76 @@ class Section3_IntrinsicContentSize_VC: UIViewController {
         textfield.backgroundColor = .lightGray
         
         return textfield
+    }
+    
+    //*******************************************************************************************//
+    
+    func setupViews_18(){
+        let image = makeImageView(named: "rush")
+        let label = makeLabel(withText: "Title")
+        let button = makeButton(withText: "Get Started")
+        
+        view.addSubview(image)
+        view.addSubview(label)
+        view.addSubview(button)
+        
+        //Imageviews by themselves have intrinsic size
+        image.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        image.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        image.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        label.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 8).isActive = true
+        label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive = true
+        label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8).isActive = true
+        
+        button.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 300).isActive = true
+        button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
+        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        //NOTA: Hasta aqui, los 3 controles anteriores tienen ambiguedad en "height".
+        //Todos tienen la misma prioridad en Hugging Vertical.
+    }
+    
+    func makeImageView(named: String) -> UIImageView {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFit
+        view.image = UIImage(named: named)
+        view.backgroundColor = .green
+        
+        //Resolver la ambiguedad:
+        //Why only dimension? Because is the only dimension that is ambigous:
+        
+        //meaning: Im ok hugging a little bit less.
+        //Puede ajustar su altura para comprimirse un poco y ajustarse a los demas controles.
+        view.setContentHuggingPriority(UILayoutPriority(rawValue: 249), for: .vertical)
+        
+        //Meaning: Im ok stretching it.
+        view.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 749), for: .vertical)
+        
+        return view
+    }
+    
+    func makeLabel(withText text: String) -> UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = text
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 32)
+        label.backgroundColor = .yellow
+        
+        return label
+    }
+    
+    func makeButton(withText text: String) -> UIButton {
+        var configuration = UIButton.Configuration.filled()
+        configuration.title = text
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
+        configuration.baseBackgroundColor = .blue
+        
+        let button = UIButton(configuration: configuration, primaryAction: nil)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
     }
 }
 

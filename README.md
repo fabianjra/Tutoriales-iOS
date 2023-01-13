@@ -92,6 +92,11 @@ Se le asigna una anchura, pero en caso de necesitarlo, puede ampliarse o reducir
 - We Adjust them through CHCR.
 - They can be overridden with anchors.
 
+**Key points:**
+- We do most of our layout with anchors.
+- Occasionally we tweak the CHCR of controls to resolve ambiguity.
+- This is how we make our applications adaptive in their layout.
+
 <p>&nbsp;</p>
 
 ### RxSwift
