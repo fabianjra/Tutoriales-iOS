@@ -14,6 +14,9 @@
          location = "group:/Users/f.rodriguezalvarez/Sources/Personal/Tutoriales-iOS/LevelUpInAutoLayout-UdemyCourse/DesignChallenges"
          name = "DesignChallenges">
          <FileRef
+            location = "group:SpotifyPlayer/SpotifyPlayer.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:BasicAnchors/BasicAnchors.xcodeproj">
          </FileRef>
       </Group>
