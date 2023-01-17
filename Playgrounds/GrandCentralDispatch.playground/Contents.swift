@@ -1,27 +1,4 @@
-import UIKit
-
-//MARK: - OPTIONALS:
-
-class UnwrapExample {
-    
-    //2 maneras de declararlos.
-    var name: String?
-    var name2: Optional<String>
-    
-    init() {
-        self.name = ""
-        self.name2 = ""
-    }
-}
-
-private func Optionals(){
-    DispatchQueue.global().async {
-        sleep(2)
-        print("Sync inside")
-    }
-    
-    print("Outside")
-}
+import Foundation
 
 //MARK: - GRAND CENTRAL DISPATCH:
 
@@ -88,6 +65,17 @@ private func MainQueue(){
     }
 }
 //MainQueue()
+
+private func sleeping(){
+    DispatchQueue.global().async {
+        sleep(2)
+        print("Sync inside")
+    }
+    
+    print("Outside")
+}
+
+//sleeping()
 
 /*
  2: Global queues.

@@ -8,13 +8,13 @@
       location = "group:Playgrounds"
       name = "Playgrounds">
       <FileRef
+         location = "group:GrandCentralDispatch.playground">
+      </FileRef>
+      <FileRef
          location = "group:HigherOrderFunctions.playground">
       </FileRef>
       <FileRef
          location = "group:Generics.playground">
-      </FileRef>
-      <FileRef
-         location = "group:Generales.playground">
       </FileRef>
    </Group>
    <Group
