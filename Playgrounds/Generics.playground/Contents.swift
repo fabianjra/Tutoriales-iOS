@@ -18,6 +18,8 @@ let intIntDictionary = [1: 1, 2: 2, 3: 3]
 var aDictionary = Dictionary<String, Int>()
 var bDictionary: Dictionary<String, String> = ["nombre": "Fabian", "segundoNombre": "Josue", "primerApellido": "Rodriguez"]
 
+//****************************************************************************************//
+
 //EXAMPLE:
 //Instead of using as parameters: "String, Int, Double, Float, etc.", use Generic:
 //The placeholder "<T>", indicates that there is only 1 type for parameters.
@@ -27,23 +29,40 @@ func swap<T>(_ a: inout T, _ b: inout T) {
     b = tempA
 }
 
-var a = 5
-var b = 10
+func call_Swap() {
+    var a = 5
+    var b = 10
 
-var c = "50"
-var d = "60"
+    var c = "50"
+    var d = "60"
 
-swap(&a, &b)
-swap(&c, &d)
-print(a)
-print(b)
-print(c)
-print(d)
+    swap(&a, &b)
+    swap(&c, &d)
+    print(a)
+    print(b)
+    print(c)
+    print(d)
+}
+//call_Swap()
+
 
 //Using 2 types of parameters:, for example for using "int" as A parameter and "String" as B parameter.
 func genericFunction<T, U>(aParam: T, bParam: U) {
      
+    print(aParam)
+    print(bParam)
 }
+
+func call_GenericFunction() {
+    
+    let primero = 5.78
+    let segundo = "segundo parametro"
+    genericFunction(aParam: primero, bParam: segundo)
+}
+//call_GenericFunction()
+
+
+//****************************************************************************************//
 
 //Crating a Generic Stack:
 struct Stack<Element> {
@@ -60,20 +79,25 @@ struct Stack<Element> {
     }
 }
 
-var stack1 = Stack<Int>()
-stack1.push(5)
-stack1.push(10)
+func call_Stack() {
+    
+    var stack1 = Stack<Int>()
+    stack1.push(5)
+    stack1.push(10)
 
-//if nil: returns 0
-print(stack1.pop() ?? 0) // 5
-print(stack1.pop() ?? 0) // 10
+    //if nil: returns 0
+    print(stack1.pop() ?? 0) // 5
+    print(stack1.pop() ?? 0) // 10
 
-//Stack: Any
-var stackAny = Stack<Any>()
-stackAny.push("fabian")
-stackAny.push(10)
-stackAny.push(true)
+    //Stack: Any
+    var stackAny = Stack<Any>()
+    stackAny.push("fabian")
+    stackAny.push(10)
+    stackAny.push(true)
+}
+//call_Stack()
 
+//****************************************************************************************//
 
 //SumDigits
 /*  Create the function sumDigits that return the sum of digits in a given sequence of Type 'T' using generics.
