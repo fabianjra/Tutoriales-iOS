@@ -47,7 +47,8 @@ Se agregó un Playground para codigo de ejemplo sobre `Grand Central Dispatch`.
 
 Componentes generales.
 
-Libro sobre SwiftUI por Simon NG (almacenado en mediafire, link web + /file/chrmfh0cxvhrs1m/Mastering_swiftUI_Simon_NG.pdf/file).
+Libro sobre SwiftUI por Simon NG.
+Almacenado en mediafire. Link Host mediafire "mediafire.com" + link:  /file/chrmfh0cxvhrs1m/Mastering_swiftUI_Simon_NG.pdf/file
 
 <p>&nbsp;</p>
 
