@@ -14,6 +14,7 @@
 		400FC52C29521FB200D8332E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 400FC52B29521FB200D8332E /* Assets.xcassets */; };
 		400FC52F29521FB200D8332E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400FC52D29521FB200D8332E /* LaunchScreen.storyboard */; };
 		402030A2295643C8001F614A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402030A1295643C8001F614A /* SecondViewController.swift */; };
+		404B5F82298073DC0018C979 /* Section4_StackViews_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B5F81298073DC0018C979 /* Section4_StackViews_VC.swift */; };
 		4053A319296E105800872505 /* Section3_IntrinsicContentSize_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4053A318296E105800872505 /* Section3_IntrinsicContentSize_VC.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		400FC52E29521FB200D8332E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		400FC53029521FB200D8332E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		402030A1295643C8001F614A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		404B5F81298073DC0018C979 /* Section4_StackViews_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section4_StackViews_VC.swift; sourceTree = "<group>"; };
 		4053A318296E105800872505 /* Section3_IntrinsicContentSize_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section3_IntrinsicContentSize_VC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 				400FC52629521FB100D8332E /* ViewController.swift */,
 				402030A1295643C8001F614A /* SecondViewController.swift */,
 				4053A318296E105800872505 /* Section3_IntrinsicContentSize_VC.swift */,
+				404B5F81298073DC0018C979 /* Section4_StackViews_VC.swift */,
 				400FC52829521FB100D8332E /* Main.storyboard */,
 				400FC52B29521FB200D8332E /* Assets.xcassets */,
 				400FC52D29521FB200D8332E /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				400FC52729521FB100D8332E /* ViewController.swift in Sources */,
 				400FC52329521FB100D8332E /* AppDelegate.swift in Sources */,
 				400FC52529521FB100D8332E /* SceneDelegate.swift in Sources */,
+				404B5F82298073DC0018C979 /* Section4_StackViews_VC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

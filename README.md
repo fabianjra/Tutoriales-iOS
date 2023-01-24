@@ -116,7 +116,7 @@ Se le asigna una anchura, pero en caso de necesitarlo, puede ampliarse o reducir
 This is a container (has no intrinsic content size of it's own).
 Not all distribution work the same.
 Everything inside needs to be intrinsically content sized (Everything needs to be able to size itself).
-
+Stackviews doesn't have a specific size by default, the dinamically change based on the content it has inside (buttons, labels, etc).
 
 <p>&nbsp;</p>
 
