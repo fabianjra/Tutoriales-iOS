@@ -13,7 +13,9 @@ Algunos codigos de ejemplos son ligeramente cambiados a sus videos originales pa
 - [Udemy: LevelUpInAutoLayout](#LevelUpInAutoLayout-UdemyCourse)
 - [Udemy: RxSwift](#RxSwift)
 
+
 <p>&nbsp;</p>
+
 
 ### ComponentesSwiftUI
 
@@ -28,7 +30,9 @@ Componentes de SwiftUI con ejemplos explicados por el youtuber Victor Roldan Dev
 - StatesWrappers
 - ObservablesWrappers
 
+
 <p>&nbsp;</p>
+
 
 ### Pruebas-UIKit
 
@@ -41,7 +45,9 @@ Ejemplos de codigo para UIKit y generalidades como
 
 Se agregó un Playground para codigo de ejemplo sobre `Grand Central Dispatch`.
 
+
 <p>&nbsp;</p>
+
 
 ### MasteringSwiftUI
 
@@ -50,7 +56,9 @@ Componentes generales.
 Libro sobre SwiftUI por Simon NG.
 Almacenado en mediafire. Link Host mediafire "mediafire.com" + link:  /file/chrmfh0cxvhrs1m/Mastering_swiftUI_Simon_NG.pdf/file
 
+
 <p>&nbsp;</p>
+
 
 ### LevelUpInAutoLayout-UdemyCourse
 
@@ -63,6 +71,7 @@ Workspace compuesto por proyectos:
 ## Intrinsic Content Size:
 
 Its the natural size of an iOS control wants to be (default size of a control).
+This allows controls to lay themselves out without requering full contraints.
 
 - “CHCR” Give us the ability to flex our controls:
 
@@ -98,7 +107,19 @@ Se le asigna una anchura, pero en caso de necesitarlo, puede ampliarse o reducir
 - Occasionally we tweak the CHCR of controls to resolve ambiguity.
 - This is how we make our applications adaptive in their layout.
 
+**Links that helps:**
+- [Views with Intrinsinc Content Size](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/ViewswithIntrinsicContentSize.html)
+- [Content Hugging Compression Resistance (CHCR)](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/AnatomyofaConstraint.html#//apple_ref/doc/uid/TP40010853-CH9-SW21)
+
+## UIStackView:
+
+This is a container (has no intrinsic content size of it's own).
+Not all distribution work the same.
+Everything inside needs to be intrinsically content sized (Everything needs to be able to size itself).
+
+
 <p>&nbsp;</p>
+
 
 ### RxSwift
 

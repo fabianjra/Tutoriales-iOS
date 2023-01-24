@@ -53,7 +53,7 @@ class Challenge: UIViewController {
         trackLabel.topAnchor.constraint(equalTo: albumImage.bottomAnchor, constant: margin).isActive = true
         trackLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: margin).isActive = true
         trackLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -margin).isActive = true
-        
+         
         albumLabel.topAnchor.constraint(equalTo: trackLabel.bottomAnchor, constant: margin).isActive = true
         albumLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: margin).isActive = true
         albumLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -margin).isActive = true
@@ -82,7 +82,7 @@ class Challenge: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
         view.image = UIImage(named: named)
-        
+         
         // Stretch and grow
         view.setContentHuggingPriority(UILayoutPriority(rawValue: 249), for: .vertical)
         view.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 749), for: .vertical)
@@ -139,7 +139,7 @@ class Challenge: UIViewController {
         let attributedText = NSMutableAttributedString(string: title, attributes: [
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16),
             NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.kern: 1
+            NSAttributedString.Key.kern: 1 //Un espacio entre las letras.
             ])
 
         button.setAttributedTitle(attributedText, for: .normal) // Note how not button.setTitle()
