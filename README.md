@@ -118,6 +118,27 @@ Not all distribution work the same.
 Everything inside needs to be intrinsically content sized (Everything needs to be able to size itself).
 Stackviews doesn't have a specific size by default, the dinamically change based on the content it has inside (buttons, labels, etc).
 
+**Distribution: Fill:**
+- Fills all available space.
+- Default settings.
+- Uses Intrinsic Content Size (CHCR).
+- If CHCR the same, will complain.
+
+**Distribution: Fill equally:**
+- Makes all controls the same size.
+- Only distribution NOT use intrinsic content size.
+- Fill equally will break the optional intrinsic content size in order to fill equally.
+- Remember: Intrinsic content size is a recomendation, not a requirement.
+
+**Distribution: Fill proportionally:**
+- Mantains proportions as layout grows and shrinks.
+
+**Distribution: Equal spacing:**
+- Calculate the entire space and tries to make them all the same in base of all controls inside. 
+
+**Distribution: Equal centering:**
+- Spaces equally between center of controls.
+
 <p>&nbsp;</p>
 
 
