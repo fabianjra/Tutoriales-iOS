@@ -23,6 +23,9 @@
       <FileRef
          location = "group:LevelUpInAutoLayout/LevelUpInAutoLayout.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:Examples/1-Examples.xcodeproj">
+      </FileRef>
       <Group
          location = "group:/Users/f.rodriguezalvarez/Sources/Personal/Tutoriales-iOS/LevelUpInAutoLayout-UdemyCourse/DesignChallenges"
          name = "DesignChallenges">
