@@ -35,6 +35,16 @@
          <FileRef
             location = "group:BasicAnchors/BasicAnchors.xcodeproj">
          </FileRef>
+         <Group
+            location = "group:/Users/f.rodriguezalvarez/Sources/Personal/Tutoriales-iOS/LevelUpInAutoLayout-UdemyCourse/DesignChallenges/Stacks"
+            name = "Stacks">
+            <FileRef
+               location = "group:CustomViewChallenge/CustomViewChallenge.xcodeproj">
+            </FileRef>
+            <FileRef
+               location = "group:CustomViewsSolution/CustomViewsSolution.xcodeproj">
+            </FileRef>
+         </Group>
       </Group>
    </Group>
    <FileRef
