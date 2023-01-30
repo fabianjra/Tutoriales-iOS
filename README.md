@@ -158,15 +158,23 @@ Se le asigna una anchura, pero en caso de necesitarlo, puede ampliarse o reducir
 There are 3 ways to tweak the constraints:
 - Change the constant. Example: `.topAnchorConstraint.constant == 44`. 
 - Code: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Constants.swift)
-* 
+
+<p>&nbsp;</p>
+
 - Enable / disable. Example: `.leadingAnchorConstraint.isActive = true / false`. 
 - Code: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Constraints.swift)
-* 
+
+<p>&nbsp;</p>
+
 - Toggle visibility. Example: `label2.isHidden = true / false`. 
 - Code: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Visibility.swift)
-* 
+
+<p>&nbsp;</p>
+
 - Challenge: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/DesignChallenges/Adaptive/NudgeTheLabel/NudgeTheLabel/BlueView.swift)
 
+
+<p>&nbsp;</p>
 
 ## RxSwift
 
