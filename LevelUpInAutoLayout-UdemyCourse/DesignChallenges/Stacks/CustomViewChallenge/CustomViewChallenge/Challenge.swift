@@ -16,7 +16,8 @@ class Challenge: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        setupViews()
+        //setupViews()
+        setupViews_StackView()
         
         //self.view.backgroundColor = .black
     }
@@ -26,6 +27,7 @@ class Challenge: UIViewController {
     }
     
     /*
+     #1:
      
      Challenge here is to take the various controls and practice extracting components as subViews (UIViews).
      
@@ -48,9 +50,7 @@ class Challenge: UIViewController {
      └───────────────┘        └───────────────┘
      
      See if you can extract those into their own custom UIViews and then lay those out.
-     
      */
-    
     func setupViews() {
         
         let descriptionText = "When you go offline, you'll only be able to play the music and podcasts you've downloaded."
@@ -102,4 +102,83 @@ class Challenge: UIViewController {
         rowView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -margin).isActive = true
     }
     
+    //*******************************************************************************************//
+    
+    //35. Solution: Stack View Challenge.
+    
+    /*
+     #2:
+     
+     Challenge: See if you can embed all these controls in a StackView like this.
+ 
+     ┌────────StackView─────────┐
+     │                          │
+     │        offlineRow        │
+     │                          │
+     │      offlineSublabel     │
+     │                          │   axis = vertical
+     │       crossfadeView      │   distribution = fill
+     │                          │   alignment = fill
+     │        gaplessRow        │   spacing = 20
+     │                          │
+     │       hideSongsRow       │
+     │                          │
+     │     normalizationRow     │
+     │                          │
+     └──────────────────────────┘
+     
+     Things of note:
+  
+     1. No bottom constraint on StackView required.
+  
+         Because the StackView is fully intrinsically sized, we don't need a button constraint pinning it to the bottom.
+         We could add one if we wanted it to fully stretch. But if we want it to retain it's size non is required.
+  
+     2. Notice the how many fewer constraints are required.
+  
+         Our original layout for this back in the anchors design challenge required around 30 constraints.
+         With the StackView, and all of it's built in spacing we now require ~12. Considerably fewer.
+     */
+     
+    func setupViews_StackView() {
+        
+        let marginSV: CGFloat = 16.0
+        
+        //Create controls:
+        let stackView = makeStackView(withOrientation: .vertical)
+        stackView.spacing = 20 //Override spacing from the function "makeStackView".
+        
+        let descriptionText = "When you go offline, you'll only be able to play the music and podcasts you've downloaded."
+        
+        //Rows:
+        let rowOffline = RowView(textLabel: "Offline", isSwitchOn: false)
+        let descriptionOffline = makeSubLabel(withText: descriptionText)
+        let crossfadeView = CrossfadeView()
+        let rowGapless = RowView(textLabel: "Gapless playback", isSwitchOn: true)
+        let rowHideUnplayable = RowView(textLabel: "Hide unplayable songs", isSwitchOn: true)
+        let rowEnableAudio = RowView(textLabel: "Enalbe audio normalization", isSwitchOn: true)
+        
+        //Add to view:
+        stackView.addArrangedSubview(rowOffline)
+        stackView.addArrangedSubview(descriptionOffline)
+        stackView.addArrangedSubview(crossfadeView)
+        stackView.addArrangedSubview(rowGapless)
+        stackView.addArrangedSubview(rowHideUnplayable)
+        stackView.addArrangedSubview(rowEnableAudio)
+        
+        //Add subviews:
+        view.addSubview(stackView)
+        
+        //Layout:
+        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        //If we add this, will add extra empty space between Rows:
+        //stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        // for padding and spacing
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: marginSV, leading: marginSV, bottom: marginSV, trailing: marginSV)
+    }
 }

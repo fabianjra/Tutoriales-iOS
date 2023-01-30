@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="1975" y="-2"/>
         </scene>
-        <!--Section4 Stack ViewsVC-->
+        <!--View Controller-->
         <scene sceneID="rYx-jW-ReP">
             <objects>
-                <viewController id="4nq-50-uMS" customClass="Section4_StackViews_VC" customModule="LevelUpInAutoLayout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4nq-50-uMS" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CIK-OE-kSq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
