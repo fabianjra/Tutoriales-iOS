@@ -31,7 +31,7 @@ class AdjustSpacersBlueView: UIView {
     func setupViews() {
         backgroundColor = .blue
         topSpacer.backgroundColor = .white
-        bottomSpacer.backgroundColor = .white
+        bottomSpacer.backgroundColor = .gray
 
         let label = makeLabel(withText: "Adjusting via spacers", size: 24)
         let stackView = makeStackView(withOrientation: .vertical)
@@ -56,7 +56,23 @@ class AdjustSpacersBlueView: UIView {
         adjustConstraints()
     }
 
+    //Not deprecated:
     func adjustConstraints() {
+        let orientation = getUIInterfaceOrientation()
+        
+        if orientation == .portrait {
+            topSpacer.isHidden = true
+            bottomSpacer.isHidden = true
+        } else {
+            topSpacer.isHidden = false
+            bottomSpacer.isHidden = false
+        }
+    }
+    
+    //Deprecated:
+    //'statusBarOrientation' was deprecated in iOS 13.0: Use the interfaceOrientation property of the window scene instead.
+    /*
+     func adjustConstraints_deprecated() {
         if UIApplication.shared.statusBarOrientation.isPortrait {
             topSpacer.isHidden = true
             bottomSpacer.isHidden = true
@@ -69,6 +85,7 @@ class AdjustSpacersBlueView: UIView {
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 200, height: 200)
     }
+     */
 
 }
 

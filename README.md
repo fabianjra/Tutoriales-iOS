@@ -163,11 +163,13 @@ There are 3 ways to tweak the constraints:
 
 - Enable / disable. Example: `.leadingAnchorConstraint.isActive = true / false`. 
 - Code: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Constraints.swift)
+- Example: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/DesignChallenges/Adaptive/NudgeTheLabel/NudgeTheLabel/BlueView.swift)
 
 <p>&nbsp;</p>
 
 - Toggle visibility. Example: `label2.isHidden = true / false`. 
 - Code: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Visibility.swift)
+- Example: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/AdjustSpacersBlueView.swift)
 
 <p>&nbsp;</p>
 

@@ -158,3 +158,23 @@ extension UIColor {
     static let darkTeal = UIColor(red: 90/255, green: 200/255, blue: 250/255, alpha: 1)
     static let darkYellow = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1)
 }
+
+/*
+ An application can use more than one scene, each with one or more windows.
+ Use the connectedScenes method to obtain the list of connected scenes for the application.
+ Use the window or keyWindow property on a scene to obtain the window.
+ If you are certain that your app uses only one scene with one window you could obtain the same root view controller using the following:
+ */
+func getUIInterfaceOrientation() -> UIInterfaceOrientation {
+    
+    //Not deprecated code.
+    guard let firstScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+        return .unknown
+    }
+    
+    guard let firstWindow = firstScene.windows.first else {
+        return .unknown
+    }
+    
+    return firstWindow.windowScene?.interfaceOrientation ?? .unknown
+}
