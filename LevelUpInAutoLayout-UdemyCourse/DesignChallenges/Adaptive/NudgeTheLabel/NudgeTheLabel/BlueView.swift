@@ -47,11 +47,47 @@ class BlueView: UIView {
     }
     
     func adjustConstraints() {
-        if UIApplication.shared.statusBarOrientation.isPortrait {
-            // Fill in these values here
+        
+        /*
+         An application can use more than one scene, each with one or more windows.
+         Use the connectedScenes method to obtain the list of connected scenes for the application.
+         Use the window or keyWindow property on a scene to obtain the window.
+         If you are certain that your app uses only one scene with one window you could obtain the same root view controller using the following:
+         */
+        
+        //Not deprecated code.
+        guard let firstScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+            return
+        }
+        
+        guard let firstWindow = firstScene.windows.first else {
+            return
+        }
+        
+        if firstWindow.windowScene?.interfaceOrientation == .portrait {
+            //Fill in these values here
+            print("Portrait")
+            
+            topAnchorConstraint.isActive = true
+            centerYAnchorConstraint.isActive = false
         } else {
             // Fill in these values here
+            print("Landscape")
+            
+            topAnchorConstraint.isActive = false
+            centerYAnchorConstraint.isActive = true
         }
+        
+        /*
+         //'statusBarOrientation' was deprecated in iOS 13.0: Use the interfaceOrientation property of the window scene instead.
+         if UIApplication.shared.statusBarOrientation.isPortrait {
+         // Fill in these values here
+         print("Portrait")
+         } else {
+         // Fill in these values here
+         print("Landscape")
+         }
+         */
     }
     
     override var intrinsicContentSize: CGSize {
