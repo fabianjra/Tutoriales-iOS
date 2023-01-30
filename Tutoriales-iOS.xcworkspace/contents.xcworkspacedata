@@ -39,6 +39,9 @@
             location = "group:/Users/f.rodriguezalvarez/Sources/Personal/Tutoriales-iOS/LevelUpInAutoLayout-UdemyCourse/DesignChallenges/Stacks"
             name = "Stacks">
             <FileRef
+               location = "group:StackViewChallenge/StackViewChallenge.xcodeproj">
+            </FileRef>
+            <FileRef
                location = "group:CustomViewChallenge/CustomViewChallenge.xcodeproj">
             </FileRef>
             <FileRef
