@@ -17,6 +17,8 @@ class Solution: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setupViews()
+        
+        view.backgroundColor = .offBlack
     }
 
     func setupNavigationBar() {
