@@ -66,7 +66,8 @@ Curso de Udemy sobre Auto Layout.
 
 Workspace compuesto por proyectos: 
 - LevelUpInAutoLayout: Proyecto general.
-- DesignChallenges (Basic anchors): Challenges para crear vistas.
+- 1-Examples: Lista de configuraciones.
+- Carpeta "DesignChallenges": Challenges para crear vistas.
 
 ### Intrinsic Content Size:
 
@@ -151,6 +152,13 @@ Se le asigna una anchura, pero en caso de necesitarlo, puede ampliarse o reducir
 
 *Gotchas:*
 - When adding views to `UIStackView` remember it's `addArrangedSubview` not `addSubview`.
+
+### Adaptive layouts:
+
+There are 3 ways to tweak the constraints:
+- Change the constant. Example: `.topAnchorConstraint.constant == 44`. Code: [File](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Constants.swift)
+- Enable / disable. Ex: `.leadingAnchorConstraint.isActive = true / false`
+- Toggle visibility. Ex: `label2.isHidden = true / false`
 
 
 <p>&nbsp;</p>
