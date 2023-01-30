@@ -48,6 +48,13 @@
                location = "group:CustomViewsSolution/CustomViewsSolution.xcodeproj">
             </FileRef>
          </Group>
+         <Group
+            location = "group:/Users/f.rodriguezalvarez/Sources/Personal/Tutoriales-iOS/LevelUpInAutoLayout-UdemyCourse/DesignChallenges/Adaptive"
+            name = "Adaptive">
+            <FileRef
+               location = "group:NudgeTheLabel/NudgeTheLabel.xcodeproj">
+            </FileRef>
+         </Group>
       </Group>
    </Group>
    <FileRef
