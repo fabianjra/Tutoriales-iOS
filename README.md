@@ -17,7 +17,7 @@ Algunos codigos de ejemplos son ligeramente cambiados a sus videos originales pa
 <p>&nbsp;</p>
 
 
-### ComponentesSwiftUI
+## ComponentesSwiftUI
 
 Componentes de SwiftUI con ejemplos explicados por el youtuber Victor Roldan Dev.
 [Link del canal en youtube de Victor Roldan DEV](https://www.youtube.com/@VictorRoldanDev).
@@ -34,7 +34,7 @@ Componentes de SwiftUI con ejemplos explicados por el youtuber Victor Roldan Dev
 <p>&nbsp;</p>
 
 
-### Pruebas-UIKit
+## Pruebas-UIKit
 
 Ejemplos de codigo para UIKit y generalidades como
 
@@ -49,9 +49,9 @@ Se agregó un Playground para codigo de ejemplo sobre `Grand Central Dispatch`.
 <p>&nbsp;</p>
 
 
-### MasteringSwiftUI
+## MasteringSwiftUI
 
-Componentes generales.
+- Componentes generales.
 
 Libro sobre SwiftUI por Simon NG.
 Almacenado en mediafire. Link Host mediafire "mediafire.com" + link:  /file/chrmfh0cxvhrs1m/Mastering_swiftUI_Simon_NG.pdf/file
@@ -60,7 +60,7 @@ Almacenado en mediafire. Link Host mediafire "mediafire.com" + link:  /file/chrm
 <p>&nbsp;</p>
 
 
-### LevelUpInAutoLayout-UdemyCourse
+## LevelUpInAutoLayout-UdemyCourse
 
 Curso de Udemy sobre Auto Layout.
 
@@ -68,7 +68,7 @@ Workspace compuesto por proyectos:
 - LevelUpInAutoLayout: Proyecto general.
 - DesignChallenges (Basic anchors): Challenges para crear vistas.
 
-## Intrinsic Content Size:
+### Intrinsic Content Size:
 
 Its the natural size of an iOS control wants to be (default size of a control).
 This allows controls to lay themselves out without requering full contraints.
@@ -111,7 +111,7 @@ Se le asigna una anchura, pero en caso de necesitarlo, puede ampliarse o reducir
 - [Views with Intrinsinc Content Size](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/ViewswithIntrinsicContentSize.html)
 - [Content Hugging Compression Resistance (CHCR)](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/AnatomyofaConstraint.html#//apple_ref/doc/uid/TP40010853-CH9-SW21)
 
-## UIStackView:
+### UIStackView:
 
 * This is a container (has no intrinsic content size of it's own). 
 * Not all distribution work the same.
@@ -140,7 +140,7 @@ Se le asigna una anchura, pero en caso de necesitarlo, puede ampliarse o reducir
 - Spaces equally between center of controls.
 
 **Links that helps (Stack Views):**
-Googleable Terms: `UIStackView`, `Distribution`, `Alignment`, `UIScrollView`.
+- Googleable Terms: `UIStackView`, `Distribution`, `Alignment`, `UIScrollView`.
 
 - [UIStackViews](https://developer.apple.com/documentation/uikit/uistackview)
 - [UIScrollView](https://developer.apple.com/documentation/uikit/uiscrollview)
@@ -156,6 +156,6 @@ Googleable Terms: `UIStackView`, `Distribution`, `Alignment`, `UIScrollView`.
 <p>&nbsp;</p>
 
 
-### RxSwift
+## RxSwift
 
 Curso de Udemy sobre RxSwfit.
