@@ -157,8 +157,8 @@ Se le asigna una anchura, pero en caso de necesitarlo, puede ampliarse o reducir
 
 There are 3 ways to tweak the constraints:
 - Change the constant. Example: `.topAnchorConstraint.constant == 44`. Code: [File](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Constants.swift)
-- Enable / disable. Ex: `.leadingAnchorConstraint.isActive = true / false`
-- Toggle visibility. Ex: `label2.isHidden = true / false`
+- Enable / disable. Ex: `.leadingAnchorConstraint.isActive = true / false`. Code: [File](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Constraints.swift)
+- Toggle visibility. Ex: `label2.isHidden = true / false`. Code: [File](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Visibility.swift)
 
 
 <p>&nbsp;</p>
