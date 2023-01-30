@@ -107,16 +107,16 @@ Se le asigna una anchura, pero en caso de necesitarlo, puede ampliarse o reducir
 - Occasionally we tweak the CHCR of controls to resolve ambiguity.
 - This is how we make our applications adaptive in their layout.
 
-**Links that helps:**
+**Links that helps (Intrinsic Content Size):**
 - [Views with Intrinsinc Content Size](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/ViewswithIntrinsicContentSize.html)
 - [Content Hugging Compression Resistance (CHCR)](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/AnatomyofaConstraint.html#//apple_ref/doc/uid/TP40010853-CH9-SW21)
 
 ## UIStackView:
 
-This is a container (has no intrinsic content size of it's own).
-Not all distribution work the same.
-Everything inside needs to be intrinsically content sized (Everything needs to be able to size itself).
-Stackviews doesn't have a specific size by default, the dinamically change based on the content it has inside (buttons, labels, etc).
+* This is a container (has no intrinsic content size of it's own). 
+* Not all distribution work the same.
+* Everything inside needs to be intrinsically content sized (Everything needs to be able to size itself).
+* Stackviews doesn't have a specific size by default, the dinamically change based on the content it has inside (buttons, labels, etc).
 
 **Distribution: Fill:**
 - Fills all available space.
@@ -138,6 +138,20 @@ Stackviews doesn't have a specific size by default, the dinamically change based
 
 **Distribution: Equal centering:**
 - Spaces equally between center of controls.
+
+**Links that helps (Stack Views):**
+Googleable Terms: `UIStackView`, `Distribution`, `Alignment`, `UIScrollView`.
+
+- [UIStackViews](https://developer.apple.com/documentation/uikit/uistackview)
+- [UIScrollView](https://developer.apple.com/documentation/uikit/uiscrollview)
+- [Auto Layout Cookbook Example](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/LayoutUsingStackViews.html#//apple_ref/doc/uid/TP40010853-CH11-SW1)
+- [Distribution](https://developer.apple.com/documentation/uikit/uistackview/distribution)
+- [Alignment](https://developer.apple.com/documentation/uikit/uistackview/alignment)
+- [NSHipster](https://nshipster.com/uistackview/)
+
+*Gotchas:*
+- When adding views to `UIStackView` remember it's `addArrangedSubview` not `addSubview`.
+
 
 <p>&nbsp;</p>
 
