@@ -54,6 +54,9 @@
             <FileRef
                location = "group:NudgeTheLabel/NudgeTheLabel.xcodeproj">
             </FileRef>
+            <FileRef
+               location = "group:PaddingWithSpacers/PaddingWithSpacers.xcodeproj">
+            </FileRef>
          </Group>
       </Group>
    </Group>
