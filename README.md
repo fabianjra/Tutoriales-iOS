@@ -177,6 +177,11 @@ There are 3 ways to tweak the constraints:
 
 - Challenge practice (Rotation, CustomView, StackView, enable/disable constraints): [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/DesignChallenges/SpotifyPlayer/SpotifyPlayer/SpotifiyPlayerRotation/SpotifiyPlayerRotation.swift)
 
+**Orientation:**
+- In this example and design challenge we used `UIDevice.current.orientation.isLandscape` to determine device orientation. This works, but its deprecated and no longer the ideal way. I used it purely for it's simplicity and to focus more on the Auto Layout.
+- If you want to talk orientation changes, the language we use today is more around class sizes. This is because on the iPad you can be in what looks like a landscape orientation but really render in portrait. So large iPhone sizes enable you to do this too.
+- In this cases you want to listen for callbacks and events from the `UITraitCollection` class which you can read more about here.
+- [Link for UITraitCollection](https://developer.apple.com/documentation/uikit/uitraitcollection)
 
 <p>&nbsp;</p>
 
