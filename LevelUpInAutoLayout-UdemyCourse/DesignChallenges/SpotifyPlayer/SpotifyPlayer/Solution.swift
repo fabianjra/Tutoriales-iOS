@@ -10,14 +10,14 @@ import UIKit
 
 class Solution: UIViewController {
 
-    let buttonHeight: CGFloat = 40
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
     }
 
     func setupViews() {
+        let buttonHeight: CGFloat = 40
+        
         let albumImage = makeImageView(named: "rush")
         let trackLabel = makeTrackLabel(withText: "Tom Sawyer")
         let albumLabel = makeAlbumLabel(withText: "Rush • Moving Pictures (2011 Remaster)")
@@ -140,11 +140,12 @@ class Solution: UIViewController {
     }
 
     func makeSpotifyButton(withText title: String) -> UIButton {
+        let buttonHeight: CGFloat = 40
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         var config = UIButton.Configuration.filled()
-        config.baseBackgroundColor = .spotifyGreen
+        config.baseBackgroundColor = UIColor(red: 28/255, green: 184/255, blue: 89/255, alpha: 1) //SpotifyGreen
         config.cornerStyle = .capsule
         config.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: buttonHeight, bottom: 10, trailing: buttonHeight)
         button.configuration = config

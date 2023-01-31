@@ -133,7 +133,7 @@ class Challenge: UIViewController {
         var config = UIButton.Configuration.filled()
         config.baseBackgroundColor = .spotifyGreen
         config.cornerStyle = .capsule
-        config.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: buttonHeight, bottom: 10, trailing: buttonHeight)
+        config.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: playButtonHeight, bottom: 10, trailing: playButtonHeight)
         button.configuration = config
         
         let attributedText = NSMutableAttributedString(string: title, attributes: [

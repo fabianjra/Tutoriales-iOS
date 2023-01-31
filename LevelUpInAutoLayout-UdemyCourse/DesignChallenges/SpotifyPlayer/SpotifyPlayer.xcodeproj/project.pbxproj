@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4050407E298894DA00DD5603 /* SpotifiyPlayerRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4050407D298894DA00DD5603 /* SpotifiyPlayerRotation.swift */; };
+		4050408329889DA700DD5603 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4050408229889DA700DD5603 /* Utils.swift */; };
+		405040852988A0A200DD5603 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405040842988A0A200DD5603 /* ControlsView.swift */; };
+		405040882988B8C300DD5603 /* ProgressRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405040872988B8C300DD5603 /* ProgressRow.swift */; };
 		71D335B823142A3E00264D83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D335B723142A3E00264D83 /* AppDelegate.swift */; };
 		71D335BF23142A3F00264D83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D335BE23142A3F00264D83 /* Assets.xcassets */; };
 		71D335C223142A3F00264D83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71D335C023142A3F00264D83 /* LaunchScreen.storyboard */; };
 		71D335CB23142A7E00264D83 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D335CA23142A7E00264D83 /* Solution.swift */; };
 		71D335CD23142A8B00264D83 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D335CC23142A8B00264D83 /* Challenge.swift */; };
-		71D335CF23142A9200264D83 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D335CE23142A9200264D83 /* Factories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4050407D298894DA00DD5603 /* SpotifiyPlayerRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifiyPlayerRotation.swift; sourceTree = "<group>"; };
+		4050408229889DA700DD5603 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		405040842988A0A200DD5603 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		405040872988B8C300DD5603 /* ProgressRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRow.swift; sourceTree = "<group>"; };
 		71D335B423142A3E00264D83 /* SpotifyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D335B723142A3E00264D83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71D335BE23142A3F00264D83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -23,7 +30,6 @@
 		71D335C323142A3F00264D83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71D335CA23142A7E00264D83 /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
 		71D335CC23142A8B00264D83 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
-		71D335CE23142A9200264D83 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4050407F2988958C00DD5603 /* SpotifiyPlayerRotation */ = {
+			isa = PBXGroup;
+			children = (
+				4050407D298894DA00DD5603 /* SpotifiyPlayerRotation.swift */,
+				405040842988A0A200DD5603 /* ControlsView.swift */,
+				405040872988B8C300DD5603 /* ProgressRow.swift */,
+				4050408229889DA700DD5603 /* Utils.swift */,
+			);
+			path = SpotifiyPlayerRotation;
+			sourceTree = "<group>";
+		};
+		4050408A2988D11300DD5603 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				71D335C323142A3F00264D83 /* Info.plist */,
+				71D335C023142A3F00264D83 /* LaunchScreen.storyboard */,
+				71D335BE23142A3F00264D83 /* Assets.xcassets */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
 		71D335AB23142A3E00264D83 = {
 			isa = PBXGroup;
 			children = (
@@ -56,23 +83,13 @@
 		71D335B623142A3E00264D83 /* SpotifyPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				71D335C923142A4E00264D83 /* Files */,
+				4050408A2988D11300DD5603 /* Files */,
+				4050407F2988958C00DD5603 /* SpotifiyPlayerRotation */,
 				71D335B723142A3E00264D83 /* AppDelegate.swift */,
 				71D335CA23142A7E00264D83 /* Solution.swift */,
 				71D335CC23142A8B00264D83 /* Challenge.swift */,
-				71D335CE23142A9200264D83 /* Factories.swift */,
 			);
 			path = SpotifyPlayer;
-			sourceTree = "<group>";
-		};
-		71D335C923142A4E00264D83 /* Files */ = {
-			isa = PBXGroup;
-			children = (
-				71D335C323142A3F00264D83 /* Info.plist */,
-				71D335C023142A3F00264D83 /* LaunchScreen.storyboard */,
-				71D335BE23142A3F00264D83 /* Assets.xcassets */,
-			);
-			name = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,8 +164,11 @@
 			files = (
 				71D335CB23142A7E00264D83 /* Solution.swift in Sources */,
 				71D335CD23142A8B00264D83 /* Challenge.swift in Sources */,
-				71D335CF23142A9200264D83 /* Factories.swift in Sources */,
+				4050408329889DA700DD5603 /* Utils.swift in Sources */,
+				405040882988B8C300DD5603 /* ProgressRow.swift in Sources */,
+				405040852988A0A200DD5603 /* ControlsView.swift in Sources */,
 				71D335B823142A3E00264D83 /* AppDelegate.swift in Sources */,
+				4050407E298894DA00DD5603 /* SpotifiyPlayerRotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
