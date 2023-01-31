@@ -32,25 +32,25 @@
       <Group
          location = "group:/Users/f.rodriguezalvarez/Sources/Personal/Tutoriales-iOS/LevelUpInAutoLayout-UdemyCourse/DesignChallenges"
          name = "DesignChallenges">
-         <FileRef
-            location = "group:SpotifyPlayer/SpotifyPlayer.xcodeproj">
-         </FileRef>
+         <Group
+            location = "group:Samples"
+            name = "Samples">
+            <FileRef
+               location = "group:PaddingWithSpacers/PaddingWithSpacers.xcodeproj">
+            </FileRef>
+            <FileRef
+               location = "group:NudgeTheLabel/NudgeTheLabel.xcodeproj">
+            </FileRef>
+         </Group>
          <FileRef
             location = "group:BasicAnchors/BasicAnchors.xcodeproj">
          </FileRef>
          <FileRef
             location = "group:CustomViewChallenge/CustomViewChallenge.xcodeproj">
          </FileRef>
-         <Group
-            location = "group:/Users/f.rodriguezalvarez/Sources/Personal/Tutoriales-iOS/LevelUpInAutoLayout-UdemyCourse/DesignChallenges/Adaptive"
-            name = "Adaptive">
-            <FileRef
-               location = "group:NudgeTheLabel/NudgeTheLabel.xcodeproj">
-            </FileRef>
-            <FileRef
-               location = "group:PaddingWithSpacers/PaddingWithSpacers.xcodeproj">
-            </FileRef>
-         </Group>
+         <FileRef
+            location = "group:SpotifyPlayer/SpotifyPlayer.xcodeproj">
+         </FileRef>
       </Group>
    </Group>
    <FileRef
