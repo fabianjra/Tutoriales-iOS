@@ -185,16 +185,56 @@ private func delayTask(){
 /*
  Using DispatchGroup
  */
-private func usingDisptachGroup(){
-    
+func hello1(completion: @escaping (String) -> Void) {
+    //Llamado a un API.
+    DispatchQueue.global().async {
+        sleep(1)
+        print("Prueba en dispatch Group 1")
+    }
 }
 
-//func say(_ text: String, completion: @escaping ) {
-//    let delay = Double.random(in: 1...2)
-//    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-//        print(text)
-//        completion()
-//    }
-//}
-//
-//say("efe")
+func hello2(completion: @escaping (String) -> Void) {
+    //Llamado a un API.
+    DispatchQueue.global().async {
+        sleep(3)
+        print("Prueba en dispatch Group 2")
+    }
+}
+
+//Permite ir a funciones y procesarlas una por una y no avanzar hasta que se haya terminado el proceso anterior.
+//Esto es para funciones asincronas, ya que no siempre van a tardar lo mismo y una funcion puede ser mas rapida que otra.
+//Los procesos van en cadena.
+private func usingDisptachGroup() -> Bool{
+    
+    var buttonLogin: Bool = false
+    
+    let group = DispatchGroup()
+    
+    group.enter() //Inicio del Dispatch group.
+    print("Enter function hello1")
+    
+    hello1 { item in
+        
+        //Hacer alguna logica, con el resutlado obtenido de la funcion llamada
+        group.leave() //Finaliza el group.
+        print("Leave hello1")
+    }
+    
+    group.enter() //Inicio del Dispatch group, parte 2
+    print("Enter function hello2")
+    
+    hello2 { item in
+        //Hacer alguna logica, con el resutlado obtenido de la funcion llamada
+        group.leave() //Finaliza el group.
+        print("Leave hello2")
+    }
+    
+    group.notify(queue: .main) {
+        print("Disptach group notifica que se finalizaron todos los procesos. Bool: \(buttonLogin)")
+        buttonLogin = true //Do something when all the group is ready.
+    }
+    
+    return buttonLogin
+}
+let result = usingDisptachGroup()
+print("Estado del boton: \(result)")
