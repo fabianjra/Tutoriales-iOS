@@ -196,4 +196,10 @@ Curso de Udemy sobre RxSwfit.
 
 ## MVVM-DesignPattern-Udemy
 
-Introduction.
+### MVC (Model-View-Controller pattern):
+- **Model**: Data.
+- **View**: User interface.
+- **Controller**: The middle. This is in charge of the comunnication bewteen the model and the view.
+
+### MVVM (Model-View-ViewModel:
+This pattern is similar to MVC, but this allows you to "decopling" between the view and the business logic.
