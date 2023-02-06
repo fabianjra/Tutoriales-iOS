@@ -16,6 +16,9 @@
 		40C787B4298CCAE9008ADD05 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C787B3298CCAE9008ADD05 /* WebService.swift */; };
 		40C787B7298CCFFA008ADD05 /* ArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C787B6298CCFFA008ADD05 /* ArticleList.swift */; };
 		40C787B9298CD59F008ADD05 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C787B8298CD59F008ADD05 /* Utils.swift */; };
+		40C787BC29918245008ADD05 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C787BB29918245008ADD05 /* ArticleViewModel.swift */; };
+		40C787BE29918874008ADD05 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C787BD29918874008ADD05 /* Article.swift */; };
+		40C787C029918B10008ADD05 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C787BF29918B10008ADD05 /* ArticleListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		40C787B3298CCAE9008ADD05 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		40C787B6298CCFFA008ADD05 /* ArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleList.swift; sourceTree = "<group>"; };
 		40C787B8298CD59F008ADD05 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		40C787BB29918245008ADD05 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		40C787BD29918874008ADD05 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		40C787BF29918B10008ADD05 /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		40C78798298CBBFE008ADD05 /* GoodNews */ = {
 			isa = PBXGroup;
 			children = (
+				40C787BA299181AB008ADD05 /* View Models */,
 				40C787B5298CCFBD008ADD05 /* Models */,
 				40C787B0298CCAAE008ADD05 /* Services */,
 				40C787AD298CBE99008ADD05 /* Controllers */,
@@ -96,8 +103,18 @@
 			isa = PBXGroup;
 			children = (
 				40C787B6298CCFFA008ADD05 /* ArticleList.swift */,
+				40C787BD29918874008ADD05 /* Article.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		40C787BA299181AB008ADD05 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				40C787BB29918245008ADD05 /* ArticleViewModel.swift */,
+				40C787BF29918B10008ADD05 /* ArticleListViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +192,10 @@
 				40C787AF298CBEBF008ADD05 /* NewsListTableViewController.swift in Sources */,
 				40C787B4298CCAE9008ADD05 /* WebService.swift in Sources */,
 				40C7879C298CBBFE008ADD05 /* SceneDelegate.swift in Sources */,
+				40C787C029918B10008ADD05 /* ArticleListViewModel.swift in Sources */,
+				40C787BE29918874008ADD05 /* Article.swift in Sources */,
 				40C787B7298CCFFA008ADD05 /* ArticleList.swift in Sources */,
+				40C787BC29918245008ADD05 /* ArticleViewModel.swift in Sources */,
 				40C787B9298CD59F008ADD05 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
