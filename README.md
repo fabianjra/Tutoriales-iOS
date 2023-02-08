@@ -204,13 +204,14 @@ Curso de Udemy sobre RxSwfit.
 ### Pattern: MVVM (Model-View-ViewModel):
 This pattern is similar to MVC, but this allows you to "decopling" between the view and the business logic.
 
-### **_Apps made up with MVVM:_ **
+### _Apps made up with MVVM:_
 
 ### GoodNews:
 
 - **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/GoodNews)
 - **Description:** This app consumes an API for news, get a title and description to show in a TableView by `URLSession.shared.dataTask` and map the JSON to a "article" model.
-- **Screenshot:** <img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/GoodNews/GoodNews/Assets.xcassets/GoodNewsAppScreenshot.imageset/GoodNewsAppScreenshot.png" width="200">
+- **Screenshot:** 
+<img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/GoodNews/GoodNews/Assets.xcassets/GoodNewsAppScreenshot.imageset/GoodNewsAppScreenshot.png" width="200">
 
 ### HotCoffe:
 
