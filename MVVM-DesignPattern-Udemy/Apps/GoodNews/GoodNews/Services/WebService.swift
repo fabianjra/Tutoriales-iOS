@@ -38,6 +38,6 @@ class WebService {
                     //throw NetworkError.couldNotDecodeData
                 }
             }
-        }.resume() //Inicia la ejecucion.
+        }.resume() //Inicia la ejecucion del URL Session.
     }
 }
