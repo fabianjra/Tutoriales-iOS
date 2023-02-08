@@ -12,7 +12,7 @@
         <scene sceneID="Alk-P9-wPU">
             <objects>
                 <tableViewController id="0Yl-Kc-yuQ" customClass="OrderTableViewController" customModule="HotCoffe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="4KT-tS-gcc">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="4KT-tS-gcc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -50,10 +50,65 @@
                     <view key="view" contentMode="scaleToFill" id="VVk-5a-NDt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UcU-lY-0sZ">
+                                <rect key="frame" x="0.0" y="56" width="393" height="391.66666666666669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Fqu-ou-du8">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fqu-ou-du8" id="9UW-ay-IWf">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CVq-Rn-9rl">
+                                <rect key="frame" x="96.666666666666686" y="560" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="BU6-cd-EA2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="099-dA-zxu">
+                                <rect key="frame" x="96.666666666666686" y="602" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Loc-To-hxY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uAj-C0-abm">
+                                <rect key="frame" x="93.666666666666686" y="485" width="206" height="32"/>
+                                <segments>
+                                    <segment title="Small"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Large"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Vf0-35-wzK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UcU-lY-0sZ" firstAttribute="width" secondItem="VVk-5a-NDt" secondAttribute="width" id="8dg-dk-cKD"/>
+                            <constraint firstItem="UcU-lY-0sZ" firstAttribute="height" secondItem="VVk-5a-NDt" secondAttribute="height" multiplier="0.5" id="Bqg-Yc-X2g"/>
+                            <constraint firstItem="CVq-Rn-9rl" firstAttribute="top" secondItem="uAj-C0-abm" secondAttribute="bottom" constant="44" id="LwS-sk-iMW"/>
+                            <constraint firstItem="CVq-Rn-9rl" firstAttribute="centerX" secondItem="VVk-5a-NDt" secondAttribute="centerX" id="Tvk-WP-K2y"/>
+                            <constraint firstItem="uAj-C0-abm" firstAttribute="top" secondItem="UcU-lY-0sZ" secondAttribute="bottom" constant="37.333333333333314" id="UqC-g0-HWW"/>
+                            <constraint firstItem="uAj-C0-abm" firstAttribute="centerX" secondItem="VVk-5a-NDt" secondAttribute="centerX" id="VLb-6s-DNb"/>
+                            <constraint firstItem="099-dA-zxu" firstAttribute="top" secondItem="CVq-Rn-9rl" secondAttribute="bottom" constant="8" symbolic="YES" id="YYP-KU-sHu"/>
+                            <constraint firstItem="UcU-lY-0sZ" firstAttribute="top" secondItem="Vf0-35-wzK" secondAttribute="top" id="at0-8z-w35"/>
+                            <constraint firstItem="UcU-lY-0sZ" firstAttribute="leading" secondItem="Vf0-35-wzK" secondAttribute="leading" id="kO3-93-2Hp"/>
+                            <constraint firstItem="099-dA-zxu" firstAttribute="centerX" secondItem="VVk-5a-NDt" secondAttribute="centerX" id="r59-6W-Nhb"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add new order" id="iRI-Vd-tHf"/>
+                    <navigationItem key="navigationItem" title="Add new order" id="iRI-Vd-tHf">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="enG-1J-0eq"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="TbL-d1-bYd"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWz-OD-sXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
