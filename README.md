@@ -218,3 +218,18 @@ This pattern is similar to MVC, but this allows you to "decopling" between the v
 - **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/HotCoffe)
 - **Description:**
 - **Screenshot:** <img src="" width="200">
+
+For this App, we need to consume an API where we add orders, get orders and remove orders. This is the data we need to know for using it on Postman:
+
+- Get all offee orders (GET method): https://warp-wiry-rugby.glitch.me/orders
+- Delete all coffe orders (GET method): https://warp-wiry-rugby.glitch.me/clear-orders
+- Post a new coffee order (POST method): https://warp-wiry-rugby.glitch.me/orders
+- JSON structure for adding a new order:
+```
+{
+    "name": "Josh Alvz",
+    "email": "josh@gmail.com",
+    "type": "Lattee",
+    "size": "medium"
+}
+```
