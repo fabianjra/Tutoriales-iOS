@@ -71,7 +71,7 @@
                                 <rect key="frame" x="0.0" y="56" width="393" height="391.66666666666669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="orderTableViewCell" id="Fqu-ou-du8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="coffeeTypeTableViewCell" id="Fqu-ou-du8">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fqu-ou-du8" id="9UW-ay-IWf">
@@ -125,6 +125,9 @@
                         <barButtonItem key="leftBarButtonItem" title="Close" id="enG-1J-0eq"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="TbL-d1-bYd"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="UcU-lY-0sZ" id="Eeu-rC-oZs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWz-OD-sXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
