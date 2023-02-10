@@ -10,10 +10,12 @@ import UIKit
 class AddOrderViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     private var coffeSizeSegmentedControl: UISegmentedControl!
     
     //This is for controling all the things are going to present in the UI.
-    private let addOrderViewModel = AddOrderViewModel()
+    private var addOrderViewModel = AddOrderViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,9 @@ class AddOrderViewController: UIViewController {
     private func setupView(){
         tableView.delegate = self
         tableView.dataSource = self
+        
+        nameTextField.delegate = self
+        emailTextField.delegate = self
         
         self.coffeSizeSegmentedControl = UISegmentedControl(items: addOrderViewModel.sizes)
         self.coffeSizeSegmentedControl.selectedSegmentIndex = 0
@@ -38,6 +43,8 @@ class AddOrderViewController: UIViewController {
         //self.coffeSizeSegmentedControl.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }
+
+// - MARK: TableView
 
 extension AddOrderViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -69,5 +76,35 @@ extension AddOrderViewController: UITableViewDelegate, UITableViewDataSource {
         cell.contentConfiguration = content
         
         return cell
+    }
+}
+
+// - MARK: TextField
+
+extension AddOrderViewController: UITextFieldDelegate {
+    
+}
+
+// - MARK: Button
+
+extension AddOrderViewController {
+     
+    @IBAction func save(){
+        
+        let name = self.nameTextField.text
+        let email = self.emailTextField.text
+        let selectedType = self.coffeSizeSegmentedControl.titleForSegment(at: self.coffeSizeSegmentedControl.selectedSegmentIndex)
+        
+        guard let tableIndexPath = self.tableView.indexPathForSelectedRow else {
+            Log.WriteMessage("Error selecting the row in TableView")
+            return
+        }
+        
+        self.addOrderViewModel.name = name
+        self.addOrderViewModel.email = email
+        self.addOrderViewModel.selectedType = selectedType
+        self.addOrderViewModel.selectedSize = self.addOrderViewModel.types[tableIndexPath.row]
+        
+        //TODO: Convert the Object "addOrderViewModel" to model, so it can serialize to send to the WebService.
     }
 }
