@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		401EFEAE2994C6B1001554CD /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EFEAD2994C6B1001554CD /* WebService.swift */; };
 		401EFEB02994CBA1001554CD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EFEAF2994CBA1001554CD /* Utils.swift */; };
+		401EFEB32995F4CD001554CD /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EFEB22995F4CD001554CD /* Order.swift */; };
 		40C787D129943425008ADD05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C787D029943425008ADD05 /* AppDelegate.swift */; };
 		40C787D329943425008ADD05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C787D229943425008ADD05 /* SceneDelegate.swift */; };
 		40C787D829943425008ADD05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C787D629943425008ADD05 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		401EFEAD2994C6B1001554CD /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		401EFEAF2994CBA1001554CD /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		401EFEB22995F4CD001554CD /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		40C787CD29943425008ADD05 /* HotCoffe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotCoffe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C787D029943425008ADD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40C787D229943425008ADD05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		401EFEB12995F4B8001554CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				401EFEB22995F4CD001554CD /* Order.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		40C787C429943425008ADD05 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +80,7 @@
 		40C787CF29943425008ADD05 /* HotCoffe */ = {
 			isa = PBXGroup;
 			children = (
+				401EFEB12995F4B8001554CD /* Models */,
 				401EFEAC2994C6A2001554CD /* Services */,
 				40C787E429943ADB008ADD05 /* Controllers */,
 				40C787D029943425008ADD05 /* AppDelegate.swift */,
@@ -169,6 +180,7 @@
 				401EFEAE2994C6B1001554CD /* WebService.swift in Sources */,
 				40C787E8299440C4008ADD05 /* AddOrderViewController.swift in Sources */,
 				401EFEB02994CBA1001554CD /* Utils.swift in Sources */,
+				401EFEB32995F4CD001554CD /* Order.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
