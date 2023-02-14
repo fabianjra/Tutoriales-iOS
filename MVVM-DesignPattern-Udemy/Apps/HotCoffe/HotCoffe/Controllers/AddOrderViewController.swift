@@ -88,12 +88,12 @@ extension AddOrderViewController: UITextFieldDelegate {
 // - MARK: Button
 
 extension AddOrderViewController {
-     
+    
     @IBAction func save(){
         
         let name = self.nameTextField.text
         let email = self.emailTextField.text
-        let selectedType = self.coffeSizeSegmentedControl.titleForSegment(at: self.coffeSizeSegmentedControl.selectedSegmentIndex)
+        let selectedSize = self.coffeSizeSegmentedControl.titleForSegment(at: self.coffeSizeSegmentedControl.selectedSegmentIndex)
         
         guard let tableIndexPath = self.tableView.indexPathForSelectedRow else {
             Log.WriteMessage("Error selecting the row in TableView")
@@ -102,9 +102,22 @@ extension AddOrderViewController {
         
         self.addOrderViewModel.name = name
         self.addOrderViewModel.email = email
-        self.addOrderViewModel.selectedType = selectedType
-        self.addOrderViewModel.selectedSize = self.addOrderViewModel.types[tableIndexPath.row]
+        self.addOrderViewModel.selectedType = self.addOrderViewModel.types[tableIndexPath.row]
+        self.addOrderViewModel.selectedSize = selectedSize
         
-        //TODO: Convert the Object "addOrderViewModel" to model, so it can serialize to send to the WebService.
+        //Send the ViewModel to the WebService.
+        WebService().load(resource: Order.create(viewModel: self.addOrderViewModel)) { result in
+            
+            switch result {
+                
+                //In case its success: order was added to the WebService.
+            case .success(let order):
+                Utils.showAlertMessage("Added", message:"The order was added succesfully")
+                Log.WriteMessage("Order added: \(String(describing: order))")
+                
+            case .failure(let error):
+                Log.WriteCatchExeption("Error al enviar order al WebService", error: error)
+            }
+        }
     }
 }

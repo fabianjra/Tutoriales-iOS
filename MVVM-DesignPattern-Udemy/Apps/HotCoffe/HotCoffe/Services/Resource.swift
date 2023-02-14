@@ -19,3 +19,9 @@ struct Resource<T: Codable> {
         self.url = url
     }
 }
+
+//Enum to add "POST" methods.
+enum HttpMethod: String {
+    case get = "GET"
+    case post = "POST"
+}

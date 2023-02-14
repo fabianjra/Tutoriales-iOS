@@ -93,9 +93,9 @@ struct Utils {
      
      - Date: February 2023
      */
-    static func showAlertMessage(_ message: String) {
+    static func showAlertMessage(_ title: String, message: String) {
         
-        let alert = UIAlertController(title: "Error",
+        let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: UIAlertController.Style.alert)
         

@@ -14,22 +14,22 @@ enum NetworkError: Error {
     case urlError
 }
 
-//Enum to add "POST" methods.
-enum HttpMethod: String {
-    case get = "GET"
-    case post = "POST"
-}
-
 class WebService {
     
     //It's a generic type, because you don't know if you are getting coffe orders, users, etc.
     func load<T>(resource: Resource<T>, completion: @escaping(Result<T, NetworkError>) -> Void) {
         
-        URLSession.shared.dataTask(with: resource.url) { data, response, error in
+        var request = URLRequest(url: resource.url)
+        request.httpMethod = resource.httpMethod.rawValue
+        request.httpBody = resource.body
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        //Overload function of dataTask: using request, instead of "resource.url".
+        URLSession.shared.dataTask(with: request) { data, response, error in
             
             //Validate if "data" have value, only in case when error = nil
             guard let data = data, error == nil else {
-                Utils.showAlertMessage("Error en obtender data del webservice.")
+                Utils.showAlertMessage("Error", message: "Error en obtender data del webservice.")
                 completion(.failure(.domainError))
                 return //Finish the guard.
             }
