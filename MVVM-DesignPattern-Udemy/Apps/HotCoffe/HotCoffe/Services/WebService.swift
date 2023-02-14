@@ -7,16 +7,17 @@
 
 import Foundation
 
-//Codable: becasuse we need both "Encodable & Decodable", for GET and POST (serialize and deserialize json data).
-struct Resource<T: Codable> {
-    let url: URL
-}
-
 //Error types for the errors using WebService
 enum NetworkError: Error {
     case decodingError
     case domainError
     case urlError
+}
+
+//Enum to add "POST" methods.
+enum HttpMethod: String {
+    case get = "GET"
+    case post = "POST"
 }
 
 class WebService {
@@ -28,7 +29,7 @@ class WebService {
             
             //Validate if "data" have value, only in case when error = nil
             guard let data = data, error == nil else {
-                Log.WriteMessage("Error en obtender data del webservice.")
+                Utils.showAlertMessage("Error en obtender data del webservice.")
                 completion(.failure(.domainError))
                 return //Finish the guard.
             }

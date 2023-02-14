@@ -5,6 +5,8 @@
 //  Created by Fabian Josue Rodriguez Alvarez on 9/2/23.
 //
 
+import Foundation
+
 //CaseIterable: Allows to iterate the CoffeType Enum.
 enum CoffeType: String, Codable, CaseIterable {
     case cappuccino
@@ -43,4 +45,41 @@ struct Order: Codable {
         self.type = selectedType
         self.size = selectedSize
     }//End: init
+    
+    static let urlString = "https://warp-wiry-rugby.glitch.me/orders"
+    
+    static var getAll: Resource<[Order]> = {
+        guard let url = URL(string: urlString) else {
+            fatalError("URL was incorrect")
+        }
+        
+        return Resource<[Order]>(url: url)
+    }()
+    
+    //Resource to pass to the Networking operation:
+    //this "Resource" return is the one, we are going to provide to the WebService.
+    static func create(viewModel: AddOrderViewModel) -> Resource<Order?> {
+        
+        let order = Order(viewModel)
+
+        guard let url = URL(string: urlString) else {
+            fatalError("URL was incorrect")
+        }
+        
+        let encoder = JSONEncoder()
+        
+        do {
+            let data = try encoder.encode(order)
+            
+            //We need to set the "resource" to POST for the WebService.
+            var resource = Resource<Order?>(url: url)
+            resource.httpMethod = .post
+            resource.body = data
+            
+            return resource
+        }catch {
+            Log.WriteCatchExeption(error: error)
+            fatalError("Error encoding order")
+        }
+    }
 }

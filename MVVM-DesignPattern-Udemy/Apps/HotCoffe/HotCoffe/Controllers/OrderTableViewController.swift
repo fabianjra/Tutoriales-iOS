@@ -19,16 +19,7 @@ class OrderTableViewController: UITableViewController {
     
     private func populateOrders(){
         
-        let urlGetOrders = "https://warp-wiry-rugby.glitch.me/orders"
-        
-        guard let coffeOrdersURL = URL(string: urlGetOrders) else {
-            fatalError("URL was incorrect")
-        }
-        
-        //We are expecting an Array or orders.
-        let resource = Resource<[Order]>(url: coffeOrdersURL)
-        
-        WebService().load(resource: resource) { [weak self] result in
+        WebService().load(resource: Order.getAll) { [weak self] result in
             
             switch result {
                 
