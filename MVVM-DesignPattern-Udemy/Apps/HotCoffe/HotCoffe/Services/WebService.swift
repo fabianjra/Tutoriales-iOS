@@ -29,8 +29,8 @@ class WebService {
             
             //Validate if "data" have value, only in case when error = nil
             guard let data = data, error == nil else {
-                Utils.showAlertMessage("Error", message: "Error en obtender data del webservice.")
                 completion(.failure(.domainError))
+                Utils.showAlertMessage("Error", message: "Error en obtender data del webservice.") //May fail when try to show
                 return //Finish the guard.
             }
             

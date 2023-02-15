@@ -84,8 +84,8 @@ struct Utils {
      Shows an alert view
      
      - Parameters:
+        - title: Title for the alert.
         - message: Message will show in the Alert.
-        - isModal: Set true when it's used in a modal or Popup. This is false by default.
      
      - Authors: Fabian Rodriguez
      
@@ -102,8 +102,38 @@ struct Utils {
         alert.addAction(UIAlertAction(title: "Ok",
                                       style: UIAlertAction.Style.cancel, handler: { _ in
             //Close this alert.
-            print("Error message from AlertView in Utils: \(message)")
+            debugPrint("Alert message from AlertView in Utils: \(message)")
         }))
+        
+        let actualVC = getActualViewController()
+        
+        if let actualVC = actualVC {
+            actualVC.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    /**
+     Shows an alert view with a function by completionHandler.
+     
+     - Parameters:
+        - title: Title for the alert.
+        - message: Message will show in the Alert.
+        - completion: The action that will excecute the OK button.
+     
+     - Authors: Fabian Rodriguez
+     
+     - Version: 1.0
+     
+     - Date: February 2023
+     */
+    static func showAlertMessage(_ title: String, message: String, completion: @escaping(Any) -> Void ) {
+        
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok",
+                                      style: UIAlertAction.Style.cancel, handler: completion))
         
         let actualVC = getActualViewController()
         
@@ -170,5 +200,33 @@ struct Utils {
         } else {
             return rootVC?.children.last
         }
+    }
+}
+
+extension String {
+    
+    /**
+     Validate if a String is Empty
+     
+     **Example:**
+     ```swift
+     if textField.text?.isEmptyOrWhitespace() == true {
+         printContent("Is empty")
+         return
+     }
+     ```
+     
+     - Authors: Fabian Rodriguez
+     
+     - Version: 1.0
+     
+     - Date: February 2023
+     */
+    func isEmptyOrWhitespace() -> Bool {
+        if(self.isEmpty) {
+            return true
+        }
+        
+        return self.trimmingCharacters(in: .whitespaces).isEmpty
     }
 }

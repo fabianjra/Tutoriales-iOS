@@ -29,13 +29,11 @@ class OrderTableViewController: UITableViewController {
                 self?.tableView.reloadData()
                 
             case .failure(let error):
-                print(error)
+                Utils.showAlertMessage("Error", message: "Error getting the orders: \(error)")
             }
         }
     }//END: populateOrders
-    
 }
-
 
 // - MARK: TableView
 
@@ -65,5 +63,45 @@ extension OrderTableViewController {
         cell.contentConfiguration = content
         
         return cell
+    }
+}
+
+// - MARK: Delegate
+
+extension OrderTableViewController: AddOrderDelegate {
+    
+    //Add this function to use the "Delegate" from the "AddOrderViewController".
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //navC: It's the navigation controller.
+        //Because the you press the "add" button, it goes by the navigation controller, to the Modal view "AddOrderViewController".
+        //So, first goes to the NavigationController, then to the View.
+        guard let navC = segue.destination as? UINavigationController,
+              let addOrderVC = navC.viewControllers.first as? AddOrderViewController else {
+            Utils.showAlertMessage("Error", message: "There is not Add Order view")
+            return
+        }
+        
+        addOrderVC.delegate = self
+    }
+    
+    //Just for closing the modal view.
+    func addOrderViewControllerDidClose(controller: UIViewController) {
+        controller.dismiss(animated: true)
+    }
+    
+    //Action when press Save button on the AddOrderViewController.
+    func addOrderViewControllerDidSave(order: Order, controller: UIViewController) {
+        
+        //optional: You can clean the Add Order screen or close the modal.
+        controller.dismiss(animated: true)
+        
+        //optional: You can just populate again the TableView, because this fuction will reaload the TableView, by taking the data again in the WebService.
+        //populateOrders()
+        
+        //optional: Adding the new item directly to the TableView:
+        let orderVM = OrderViewModel(order: order)
+        self.orderListViewModel.orders.append(orderVM)
+        self.tableView.insertRows(at: [IndexPath.init(row: self.orderListViewModel.orders.count - 1, section: 0)], with: .automatic)
     }
 }
