@@ -16,6 +16,9 @@
          <FileRef
             location = "group:HotCoffe/HotCoffe.xcodeproj">
          </FileRef>
+         <FileRef
+            location = "group:GoodWeather/GoodWeather.xcodeproj">
+         </FileRef>
       </Group>
    </Group>
    <Group
