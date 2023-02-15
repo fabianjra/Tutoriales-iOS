@@ -218,7 +218,8 @@ This pattern is similar to MVC, but this allows you to "decopling" between the v
 - **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/HotCoffe)
 - **Description:** This app get orders by a WebService by `GET` http method. Those orders are shown in the Main `TableView`. It casn also add orders by adding a new one, using `POST` http method. The app uses `Coding`, `Decoder` and `Cncoder` to manipulate the data and model.
 - **Utilites:** There are some utilites like for example, show a global `UIAlertController` or validate if a `textField` is empty. This is the file: [Utils source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/HotCoffe/HotCoffe/Utils.swift)
-- **Screenshot:** <img src="" width="200">
+- **Screenshot:** 
+<img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/HotCoffe/HotCoffe/Assets.xcassets/HotCoffeeAppScreenshot.imageset/HotCoffeeAppScreenshot.png" width="200">
 
 For this App, we need to consume an API where we add orders, get orders and remove orders. This is the data we need to know for using it on Postman:
 
