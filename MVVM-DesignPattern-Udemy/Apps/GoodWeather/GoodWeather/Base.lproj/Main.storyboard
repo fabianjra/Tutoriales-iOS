@@ -11,19 +11,46 @@
         <!--GoodWeather-->
         <scene sceneID="8mf-Us-QWx">
             <objects>
-                <tableViewController id="vVv-Mv-wLk" sceneMemberID="viewController">
+                <tableViewController id="vVv-Mv-wLk" customClass="WeatherListTableViewController" customModule="GoodWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="aSy-G4-W5Z">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iwL-II-cuC">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" rowHeight="100" id="iwL-II-cuC" customClass="WeatherCell" customModule="GoodWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iwL-II-cuC" id="d6Q-lp-3d6">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxq-gY-E4I">
+                                            <rect key="frame" x="20" y="30" width="224" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBw-zB-uvS">
+                                            <rect key="frame" x="297" y="30" width="76" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                            <color key="textColor" systemColor="systemGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="RBw-zB-uvS" firstAttribute="leading" secondItem="Zxq-gY-E4I" secondAttribute="trailing" constant="53" id="JWs-Tl-Lfn"/>
+                                        <constraint firstAttribute="trailing" secondItem="RBw-zB-uvS" secondAttribute="trailing" constant="20" symbolic="YES" id="KeM-dg-m2d"/>
+                                        <constraint firstItem="RBw-zB-uvS" firstAttribute="centerY" secondItem="d6Q-lp-3d6" secondAttribute="centerY" id="Kjs-Hc-KiQ"/>
+                                        <constraint firstItem="Zxq-gY-E4I" firstAttribute="top" secondItem="d6Q-lp-3d6" secondAttribute="top" constant="30" id="Xht-V0-cdx"/>
+                                        <constraint firstItem="Zxq-gY-E4I" firstAttribute="centerY" secondItem="d6Q-lp-3d6" secondAttribute="centerY" id="idb-JY-UA4"/>
+                                        <constraint firstItem="RBw-zB-uvS" firstAttribute="top" secondItem="d6Q-lp-3d6" secondAttribute="top" constant="30" id="rOA-p8-nbW"/>
+                                        <constraint firstItem="Zxq-gY-E4I" firstAttribute="leading" secondItem="d6Q-lp-3d6" secondAttribute="leading" constant="20" symbolic="YES" id="yPO-6h-03U"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cityNameLabel" destination="Zxq-gY-E4I" id="903-RQ-etm"/>
+                                    <outlet property="temperatureLabel" destination="RBw-zB-uvS" id="xbT-IO-r0u"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -47,7 +74,7 @@
         <!--Add city-->
         <scene sceneID="U7q-eg-u5T">
             <objects>
-                <viewController id="YRF-yX-hbD" sceneMemberID="viewController">
+                <viewController id="YRF-yX-hbD" customClass="AddCityViewController" customModule="GoodWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sYO-k5-MC9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,6 +127,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

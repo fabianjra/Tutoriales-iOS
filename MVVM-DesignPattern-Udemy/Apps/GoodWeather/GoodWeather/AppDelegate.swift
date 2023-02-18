@@ -13,7 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        setupNavigationBar()
+        
         return true
     }
 
@@ -31,6 +33,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    //Crea el estilo para el Navigationbar
+    private func setupNavigationBar(){
+        let lightBlue = UIColor(red: 0/255, green: 141/255, blue: 211/255, alpha: 1.0) /* #008dd3 */
+        let whiteColorText = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        //Old background color method:
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = lightBlue
+        appearance.titleTextAttributes = whiteColorText
+        appearance.largeTitleTextAttributes = whiteColorText
+        
+        UINavigationBar.appearance().standardAppearance = appearance;
+        UINavigationBar.appearance().scrollEdgeAppearance = UINavigationBar.appearance().standardAppearance
+        //UINavigationBar.appearance().prefersLargeTitles = true //Se va a majear independientemente en cada vista.
+        
+        //Change buttons nvigationBar color:
+        UIBarButtonItem.appearance().tintColor = .white
+        
+        //NOTA:
+        /*
+         Para mantener siempre el Statusbar en color blanco se raliza lo siguiente:
+         1: Se selecciona en el archivo de la aplicacion (icono azul), el Status Bar Style: Light Content.
+         2: Se agrega al archivo "info.plist" la llave: "View controller-based status bar appearance" con valor en "NO".
+         */
+    }
 }
 
