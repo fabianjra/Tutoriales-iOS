@@ -197,7 +197,7 @@ Curso de Udemy sobre RxSwfit.
 ## MVVM-DesignPattern-Udemy
 
 ### Pattern: MVC (Model-View-Controller):
-- **Model**: Data.
+- **Model**: Data. The primary porpuse of the models, is to get the information from an API and set to the model, so the data can be manipulated. 
 - **View**: User interface.
 - **Controller**: The middle. This is in charge of the comunnication bewteen the model and the view.
 
