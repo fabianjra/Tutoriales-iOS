@@ -22,9 +22,8 @@ class AddCityViewController: UIViewController {
             Utils.showAlertMessage("Empty space", message: "Please write a city name in the blank space")
         } else {
             
-            let city = cityNameTextField.text! //Its alrady validated
-            let weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=4b04a0477518e155d94c9a37678059bb&units=imperial"
-            let url = URL(string: weatherURL)!
+            let cityName = cityNameTextField.text! //Its alrady validated
+            let url = AppDelegate.getWeatherURL(cityName)
             
             let resource = Resource<Any>(url: url) { data in
                 return data
