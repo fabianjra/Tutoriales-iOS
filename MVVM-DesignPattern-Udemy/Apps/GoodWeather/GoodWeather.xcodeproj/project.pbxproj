@@ -10,6 +10,8 @@
 		4011283829A454B4001721AE /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011283729A454B4001721AE /* WeatherListViewModel.swift */; };
 		4011283A29A4553C001721AE /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011283929A4553C001721AE /* WeatherViewModel.swift */; };
 		4011283C29A46512001721AE /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011283B29A46512001721AE /* Double+Extensions.swift */; };
+		4011283E29A46F3E001721AE /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011283D29A46F3E001721AE /* SettingsTableViewController.swift */; };
+		4011284029A474B9001721AE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011283F29A474B9001721AE /* SettingsViewModel.swift */; };
 		401EFECA299CBBF9001554CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EFEC9299CBBF9001554CD /* AppDelegate.swift */; };
 		401EFECC299CBBF9001554CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EFECB299CBBF9001554CD /* SceneDelegate.swift */; };
 		401EFED1299CBBF9001554CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401EFECF299CBBF9001554CD /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 		4011283729A454B4001721AE /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
 		4011283929A4553C001721AE /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		4011283B29A46512001721AE /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		4011283D29A46F3E001721AE /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		4011283F29A474B9001721AE /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		401EFEC6299CBBF9001554CD /* GoodWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		401EFEC9299CBBF9001554CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		401EFECB299CBBF9001554CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			children = (
 				401EFEDE299D79D6001554CD /* WeatherListTableViewController.swift */,
 				401EFEE0299EBEB9001554CD /* AddCityViewController.swift */,
+				4011283D29A46F3E001721AE /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 				402CC74A29A43B8A0066520C /* AddWeatherViewModel.swift */,
 				4011283729A454B4001721AE /* WeatherListViewModel.swift */,
 				4011283929A4553C001721AE /* WeatherViewModel.swift */,
+				4011283F29A474B9001721AE /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -238,10 +244,12 @@
 				402CC75129A43D8A0066520C /* String+Extensions.swift in Sources */,
 				401EFECA299CBBF9001554CD /* AppDelegate.swift in Sources */,
 				40D3FA51299EF57700BAEBE0 /* WeatherCell.swift in Sources */,
+				4011284029A474B9001721AE /* SettingsViewModel.swift in Sources */,
 				402CC74B29A43B8A0066520C /* AddWeatherViewModel.swift in Sources */,
 				4011283C29A46512001721AE /* Double+Extensions.swift in Sources */,
 				401EFECC299CBBF9001554CD /* SceneDelegate.swift in Sources */,
 				401EFEE1299EBEB9001554CD /* AddCityViewController.swift in Sources */,
+				4011283E29A46F3E001721AE /* SettingsTableViewController.swift in Sources */,
 				402CC74829A417A80066520C /* WeatherResponse.swift in Sources */,
 				4011283829A454B4001721AE /* WeatherListViewModel.swift in Sources */,
 				406F4CCD29A18E33004A98E7 /* Utils.swift in Sources */,

@@ -18,12 +18,17 @@ class WeatherListTableViewController: UITableViewController {
     }
     
     private func setupView(){
+        //Se llama individualmente por pantalla, porque en algunas que son por ejemplo de Modal, no se requiere un Titulo en grande.
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "addCitySegue" {
+            prepareSegueForAddCityViewController(segue: segue)
+        }
+        
+        if segue.identifier == "settingsSegue" {
             prepareSegueForAddCityViewController(segue: segue)
         }
     }
@@ -36,14 +41,19 @@ class WeatherListTableViewController: UITableViewController {
             return
         }
         
-        guard let addCityVC = navC.viewControllers.first as? AddCityViewController else {
-            Utils.showAlertMessage("Error", message: "Error al intentar hacer segue a la vista de Add City")
-            return
+        if let addCityVC = navC.viewControllers.first as? AddCityViewController {
+            
+            //Le indica al Delegate de la segunda pantalla, que esta (aqui) va a ser la encargada de manejar esa variable delegate.
+            //En la segunda pantalla, Delegate, se convierte en esta pantalla.
+            addCityVC.delegate = self
+            
+        } else if let settingsVC = navC.viewControllers.first as? SettingsTableViewController {
+            
+            
+               
+        }else {
+            Utils.showAlertMessage("Error", message: "Error al intentar hacer segue. No encontrado")
         }
-        
-        //Le indica al Delegate de la segunda pantalla, que esta (aqui) va a ser la encargada de manejar esa variable delegate.
-        //En la segunda pantalla, Delegate, se convierte en esta pantalla.
-        addCityVC.delegate = self
     }
 }
 
