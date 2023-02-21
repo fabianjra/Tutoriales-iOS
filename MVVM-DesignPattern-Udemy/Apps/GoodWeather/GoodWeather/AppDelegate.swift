@@ -33,7 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    //Setting Up defaultSettings, when the App Starts:
+    //Setting Up defaultSettings, when the App Starts.
+    //If the Application doesn't have the key "unit", set farenheit by default.
     private func setupDefaultSettings() {
         
         let userDefaults = UserDefaults.standard
