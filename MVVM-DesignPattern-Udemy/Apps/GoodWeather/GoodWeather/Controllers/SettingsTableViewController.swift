@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol SettingsDelegate {
+    func settingsDone(viewModel: SettingsViewModel)
+}
+
 class SettingsTableViewController: UITableViewController {
     
     private var settingsViewModel = SettingsViewModel()
+    var delegate: SettingsDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +27,12 @@ class SettingsTableViewController: UITableViewController {
     // -- MARK: Buttons:
     
     @IBAction func doneButtonPressed() {
+        
+        //Unwrap the Delegate
+        if let delegate = self.delegate {
+            delegate.settingsDone(viewModel: settingsViewModel)
+        }
+        
         self.dismiss(animated: true)
     }
 }
@@ -79,7 +90,7 @@ extension SettingsTableViewController {
         
         cell.contentConfiguration = content
         
-        //Validate if a unit is selected
+        //Validate if a unit is selected when the cell is loaded.
         if settingsItem == settingsViewModel.selectedUnit {
             cell.accessoryType = .checkmark
         }

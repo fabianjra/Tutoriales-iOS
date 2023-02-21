@@ -29,7 +29,7 @@ class WeatherListTableViewController: UITableViewController {
         }
         
         if segue.identifier == "settingsSegue" {
-            prepareSegueForAddCityViewController(segue: segue)
+            prepareSegueForSettingsViewController(segue: segue)
         }
     }
     
@@ -47,12 +47,27 @@ class WeatherListTableViewController: UITableViewController {
             //En la segunda pantalla, Delegate, se convierte en esta pantalla.
             addCityVC.delegate = self
             
-        //} else if let settingsVC = navC.viewControllers.first as? SettingsTableViewController {
-            
-        } else if navC.viewControllers.first is SettingsTableViewController {
-               
         } else {
-            Utils.showAlertMessage("Error", message: "Error al intentar hacer segue. No encontrado")
+            Utils.showAlertMessage("Error", message: "Error al intentar hacer segue de Add City. No encontrado")
+        }
+    }
+    
+    private func prepareSegueForSettingsViewController(segue: UIStoryboardSegue) {
+        
+        //El segue va primero al NavigationController, por eso primero se valida el destino para que sea el Nav.
+        guard let navC = segue.destination as? UINavigationController else {
+            Utils.showAlertMessage("Error", message: "Error al intentar hacer segue al Navigation Controller")
+            return
+        }
+        
+        if let settingsVC = navC.viewControllers.first as? SettingsTableViewController {
+            
+            //Le indica al Delegate de la pantalla de Settings, que este ViewControllre (aqui) va a ser la encargada de manejar esa variable perteneciente a la otra pantalla.
+            //En la segunda pantalla (pantalla de settings), ese Delegate, se convierte en esta pantalla.
+            settingsVC.delegate = self
+            
+        } else {
+            Utils.showAlertMessage("Error", message: "Error al intentar hacer segue de Settings. No encontrado")
         }
     }
 }
@@ -91,5 +106,15 @@ extension WeatherListTableViewController: addWeatherDelegate {
         //Utils.showAlertMessage("Added", message: "Added. This is Weather List VC")
         weatherListViewModel.addWeatherViewModel(viewModel)
         self.tableView.reloadData()
+    }
+}
+
+// -- MARK: Delegate for Settings
+
+extension WeatherListTableViewController: SettingsDelegate {
+
+    func settingsDone(viewModel: SettingsViewModel) {
+            
+        
     }
 }
