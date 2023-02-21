@@ -47,11 +47,11 @@ class WeatherListTableViewController: UITableViewController {
             //En la segunda pantalla, Delegate, se convierte en esta pantalla.
             addCityVC.delegate = self
             
-        } else if let settingsVC = navC.viewControllers.first as? SettingsTableViewController {
+        //} else if let settingsVC = navC.viewControllers.first as? SettingsTableViewController {
             
-            
+        } else if navC.viewControllers.first is SettingsTableViewController {
                
-        }else {
+        } else {
             Utils.showAlertMessage("Error", message: "Error al intentar hacer segue. No encontrado")
         }
     }

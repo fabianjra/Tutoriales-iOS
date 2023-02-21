@@ -46,6 +46,17 @@ class SettingsViewModel {
         set {
             let userDefault = UserDefaults.standard
             userDefault.set(newValue.rawValue, forKey: "unit")
+            
+            /*
+             The only reason there is a synchronize method is so your app can tell NSUserDefaults to persist the dictionary "now"
+             instead of waiting for the automatic saving that will eventually happen.
+             
+             And the only reason you ever need to do that is because your app might be terminated (or crash) before the next automatic save.
+             
+             In my own apps, the only place I call synchronize is in the applicationDidEnterBackground delegate method.
+             This is to ensure the latest unsaved changes are persisted in case the app is terminated while in the background.
+             */
+            //userDefault.synchronize()
         }
     }
 }
