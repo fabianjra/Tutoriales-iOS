@@ -17,39 +17,32 @@ class WeatherListTableViewController: UITableViewController {
     
     private func setupView(){
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let url = AppDelegate.getWeatherURL("ohio")
-        
-        //We are expecting a "WeatherResponse" type (the root from the Json response).
-        let resource = Resource<WeatherResponse>(url: url) { data in
-            
-            let decoder = JSONDecoder()
-            
-            do{
-                let response = try decoder.decode(WeatherResponse.self, from: data)
-                return response
-                
-            }catch{
-                Log.WriteCatchExeption(error: error)
-                Utils.showAlertMessage("Error", message: error.localizedDescription)
-                return nil
-            }
-        }//End: Resource instantiation.
+         
+    }//End: SetupView
     
-        //NOTA: Posiblemente en algunos casos pueda provocarse un error de "Transport Seccurity" llamado "finished with error".
-        //Para solucionar eso:
-        //1: Se agrega el info.plist la llave: "App Transport Security Settigns".
-        //2: Dentro de la llave agregada, se agrega una subllave llamada: "Allow Arbitrary Loads".
-        //3: Se pone en subllave con el valor "YES".
-        Webservice().load(resource: resource) { weatherResponse in
-            
-            if let weatherResponse = weatherResponse {
-                
-                Utils.showAlertMessage("Temperature response", message: "Temperature: \(weatherResponse.main.temperature.description)° and humidity: \(weatherResponse.main.humidity.description)")
-            }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "addCitySegue" {
+            prepareSegueForAddCityViewController(segue: segue)
+        }
+    }
+    
+    private func prepareSegueForAddCityViewController(segue: UIStoryboardSegue) {
+        
+        //El segue va primero al NavigationController, por eso primero se valida el destino para que sea el Nav.
+        guard let navC = segue.destination as? UINavigationController else {
+            Utils.showAlertMessage("Error", message: "Error al intentar hacer segue al Navigation Controller")
+            return
         }
         
-    }//End: SetupView
+        guard let addCityVC = navC.viewControllers.first as? AddCityViewController else {
+            Utils.showAlertMessage("Error", message: "Error al intentar hacer segue a la vista de Add City")
+            return
+        }
+        
+        
+        addCityVC.delegate = self
+    }
 }
 
 // -- MARK: TableView
@@ -75,5 +68,15 @@ extension WeatherListTableViewController {
         cell.temperatureLabel.text = "17 C°"
         
         return cell
+    }
+}
+
+// -- MARK: Delegate from Add Weather
+
+extension WeatherListTableViewController: addWeatherDelegate {
+    
+    func addWeatherDidSave(viewModel: WeatherViewModel) {
+        //TODO: Add the city to the TableView.
+        //Utils.showAlertMessage("Added", message: "Added. This is Weather List VC")
     }
 }

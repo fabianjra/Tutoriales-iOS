@@ -62,7 +62,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="NTd-jE-Oih"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="e2M-g8-UXT">
                             <connections>
-                                <segue destination="cuu-vj-U8T" kind="presentation" id="adn-a9-dYl"/>
+                                <segue destination="cuu-vj-U8T" kind="presentation" identifier="addCitySegue" id="adn-a9-dYl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

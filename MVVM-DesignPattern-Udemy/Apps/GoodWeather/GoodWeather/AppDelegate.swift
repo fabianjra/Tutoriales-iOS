@@ -59,12 +59,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          2: Se agrega al archivo "info.plist" la llave: "View controller-based status bar appearance" con valor en "NO".
          */
     }
-    
-    static func getWeatherURL(_ cityName: String) -> URL {
-        let apiKey = "4b04a0477518e155d94c9a37678059bb"
-        let weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=\(apiKey)&units=imperial"
-        
-        return URL(string: weatherURL)!
-    }
 }
 

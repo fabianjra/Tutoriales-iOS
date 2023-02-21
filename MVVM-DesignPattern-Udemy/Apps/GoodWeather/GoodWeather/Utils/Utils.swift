@@ -176,32 +176,3 @@ struct Utils {
         }
     }
 }
-
-extension String {
-    
-    /**
-     Validate if a String is Empty
-     
-     **Example:**
-     ```swift
-     if textField.text?.isEmptyOrWhitespace() == true {
-         printContent("Is empty")
-         return
-     }
-     ```
-     
-     - Authors: Fabian Rodriguez
-     
-     - Version: 1.0
-     
-     - Date: February 2023
-     */
-    func isEmptyOrWhitespace() -> Bool {
-        if(self.isEmpty) {
-            return true
-        }
-        
-        return self.trimmingCharacters(in: .whitespaces).isEmpty
-    }
-}
-

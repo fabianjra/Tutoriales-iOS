@@ -7,11 +7,20 @@
 
 import UIKit
 
+protocol addWeatherDelegate {
+    func addWeatherDidSave(viewModel: WeatherViewModel)
+}
+
 class AddCityViewController: UIViewController {
     
     // -- MARK: IBOutlets
     
     @IBOutlet weak var cityNameTextField: UITextField!
+    
+    // -- MARK: Variables
+    
+    private var addWeatherVM = AddWeatherViewModel()
+    var delegate: addWeatherDelegate?
     
     
     // -- MARK: Buttons
@@ -23,14 +32,13 @@ class AddCityViewController: UIViewController {
         } else {
             
             let cityName = cityNameTextField.text! //Its alrady validated
-            let url = AppDelegate.getWeatherURL(cityName)
             
-            let resource = Resource<Any>(url: url) { data in
-                return data
-            }
-            
-            Webservice().load(resource: resource) { result in
+            addWeatherVM.addWeather(for: cityName) { weatherVM in
+                self.delegate?.addWeatherDidSave(viewModel: weatherVM)
                 
+                Utils.showAlertMessage("Added", message: "Succesfully added the new city weather") { _ in
+                    self.dismiss(animated: true)
+                }
             }
         }
     }
