@@ -32,6 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    //Setting Up defaultSettings, when the App Starts:
+    private func setupDefaultSettings() {
+        
+        let userDefaults = UserDefaults.standard
+        
+        if userDefaults.value(forKey: Constants.unit) == nil {
+            userDefaults.set(Unit.farenheit.rawValue, forKey: Constants.unit)
+        }
+    }
 
     //Crea el estilo para el Navigationbar
     private func setupNavigationBar(){

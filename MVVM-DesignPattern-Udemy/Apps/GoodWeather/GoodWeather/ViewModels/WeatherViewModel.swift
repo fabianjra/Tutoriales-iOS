@@ -7,16 +7,20 @@
 
 class WeatherViewModel {
     let weather: WeatherResponse
+    var temperature: Double
     
-    init(weather: WeatherResponse) {
-        self.weather = weather
+    init(weatherResponse: WeatherResponse) {
+        self.weather = weatherResponse
+        self.temperature = weatherResponse.weather.temperature
     }
     
     var city: String {
         return weather.cityName
     }
     
-    var temperature: Double {
-        return weather.weather.temperature
-    }
+//    var temperature: Double {
+//        return weather.weather.temperature
+//    }
+    
+    
 }

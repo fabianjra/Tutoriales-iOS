@@ -9,6 +9,8 @@ import Foundation
 
 class Constants {
     
+    static let unit = "unit"
+    
     static func getWeatherURL(_ cityName: String) -> URL {
         
         //Get the default settings for temperature

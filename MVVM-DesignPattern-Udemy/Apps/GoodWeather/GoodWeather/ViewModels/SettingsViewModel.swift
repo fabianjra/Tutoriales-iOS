@@ -36,7 +36,7 @@ class SettingsViewModel {
             let userDefault = UserDefaults.standard
             var unitValue = ""
             
-            if let value = userDefault.value(forKey: "unit") as? String {
+            if let value = userDefault.value(forKey: Constants.unit) as? String {
                 unitValue = value
             }
             
@@ -45,7 +45,7 @@ class SettingsViewModel {
         
         set {
             let userDefault = UserDefaults.standard
-            userDefault.set(newValue.rawValue, forKey: "unit")
+            userDefault.set(newValue.rawValue, forKey: Constants.unit)
             
             /*
              The only reason there is a synchronize method is so your app can tell NSUserDefaults to persist the dictionary "now"

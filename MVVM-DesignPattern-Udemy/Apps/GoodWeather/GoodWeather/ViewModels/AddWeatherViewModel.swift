@@ -32,11 +32,11 @@ class AddWeatherViewModel {
         //1: Se agrega el info.plist la llave: "App Transport Security Settigns".
         //2: Dentro de la llave agregada, se agrega una subllave llamada: "Allow Arbitrary Loads".
         //3: Se pone en subllave con el valor "YES".
-        Webservice().load(resource: resource) { result in
+        Webservice().load(resource: resource) { response in
             
-            if let result = result {
+            if let result = response {
                 
-                let viewModel = WeatherViewModel(weather: result)
+                let viewModel = WeatherViewModel(weatherResponse: result)
                 
                 completion(viewModel)
                 

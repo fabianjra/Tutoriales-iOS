@@ -11,10 +11,16 @@ class WeatherListTableViewController: UITableViewController {
     
     //Variables:
     private var weatherListViewModel = WeatherListViewModel() //This can add elements to the VM and get the count of items.
+    private var lastUnitSelection: Unit! //Unwrap because it will always have a value
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
+        let userDefaults = UserDefaults.standard
+        if let value = userDefaults.value(forKey: Constants.unit) as? String {
+            self.lastUnitSelection = Unit(rawValue: value)!
+        }
     }
     
     private func setupView(){
@@ -115,6 +121,10 @@ extension WeatherListTableViewController: SettingsDelegate {
 
     func settingsDone(viewModel: SettingsViewModel) {
             
-        
+        if lastUnitSelection.rawValue != viewModel.selectedUnit.rawValue {
+            weatherListViewModel.updateUnit(to: viewModel.selectedUnit)
+            tableView.reloadData()
+            lastUnitSelection = Unit(rawValue: viewModel.selectedUnit.rawValue)!
+        }
     }
 }
