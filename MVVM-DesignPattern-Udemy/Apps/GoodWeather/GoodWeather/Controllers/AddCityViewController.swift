@@ -34,6 +34,8 @@ class AddCityViewController: UIViewController {
             let cityName = cityNameTextField.text! //Its alrady validated
             
             addWeatherVM.addWeather(for: cityName) { weatherVM in
+                
+                //Es llamada la pantalla anterior, llama la funcion y le pasa el ViewModel:
                 self.delegate?.addWeatherDidSave(viewModel: weatherVM)
                 
                 Utils.showAlertMessage("Added", message: "Succesfully added the new city weather") { _ in

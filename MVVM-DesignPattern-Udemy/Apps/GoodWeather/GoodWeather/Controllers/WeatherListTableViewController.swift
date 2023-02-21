@@ -9,16 +9,17 @@ import UIKit
 
 class WeatherListTableViewController: UITableViewController {
     
+    //Variables:
+    private var weatherListViewModel = WeatherListViewModel() //This can add elements to the VM and get the count of items.
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
     }
     
     private func setupView(){
         navigationController?.navigationBar.prefersLargeTitles = true
-         
-    }//End: SetupView
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -40,7 +41,8 @@ class WeatherListTableViewController: UITableViewController {
             return
         }
         
-        
+        //Le indica al Delegate de la segunda pantalla, que esta (aqui) va a ser la encargada de manejar esa variable delegate.
+        //En la segunda pantalla, Delegate, se convierte en esta pantalla.
         addCityVC.delegate = self
     }
 }
@@ -54,18 +56,18 @@ extension WeatherListTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return weatherListViewModel.numberOfRows(section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(WeatherCell.self)", for: indexPath) as? WeatherCell else {
-            fatalError("Failed to dequeue cell.")
-            //return nil //Podria manejarse con return nil y la respuesta como un opcional.
+            Utils.showAlertMessage("Error", message: "Error in trying to get the WeatherCell")
+            return UITableViewCell()
         }
         
-        cell.cityNameLabel.text = "New York"
-        cell.temperatureLabel.text = "17 C°"
+        let weatherItem = weatherListViewModel.modelAt(indexPath.row)
+        cell.configure(weatherItem)
         
         return cell
     }
@@ -76,7 +78,8 @@ extension WeatherListTableViewController {
 extension WeatherListTableViewController: addWeatherDelegate {
     
     func addWeatherDidSave(viewModel: WeatherViewModel) {
-        //TODO: Add the city to the TableView.
         //Utils.showAlertMessage("Added", message: "Added. This is Weather List VC")
+        weatherListViewModel.addWeatherViewModel(viewModel)
+        self.tableView.reloadData()
     }
 }
