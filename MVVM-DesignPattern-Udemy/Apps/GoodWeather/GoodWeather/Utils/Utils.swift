@@ -46,6 +46,32 @@ enum Log {
     static func WriteCatchExeption(_ message: String? = nil, file: String = #file, function: String = #function, line: Int = #line, error: Error) {
         print("Error in catch - \(message ?? ""), called by: \(file.components(separatedBy: "/").last ?? file) - \(function), at line: \(line). Description: ", error)
     }
+    
+    /**
+     Shows a message on console.
+     
+     **Notes:**
+     - Writes a simple string message on console.
+     
+     **Example:**
+     ```swift
+     Log.WriteMessage("This is a string message.")
+     ```
+     
+     - Parameters:
+     - message:String message to add to the print.
+     
+     - Authors: Fabian Rodriguez
+     
+     - Version: 1.0
+     
+     - Date: February 2023
+     */
+    static func WriteMessage(_ obj: Any?) {
+        print("///*****************************************///")
+        print(obj ?? "-----------------------------------------------------")
+        print("///*****************************************///")
+    }
 }
 
 // MARK: - Functions
@@ -100,14 +126,17 @@ struct Utils {
      
      - Date: February 2023
      */
-    static func showAlertMessage(_ title: String, message: String, completion: @escaping(Any) -> Void ) {
+    static func showAlertMessage(_ title: String, message: String, titleAction: String, completion: @escaping(Any) -> Void ) {
         
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: UIAlertController.Style.alert)
         
-        alert.addAction(UIAlertAction(title: "Ok",
+        alert.addAction(UIAlertAction(title: titleAction,
                                       style: UIAlertAction.Style.cancel, handler: completion))
+        
+        alert.addAction(UIAlertAction(title: "Close",
+                                      style: UIAlertAction.Style.default))
         
         let actualVC = getActualViewController()
         
