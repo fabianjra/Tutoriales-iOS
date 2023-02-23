@@ -239,12 +239,6 @@ For this App, we need to consume an API where we add orders, get orders and remo
 ### GoodWeather:
 
 - **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/GoodWeather)
-- **Description:** This app get city names from an API and gets the weather temperature in celcius and farenheit.
-
-- **Notes:**
-* Bindigs:
-
+- **Description:** This app get city names from an API and gets the weather temperature in celcius and farenheit. This app cosumes an API in this WEB: https://openweathermap.org/
 - **Screenshot:** 
-<img src="" width="200">
-
-This app cosumes an API in this WEB: https://openweathermap.org/
+<img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/HotCoffe/GoodWeather/Assets.xcassets/GoodWeatherAppScreenshot.imageset/GoodWeatherAppScreenshot.png" width="200">
