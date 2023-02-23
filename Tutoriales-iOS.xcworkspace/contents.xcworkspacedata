@@ -19,6 +19,9 @@
          <FileRef
             location = "group:GoodWeather/GoodWeather.xcodeproj">
          </FileRef>
+         <FileRef
+            location = "group:BindingMVVM/BindingMVVM.xcodeproj">
+         </FileRef>
       </Group>
    </Group>
    <Group

@@ -242,3 +242,11 @@ For this App, we need to consume an API where we add orders, get orders and remo
 - **Utilites:** There are some utilites like for example, show a global `UIAlertController` or validate if a `textField` is empty. This is the file: [Utils source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/GoodWeather/GoodWeather/Utils/Utils.swift)
 - **Screenshot:** 
 <img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/GoodWeather/GoodWeather/Assets.xcassets/GoodWeatherAppScreenshot.imageset/GoodWeatherAppScreenshot.png" width="200">
+
+### Bindigs:
+
+- **Project:** [Source]()
+
+- **Description:** There are differents ways to bind, 2 commons:
+* `'View` to `View Model`: Example: A `View` has 2 `textfields` "name" and "age". Each time the text changes on the screen, the 2 properties (var) on the `ViewModel` has to change also, beacuase they are binded to the `View`. This should be automatically.
+* `View Model` to `View`: Example: Same 2 `textfields` "name" and "age" are on the `ViewModel`. Whenever these 2 properties changes, this update is going to be reflected on the `View` (Textfield on the screen).
