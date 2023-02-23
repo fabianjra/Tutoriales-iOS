@@ -7,6 +7,8 @@
 
 //A ViewModel could be a Struct, depending on what the ViewModel is doing.
 struct LoginViewModel {
-    var username: String = ""
-    var password: String = ""
+    
+    //Not all the values has to be Dynamic, only the ones you are interested in getting the value, so you can pass the value from the Model to the UI.
+    var username = Dynamic("")
+    var password = Dynamic("")
 }

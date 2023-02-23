@@ -5,6 +5,8 @@
 //  Created by Fabian Josue Rodriguez Alvarez on 22/2/23.
 //
 
+// NOTE: This class allos the APP, Binding the Textfield from: VIEW to VIEW-MODEL
+
 import UIKit
 
 class BindingTextField: UITextField {
