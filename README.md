@@ -245,8 +245,9 @@ For this App, we need to consume an API where we add orders, get orders and remo
 
 ### Bindigs:
 
-- **Project:** [Source]()
-
+- **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/BindingMVVM)
 - **Description:** There are differents ways to bind, 2 commons:
 * `'View` to `View Model`: Example: A `View` has 2 `textfields` "name" and "age". Each time the text changes on the screen, the 2 properties (var) on the `ViewModel` has to change also, beacuase they are binded to the `View`. This should be automatically.
 * `View Model` to `View`: Example: Same 2 `textfields` "name" and "age" are on the `ViewModel`. Whenever these 2 properties changes, this update is going to be reflected on the `View` (Textfield on the screen).
+- **Screenshot:** 
+<img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/BindingMVVM/BindingMVVM/Assets.xcassets/BindingMVVMAppScreenshot.imageset/BindingMVVMAppScreenshot.png" width="200">
