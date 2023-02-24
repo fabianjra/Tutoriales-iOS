@@ -251,3 +251,13 @@ For this App, we need to consume an API where we add orders, get orders and remo
 * `View Model` to `View`: Example: Same 2 `textfields` "name" and "age" are on the `ViewModel`. Whenever these 2 properties changes, this update is going to be reflected on the `View` (Textfield on the screen).
 - **Screenshot:** 
 <img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/BindingMVVM/BindingMVVM/Assets.xcassets/BindingMVVMAppScreenshot.imageset/BindingMVVMAppScreenshot.png" width="200">
+
+### TESTING:
+
+1. **UNIT TEST:** Unit Test allows the developer to write code which test other pieces of code.
+    - FAST: Doesn't have to depend on a service.
+    - AUTOMATED: Doesn't have to write it again and again.
+    - INDEPEND: Example: You can't say that you can't run the test because a service is down.
+    - REPEATABLE: You can run many times the test.
+
+2. **Test Driven Development (TDD):** Start writing a failing test -> make the test pass -> refactor. 
