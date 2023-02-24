@@ -22,6 +22,9 @@
          <FileRef
             location = "group:BindingMVVM/BindingMVVM.xcodeproj">
          </FileRef>
+         <FileRef
+            location = "group:Calculator/Calculator.xcodeproj">
+         </FileRef>
       </Group>
    </Group>
    <Group
