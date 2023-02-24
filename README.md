@@ -262,4 +262,7 @@ For this App, we need to consume an API where we add orders, get orders and remo
 
 2. **Test Driven Development (TDD):** Start writing a failing test -> make the test pass -> refactor. 
 
-For adding the UNIT TEST class: Select the project (blue icon), then go to EDITOR -> ADD TARGET -> Select: Unit Testing Bundle and create it. This will create the Test Class (XCTestCase).
+- For adding the UNIT TEST class: Select the project (blue icon), then go to EDITOR -> ADD TARGET -> Select: Unit Testing Bundle and create it. This will create the Test Class (XCTestCase).
+- All test, have to start with "test" in the function name.
+- One way to add a "project class" to the Test project, is selecting the class, then RightSideBar: -> Show File Inspector -> Target Membership -> Select the Unit Test Project.
+- Another way is to import te project to the Test Case: `@testable import Calculator`

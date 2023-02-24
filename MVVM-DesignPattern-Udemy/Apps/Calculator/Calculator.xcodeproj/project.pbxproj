@@ -14,6 +14,7 @@
 		40F65B6029A94231002A8E88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F65B5F29A94231002A8E88 /* Assets.xcassets */; };
 		40F65B6329A94231002A8E88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F65B6129A94231002A8E88 /* LaunchScreen.storyboard */; };
 		40F65B7129A942E7002A8E88 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F65B7029A942E7002A8E88 /* CalculatorTests.swift */; };
+		40F65B7829A9457E002A8E88 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F65B7729A9457E002A8E88 /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		40F65B6429A94231002A8E88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40F65B6E29A942E7002A8E88 /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F65B7029A942E7002A8E88 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		40F65B7729A9457E002A8E88 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				40F65B5F29A94231002A8E88 /* Assets.xcassets */,
 				40F65B6129A94231002A8E88 /* LaunchScreen.storyboard */,
 				40F65B6429A94231002A8E88 /* Info.plist */,
+				40F65B7729A9457E002A8E88 /* Calculator.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40F65B5B29A9422F002A8E88 /* ViewController.swift in Sources */,
+				40F65B7829A9457E002A8E88 /* Calculator.swift in Sources */,
 				40F65B5729A9422F002A8E88 /* AppDelegate.swift in Sources */,
 				40F65B5929A9422F002A8E88 /* SceneDelegate.swift in Sources */,
 			);
