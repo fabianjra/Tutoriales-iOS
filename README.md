@@ -268,3 +268,4 @@ For this App, we need to consume an API where we add orders, get orders and remo
 - Another way is to import te project to the Test Case: `@testable import Calculator`
 - The function `setUp()` allows us to create an instanciation of something we are going to use across the Tests.
 - The function `tearDown()` is going to excecute afer each Test.
+- Run all test shortcut: `cmd + u`
