@@ -240,6 +240,7 @@ For this App, we need to consume an API where we add orders, get orders and remo
 - **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/GoodWeather)
 - **Description:** This app get city names from an API and gets the weather temperature in celcius and farenheit. This app cosumes an API in this WEB: https://openweathermap.org/
 - **Utilites:** There are some utilites like for example, show a global `UIAlertController` or validate if a `textField` is empty. This is the file: [Utils source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/GoodWeather/GoodWeather/Utils/Utils.swift)
+- **Unit Test examples:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/GoodWeather/GoodWeatherTests)
 - **Screenshot:** 
 <img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/GoodWeather/GoodWeather/Assets.xcassets/GoodWeatherAppScreenshot.imageset/GoodWeatherAppScreenshot.png" width="200">
 
@@ -253,6 +254,8 @@ For this App, we need to consume an API where we add orders, get orders and remo
 <img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/BindingMVVM/BindingMVVM/Assets.xcassets/BindingMVVMAppScreenshot.imageset/BindingMVVMAppScreenshot.png" width="200">
 
 ### TESTING:
+
+- Unit Test project: [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/Calculator) 
 
 1. **UNIT TEST:** Unit Test allows the developer to write code which test other pieces of code.
     - FAST: Doesn't have to depend on a service.
@@ -269,3 +272,29 @@ For this App, we need to consume an API where we add orders, get orders and remo
 - The function `setUp()` allows us to create an instanciation of something we are going to use across the Tests.
 - The function `tearDown()` is going to excecute afer each Test.
 - Run all test shortcut: `cmd + u`
+
+### Bonus lecture:
+
+- [Building Augmented Reality Apps Using RealityKit & ARKit](https://www.udemy.com/course/building-augmented-reality-apps-in-realitykit-arkit/?referralCode=BB7A8EC8AEA928AAD34F)
+- [Introduction to Server Driven UI in iOS](https://www.udemy.com/course/introduction-to-server-driven-ui-in-ios-swift-swiftui/?referralCode=2F57B10C28B68D440B89)
+- [Test Driven Development in iOS Using Swift](https://www.udemy.com/course/test-driven-development-in-ios-using-swift/?referralCode=07649C41E6E184CE86B3)
+- [SwiftUI Cookbook - Over 100 Recipes for Building iOS Apps](https://www.udemy.com/course/swiftui-cookbook-over-100-recipes-for-building-ios-apps/?referralCode=06ADC26414C593DE91B4)
+- [Async/Await and Actors - Concurrency in Swift](https://www.udemy.com/course/asyncawait-and-actors-concurrency-in-swift/?referralCode=BE09E803E9E7CBF7F368)
+- [Swift for Intermediate and Advanced iOS Developers](https://www.udemy.com/course/swift-for-intermediate-and-advanced-ios-developers/?referralCode=2F0103424A4D82742C72)
+- [GraphQL with iOS and SwiftUI: The Complete Developers Guide](https://www.udemy.com/course/graphql-in-ios-using-swift/?referralCode=9A2C826D12F2E863275E)
+- [Core Data in iOS](https://www.udemy.com/course/core-data-in-ios/?referralCode=F87F4552453DA9E776FE)
+- [Flutter and Firebase - Build Real World iOS and Android Apps](https://www.udemy.com/course/flutter-firebase-build-real-world-ios-and-android-apps/?referralCode=007B47CAB3795A71C57A)
+- [Writing Clean Code](https://www.udemy.com/course/writing-clean-code-swift/?referralCode=CEB5F35104C973122FE7)
+- [The Complete Hands-On SwiftUI Apps Using Firebase](https://www.udemy.com/course/the-complete-hands-on-swiftui-apps-using-firebase/?referralCode=688190DEB57CD2E86A8F)
+- [MVVM Design Pattern in SwiftUI](https://www.udemy.com/course/mvvm-design-pattern-in-swiftui/?referralCode=DBCF3B88D25104DA4FB2)
+- [Machine Learning and Artificial Intelligence Using Swift](https://www.udemy.com/course/machine-learning-and-artificial-intelligence-using-swift/?referralCode=CB992C10526C60C084DB)
+- [SwiftUI - Declarative Interfaces for any Apple Device](https://www.udemy.com/course/swiftui-declarative-interfaces-for-any-apple-device/?referralCode=EB97896D293C976B3231)
+- [Flutter and Dart - Build Apps Using MVVM Design Pattern](https://www.udemy.com/course/flutter-dart-mvvm-design-pattern/?referralCode=3E32698D188E47553501)
+- [Mastering RxSwift in iOS](https://www.udemy.com/course/mastering-rxswift-in-ios/?referralCode=4B50D1EF895799098F55)
+- [Mastering ARKit for iOS](https://www.udemy.com/course/mastering-arkit-for-ios-using-swift/?referralCode=E52ADAFBC9DA334B8B47)
+- [Intermediate and Advanced iOS - Build Real World Apps](https://www.udemy.com/course/building-real-world-ios-apps-using-swift/?referralCode=872A9E8AF6F238EB7FB0)
+- [The Complete Guide to JSON Parsing in Swift](https://www.udemy.com/course/ultimate-guide-to-json-parsing-with-swift/?referralCode=8E75504604F2D5D6BF00)
+- [Mastering MapKit for iOS](https://www.udemy.com/course/mastering-mapkit-for-ios/?referralCode=3F231ECA284DAB0947D7)
+- [Machine Learning in iOS Using Swift](https://www.udemy.com/course/mastering-core-ml-for-ios/?referralCode=E1E95CF3FAFBB5C123A3)
+- [Mastering Firebase for iOS Using Swift](https://www.udemy.com/course/practical-firebase-for-ios-using-swift/?referralCode=F37F1A54C6DD750475A5)
+- [The Complete Guide to Lean Controllers in iOS](https://www.udemy.com/course/a-complete-guide-to-lean-controllers-in-ios/?referralCode=293D4E7C65E565EF9F47)
