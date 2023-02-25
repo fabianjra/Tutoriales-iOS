@@ -19,6 +19,10 @@ class WeatherListViewModel {
         return weatherCollectionViewModel.count
     }
     
+    func getWeatherList() -> [WeatherViewModel] {
+        return weatherCollectionViewModel
+    }
+    
     //Get a Model at a particular location.
     func modelAt(_ index: Int) -> WeatherViewModel {
         return weatherCollectionViewModel[index]
