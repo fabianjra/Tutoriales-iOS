@@ -13,6 +13,7 @@ Algunos codigos de ejemplos son ligeramente cambiados a sus videos originales pa
 - [Udemy: LevelUpInAutoLayout](#LevelUpInAutoLayout-UdemyCourse)
 - [Udemy: RxSwift](#RxSwift)
 - [Udemy: MVVM Design Pattern](#MVVM-DesignPattern-Udemy)
+- [Udemy: Async/Await-and-Actors-Concurrency-Udemy](#Async/Await-and-Actors-Concurrency-Udemy)
 
 
 <p>&nbsp;</p>
@@ -298,3 +299,18 @@ For this App, we need to consume an API where we add orders, get orders and remo
 - [Machine Learning in iOS Using Swift](https://www.udemy.com/course/mastering-core-ml-for-ios/?referralCode=E1E95CF3FAFBB5C123A3)
 - [Mastering Firebase for iOS Using Swift](https://www.udemy.com/course/practical-firebase-for-ios-using-swift/?referralCode=F37F1A54C6DD750475A5)
 - [The Complete Guide to Lean Controllers in iOS](https://www.udemy.com/course/a-complete-guide-to-lean-controllers-in-ios/?referralCode=293D4E7C65E565EF9F47)
+
+
+<p>&nbsp;</p>
+
+
+## Async/Await-and-Actors-Concurrency-Udemy
+
+**Concurrency:**  Do multiple things at the same time.
+    * Serial: This is a way to do tasks. They are in line, excecuting one by one, once tha last task is completed.
+    * `DispatchQueue.main`: The Main Queue should be used only for UI events.
+    * `DispathQueue.global`: Background thread should be used for downloading tasks and other events that shouldn't block the UI. After using the global queue, you have to switch to the main thread and perform the UI update.
+
+- **Changes in code:**
+    * `Async { }` is now: `Task { }`
+    * `asyncDetached { }` is now: `Task.detached { }`
