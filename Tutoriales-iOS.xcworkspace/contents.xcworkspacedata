@@ -8,6 +8,42 @@
       location = "group:Udemy"
       name = "Udemy">
       <Group
+         location = "group:LevelUpInAutoLayout-UdemyCourse"
+         name = "LevelUpInAutoLayout-UdemyCourse">
+         <FileRef
+            location = "group:Course+PDF.pdf">
+         </FileRef>
+         <FileRef
+            location = "group:LevelUpInAutoLayout/LevelUpInAutoLayout.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Examples/1-Examples.xcodeproj">
+         </FileRef>
+         <Group
+            location = "group:DesignChallenges"
+            name = "DesignChallenges">
+            <Group
+               location = "group:Samples"
+               name = "Samples">
+               <FileRef
+                  location = "group:PaddingWithSpacers/PaddingWithSpacers.xcodeproj">
+               </FileRef>
+               <FileRef
+                  location = "group:NudgeTheLabel/NudgeTheLabel.xcodeproj">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:BasicAnchors/BasicAnchors.xcodeproj">
+            </FileRef>
+            <FileRef
+               location = "group:CustomViewChallenge/CustomViewChallenge.xcodeproj">
+            </FileRef>
+            <FileRef
+               location = "group:SpotifyPlayer/SpotifyPlayer.xcodeproj">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
          location = "group:MVVM-DesignPattern-Udemy"
          name = "MVVM-DesignPattern-Udemy">
          <Group
@@ -54,42 +90,6 @@
       <FileRef
          location = "group:Generics.playground">
       </FileRef>
-   </Group>
-   <Group
-      location = "group:LevelUpInAutoLayout-UdemyCourse"
-      name = "LevelUpInAutoLayout-UdemyCourse">
-      <FileRef
-         location = "group:Course+PDF.pdf">
-      </FileRef>
-      <FileRef
-         location = "group:LevelUpInAutoLayout/LevelUpInAutoLayout.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:Examples/1-Examples.xcodeproj">
-      </FileRef>
-      <Group
-         location = "group:/Users/f.rodriguezalvarez/Sources/Personal/Tutoriales-iOS/LevelUpInAutoLayout-UdemyCourse/DesignChallenges"
-         name = "DesignChallenges">
-         <Group
-            location = "group:Samples"
-            name = "Samples">
-            <FileRef
-               location = "group:PaddingWithSpacers/PaddingWithSpacers.xcodeproj">
-            </FileRef>
-            <FileRef
-               location = "group:NudgeTheLabel/NudgeTheLabel.xcodeproj">
-            </FileRef>
-         </Group>
-         <FileRef
-            location = "group:BasicAnchors/BasicAnchors.xcodeproj">
-         </FileRef>
-         <FileRef
-            location = "group:CustomViewChallenge/CustomViewChallenge.xcodeproj">
-         </FileRef>
-         <FileRef
-            location = "group:SpotifyPlayer/SpotifyPlayer.xcodeproj">
-         </FileRef>
-      </Group>
    </Group>
    <FileRef
       location = "group:Pruebas-UIKit/Pruebas-UIKit.xcodeproj">
