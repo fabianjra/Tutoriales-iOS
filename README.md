@@ -306,11 +306,56 @@ For this App, we need to consume an API where we add orders, get orders and remo
 
 ## Async/Await-and-Actors-Concurrency-Udemy
 
-**Concurrency:**  Do multiple things at the same time.
-    * Serial: This is a way to do tasks. They are in line, excecuting one by one, once tha last task is completed.
-    * `DispatchQueue.main`: The Main Queue should be used only for UI events.
-    * `DispathQueue.global`: Background thread should be used for downloading tasks and other events that shouldn't block the UI. After using the global queue, you have to switch to the main thread and perform the UI update.
+- **THREADS:**
+    * They are useful when you need perform a task without blocking the rest of the application.
 
-- **Changes in code:**
+- **Gran Central Dispatch:** GCD is a low-level API for managing concurrent operations. It can help to improve the app’s responsiveness, allowing concurrency in tasks. GCD is in charge of administrate queues.
+
+- **QUEUES:**
+    * Main Queue: Runs on the main thread. `DispatchQueue.main`. Should be used only for UI events. The main thread is Serial Queue. FIFO.
+    * Global Queue: Allows concurrency that are shared by the whole system (High, Default, Low y Background). `DispathQueue.global`. Background thread should be used for downloading tasks and other events that shouldn't block the UI.
+    * Custom Queue: These can be either serial or concurrent.
+
+- **QUEUE TYPES:**
+    * Serial: This is a way to do tasks. They are in line, excecuting one by one, once tha last task is completed.
+    * Concurrent: They run without an order, runs at the same time and they are administrated by Grand Central Dispatch.
+    
+- **QoS: Quality of Service:**
+    * This is a class property that indicates the task’s importance and guides the GCD in the priority to give.
+
+    1. User interactive: Animations or events handling.
+    2. User initiated: Work that the user kicks off and should yield immediate results. This work must be completed for the user to continue.
+    3. Default: This is preferred, which means that is the QoS by default. It's going to take a decision on your behalf in selecting the default or whatever kind of QoS.
+    4. Utility: For tasks that the user doesn't track actively. Work that may take a bit and doesn’t need to finish right away. Analogous to progress bars and importing data
+    5. Background: This work isn’t visible to the user. Backups, syncs, indexing, etc.
+    6. Unspecified: No QoS or priority setting defined.
+    
+    ```
+    DispatchQueue.global(qos: .userInteractive) - highest priority
+    DispatchQueue.global(qos: .userInitiated)
+    DispatchQueue.global() // default
+    DispatchQueue.global(qos: .utility)
+    DispatchQueue.global(qos: .background) - lowest priority 
+    ```
+    
+How to switch from to the Global Background Thread to the Main Thread:
+
+```
+DispatchQueue.global().async {
+    //download the image
+    
+    DispatchQueue.main.Async {
+        //Refresh the UI
+    }
+}
+```
+
+- **Deprecated code:**
     * `Async { }` is now: `Task { }`
     * `asyncDetached { }` is now: `Task.detached { }`
+
+- **Resources:**
+    * [Concurrency and Multithreading in iOS](https://www.viget.com/articles/concurrency-multithreading-in-ios/)
+    * [Medium: Concurrency in Swift (GCD PT1)](https://ali-akhtar.medium.com/concurrency-in-swift-grand-central-dispatch-part-1-945ff05e8863)
+    * [Swift by Sundell: Task-based concurrency in Swfit](https://www.swiftbysundell.com/articles/task-based-concurrency-in-swift/)
+    * [Cocoacasts: Threads, Queues, and Concurrency](https://cocoacasts.com/swift-and-cocoa-fundamentals-threads-queues-and-concurrency)
