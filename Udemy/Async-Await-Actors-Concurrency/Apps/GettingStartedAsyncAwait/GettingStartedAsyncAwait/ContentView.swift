@@ -23,7 +23,8 @@ struct ContentView: View {
                 Text("\(index)")
             }.listStyle(.plain)
             
-                .navigationTitle("Dates")
+                .navigationTitle("Fechas")
+            
                 .navigationBarItems(trailing: Button(action: {
                     //Button Action
                 }, label: {
