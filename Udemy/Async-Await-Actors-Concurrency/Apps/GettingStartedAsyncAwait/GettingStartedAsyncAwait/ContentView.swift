@@ -21,22 +21,22 @@ struct ContentView: View {
     @State private var currentDates: [CurrentDate] = []
     
     private func getDate() async throws -> CurrentDate? {
-       let urlString = "https://ember-sparkly-rule.glitch.me/current-date"
-       
-       guard let url = URL(string: urlString) else {
-           fatalError("El URL es incorrecto")
-       }
+        let urlString = "https://ember-sparkly-rule.glitch.me/current-date"
+        
+        guard let url = URL(string: urlString) else {
+            fatalError("El URL es incorrecto")
+        }
         
         let (data, _) = try await URLSession.shared.data(from: url)
         
         //If the app crashes: The try will return nil, because it's optional.
         return try? JSONDecoder().decode(CurrentDate.self, from: data)
-   }
+    }
     
     private func populateDates() async {
         do {
             guard let currentDate = try await getDate() else {
-                return 
+                return
             }
             
             self.currentDates.append(currentDate)
@@ -47,8 +47,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(1...10, id: \.self) { index in
-                Text("\(index)")
+            List(self.currentDates) { currentDate in
+                Text("\(currentDate.date)")
             }.listStyle(.plain)
             
                 .navigationTitle("Fechas")
@@ -58,6 +58,15 @@ struct ContentView: View {
                 }, label: {
                     Image(systemName: "arrow.clockwise.circle")
                 }))
+            
+            //This function is fired when a particular view (the list) appears on the screen.
+            //To perform an Asyncronous request or a Fetch.
+                .onAppear { }
+            
+            //Insted of .onAppear, we can use Task, because this one uses "Async" Closure:
+                .task {
+                    await populateDates()
+                }
         }
     }
 }
