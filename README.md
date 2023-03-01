@@ -359,3 +359,12 @@ DispatchQueue.global().async {
     * [Medium: Concurrency in Swift (GCD PT1)](https://ali-akhtar.medium.com/concurrency-in-swift-grand-central-dispatch-part-1-945ff05e8863)
     * [Swift by Sundell: Task-based concurrency in Swfit](https://www.swiftbysundell.com/articles/task-based-concurrency-in-swift/)
     * [Cocoacasts: Threads, Queues, and Concurrency](https://cocoacasts.com/swift-and-cocoa-fundamentals-threads-queues-and-concurrency)
+
+
+### GettingStartedAsyncAwait App:
+
+- **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Udemy/Async-Await-Actors-Concurrency/Apps/GettingStartedAsyncAwait)
+- **Description:** This app uses an API: https://ember-sparkly-rule.glitch.me/current-date which returns this Json:
+`{"date":"Wed Mar 01 2023 05:50:29 GMT+0000 (Coordinated Universal Time)"}` 
+- **Screenshot:** 
+<img src="" width="200">
