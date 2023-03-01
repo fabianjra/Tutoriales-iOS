@@ -120,7 +120,7 @@ Se le asigna una anchura, pero en caso de necesitarlo, puede ampliarse o reducir
 * Not all distribution work the same.
 * Everything inside needs to be intrinsically content sized (Everything needs to be able to size itself).
 * Stackviews doesn't have a specific size by default, the dinamically change based on the content it has inside (buttons, labels, etc).
-* Source code example (Stackview and CustomView): [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/DesignChallenges/Stacks/CustomViewChallenge/CustomViewChallenge/Challenge.swift)
+* Source code example (Stackview and CustomView): [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/LevelUpInAutoLayout-UdemyCourse/DesignChallenges/CustomViewChallenge/CustomViewChallenge/Challenge.swift)
 
 **Distribution: Fill:**
 - Fills all available space.
@@ -161,23 +161,23 @@ Se le asigna una anchura, pero en caso de necesitarlo, puede ampliarse o reducir
 There are 3 ways to tweak the constraints:
 
 - Change the constant: `.topAnchorConstraint.constant == 44`. 
-- Code example: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Constants.swift)
+- Code example: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Constants.swift)
 
 <p>&nbsp;</p>
 
 - Enable / disable: `.leadingAnchorConstraint.isActive = true / false`. 
-- Code example: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Constraints.swift)
+- Code example: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Constraints.swift)
 - Practice: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/DesignChallenges/Adaptive/NudgeTheLabel/NudgeTheLabel/BlueView.swift)
 
 <p>&nbsp;</p>
 
 - Toggle visibility: `label2.isHidden = true / false`. 
-- Code example: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Visibility.swift)
-- Practice: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/AdjustSpacersBlueView.swift)
+- Code example: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/Visibility.swift)
+- Practice: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/LevelUpInAutoLayout-UdemyCourse/Examples/1-Examples/AdjustSpacersBlueView.swift)
 
 <p>&nbsp;</p>
 
-- Challenge practice (Rotation, CustomView, StackView, enable/disable constraints): [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/LevelUpInAutoLayout-UdemyCourse/DesignChallenges/SpotifyPlayer/SpotifyPlayer/SpotifiyPlayerRotation/SpotifiyPlayerRotation.swift)
+- Challenge practice (Rotation, CustomView, StackView, enable/disable constraints): [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/LevelUpInAutoLayout-UdemyCourse/DesignChallenges/SpotifyPlayer/SpotifyPlayer/SpotifiyPlayerRotation/SpotifiyPlayerRotation.swift)
 
 **Orientation:**
 - In this example and design challenge we used `UIDevice.current.orientation.isLandscape` to determine device orientation. This works, but its deprecated and no longer the ideal way. I used it purely for it's simplicity and to focus more on the Auto Layout.
@@ -209,17 +209,17 @@ This pattern is similar to MVC, but this allows you to "decopling" between the v
 
 ### GoodNews:
 
-- **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/GoodNews)
+- **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Udemy/MVVM-DesignPattern-Udemy/Apps/GoodNews)
 - **Description:** This app consumes an API for news, get a title and description to show in a TableView by `URLSession.shared.dataTask` and map the JSON to a "article" model.
 - **Screenshot:** 
-<img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/GoodNews/GoodNews/Assets.xcassets/GoodNewsAppScreenshot.imageset/GoodNewsAppScreenshot.png" width="200">
+<img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/MVVM-DesignPattern-Udemy/Apps/GoodNews/GoodNews/Assets.xcassets/GoodNewsAppScreenshot.imageset/GoodNewsAppScreenshot.png" width="200">
 
 ### HotCoffe:
 
-- **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/HotCoffe)
+- **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Udemy/MVVM-DesignPattern-Udemy/Apps/HotCoffe)
 - **Description:** This app get orders by a WebService by `GET` http method. Those orders are shown in the Main `TableView`. It casn also add orders by adding a new one, using `POST` http method. The app uses `Coding`, `Decoder` and `Cncoder` to manipulate the data and model.
 - **Screenshot:** 
-<img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/HotCoffe/HotCoffe/Assets.xcassets/HotCoffeeAppScreenshot.imageset/HotCoffeeAppScreenshot.png" width="200">
+<img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/MVVM-DesignPattern-Udemy/Apps/HotCoffe/HotCoffe/Assets.xcassets/HotCoffeeAppScreenshot.imageset/HotCoffeeAppScreenshot.png" width="200">
 
 For this App, we need to consume an API where we add orders, get orders and remove orders. This is the data we need to know for using it on Postman:
 
@@ -238,25 +238,25 @@ For this App, we need to consume an API where we add orders, get orders and remo
 
 ### GoodWeather:
 
-- **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/GoodWeather)
+- **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Udemy/MVVM-DesignPattern-Udemy/Apps/GoodWeather)
 - **Description:** This app get city names from an API and gets the weather temperature in celcius and farenheit. This app cosumes an API in this WEB: https://openweathermap.org/
-- **Utilites:** There are some utilites like for example, show a global `UIAlertController` or validate if a `textField` is empty. This is the file: [Utils source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/GoodWeather/GoodWeather/Utils/Utils.swift)
-- **Unit Test examples:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/GoodWeather/GoodWeatherTests)
+- **Utilites:** There are some utilites like for example, show a global `UIAlertController` or validate if a `textField` is empty. This is the file: [Utils source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/MVVM-DesignPattern-Udemy/Apps/GoodWeather/GoodWeather/Utils/Utils.swift)
+- **Unit Test examples:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Udemy/MVVM-DesignPattern-Udemy/Apps/GoodWeather/GoodWeatherTests)
 - **Screenshot:** 
-<img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/GoodWeather/GoodWeather/Assets.xcassets/GoodWeatherAppScreenshot.imageset/GoodWeatherAppScreenshot.png" width="200">
+<img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/MVVM-DesignPattern-Udemy/Apps/GoodWeather/GoodWeather/Assets.xcassets/GoodWeatherAppScreenshot.imageset/GoodWeatherAppScreenshot.png" width="200">
 
 ### Bindigs:
 
-- **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/BindingMVVM)
+- **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Udemy/MVVM-DesignPattern-Udemy/Apps/BindingMVVM)
 - **Description:** There are differents ways to bind, 2 commons:
 * `'View` to `View Model`: Example: A `View` has 2 `textfields` "name" and "age". Each time the text changes on the screen, the 2 properties (var) on the `ViewModel` has to change also, beacuase they are binded to the `View`. This should be automatically.
 * `View Model` to `View`: Example: Same 2 `textfields` "name" and "age" are on the `ViewModel`. Whenever these 2 properties changes, this update is going to be reflected on the `View` (Textfield on the screen).
 - **Screenshot:** 
-<img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/MVVM-DesignPattern-Udemy/Apps/BindingMVVM/BindingMVVM/Assets.xcassets/BindingMVVMAppScreenshot.imageset/BindingMVVMAppScreenshot.png" width="200">
+<img src="https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/MVVM-DesignPattern-Udemy/Apps/BindingMVVM/BindingMVVM/Assets.xcassets/BindingMVVMAppScreenshot.imageset/BindingMVVMAppScreenshot.png" width="200">
 
 ### TESTING:
 
-- Unit Test project: [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/MVVM-DesignPattern-Udemy/Apps/Calculator) 
+- Unit Test project: [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Udemy/MVVM-DesignPattern-Udemy/Apps/Calculator) 
 
 1. **UNIT TEST:** Unit Test allows the developer to write code which test other pieces of code.
     - FAST: Doesn't have to depend on a service.
