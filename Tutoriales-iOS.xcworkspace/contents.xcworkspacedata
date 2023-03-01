@@ -11,7 +11,7 @@
          location = "group:MVVM-DesignPattern-Udemy"
          name = "MVVM-DesignPattern-Udemy">
          <Group
-            location = "group:../Udemy/MVVM-DesignPattern-Udemy/Apps"
+            location = "group:Apps"
             name = "Apps">
             <FileRef
                location = "group:GoodNews/GoodNews.xcodeproj">
