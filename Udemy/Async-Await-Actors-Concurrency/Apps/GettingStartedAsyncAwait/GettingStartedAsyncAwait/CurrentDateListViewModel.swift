@@ -13,7 +13,8 @@ class CurrentDateListViewModel: ObservableObject {
     
     @Published var currentDates: [CurrentDateViewModel] = []
     
-    func populateDates() async throws {
+    //No se ocupa "throws" despues de async, porque ya la funcion utiliza un catch adentro.
+    func populateDates() async {
         
         do {
             let currentDate = try await Webservice().getDate()
