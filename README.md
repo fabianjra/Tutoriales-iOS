@@ -363,6 +363,6 @@ DispatchQueue.global().async {
 
 - **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Udemy/Async-Await-Actors-Concurrency/Apps/GettingStartedAsyncAwait)
 - **Description:** This app uses an API: https://ember-sparkly-rule.glitch.me/current-date which returns this Json:
-`{"date":"Wed Mar 01 2023 05:50:29 GMT+0000 (Coordinated Universal Time)"}` 
+`{"date":"Wed Mar 01 2023 05:50:29 GMT+0000 (Coordinated Universal Time)"}`. This app fills a List based on the button, to get the current date an append to the list.
 - **Screenshot:** 
 <img src="" width="200">
