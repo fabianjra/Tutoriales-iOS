@@ -13,7 +13,7 @@ Algunos codigos de ejemplos son ligeramente cambiados a sus videos originales pa
 - [Udemy: LevelUpInAutoLayout](#LevelUpInAutoLayout-UdemyCourse)
 - [Udemy: RxSwift](#RxSwift)
 - [Udemy: MVVM Design Pattern](#MVVM-DesignPattern-Udemy)
-- [Udemy: Async/Await-and-Actors-Concurrency](#Async/Await-and-Actors-Concurrency)
+- [Udemy: Async/Await-and-Actors-Concurrency](#Async-Await-and-Actors-Concurrency)
 
 
 <p>&nbsp;</p>
@@ -304,7 +304,7 @@ For this App, we need to consume an API where we add orders, get orders and remo
 <p>&nbsp;</p>
 
 
-## Async/Await-and-Actors-Concurrency
+## Async-Await-and-Actors-Concurrency
 
 - **THREADS:** They are useful when you need perform a task without blocking the rest of the application.
 
