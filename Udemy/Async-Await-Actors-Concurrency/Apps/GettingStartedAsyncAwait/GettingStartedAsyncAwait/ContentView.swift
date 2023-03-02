@@ -20,18 +20,18 @@ struct ContentView: View {
     
     @State private var currentDates: [CurrentDate] = []
     
-    private func getDate() async throws -> CurrentDate? {
-        let urlString = "https://ember-sparkly-rule.glitch.me/current-date"
-        
-        guard let url = URL(string: urlString) else {
-            fatalError("El URL es incorrecto")
-        }
-        
-        let (data, _) = try await URLSession.shared.data(from: url)
-        
-        //If the app crashes: The try will return nil, because it's optional.
-        return try? JSONDecoder().decode(CurrentDate.self, from: data)
-    }
+//    private func getDate() async throws -> CurrentDate? {
+//        let urlString = "https://ember-sparkly-rule.glitch.me/current-date"
+//        
+//        guard let url = URL(string: urlString) else {
+//            fatalError("El URL es incorrecto")
+//        }
+//        
+//        let (data, _) = try await URLSession.shared.data(from: url)
+//        
+//        //If the app crashes: The try will return nil, because it's optional.
+//        return try? JSONDecoder().decode(CurrentDate.self, from: data)
+//    }
     
     private func populateDates() async {
         do {

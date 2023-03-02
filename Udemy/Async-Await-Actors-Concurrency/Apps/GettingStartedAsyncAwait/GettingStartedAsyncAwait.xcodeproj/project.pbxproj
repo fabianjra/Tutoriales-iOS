@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40EC4F6429B032F900AC717C /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EC4F6329B032F900AC717C /* Webservice.swift */; };
+		40EC4F6629B0339700AC717C /* CurrentDateListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EC4F6529B0339700AC717C /* CurrentDateListViewModel.swift */; };
 		40F69F2B29AF163200A49255 /* GettingStartedAsyncAwaitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F69F2A29AF163200A49255 /* GettingStartedAsyncAwaitApp.swift */; };
 		40F69F2D29AF163200A49255 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F69F2C29AF163200A49255 /* ContentView.swift */; };
 		40F69F2F29AF163300A49255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F69F2E29AF163300A49255 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40EC4F6329B032F900AC717C /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		40EC4F6529B0339700AC717C /* CurrentDateListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateListViewModel.swift; sourceTree = "<group>"; };
 		40F69F2729AF163200A49255 /* GettingStartedAsyncAwait.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettingStartedAsyncAwait.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F69F2A29AF163200A49255 /* GettingStartedAsyncAwaitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingStartedAsyncAwaitApp.swift; sourceTree = "<group>"; };
 		40F69F2C29AF163200A49255 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +59,8 @@
 				40F69F2C29AF163200A49255 /* ContentView.swift */,
 				40F69F2E29AF163300A49255 /* Assets.xcassets */,
 				40F69F3029AF163300A49255 /* Preview Content */,
+				40EC4F6329B032F900AC717C /* Webservice.swift */,
+				40EC4F6529B0339700AC717C /* CurrentDateListViewModel.swift */,
 			);
 			path = GettingStartedAsyncAwait;
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			files = (
 				40F69F2D29AF163200A49255 /* ContentView.swift in Sources */,
 				40F69F2B29AF163200A49255 /* GettingStartedAsyncAwaitApp.swift in Sources */,
+				40EC4F6629B0339700AC717C /* CurrentDateListViewModel.swift in Sources */,
+				40EC4F6429B032F900AC717C /* Webservice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

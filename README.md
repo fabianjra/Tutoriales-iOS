@@ -306,8 +306,7 @@ For this App, we need to consume an API where we add orders, get orders and remo
 
 ## Async/Await-and-Actors-Concurrency-Udemy
 
-- **THREADS:**
-    * They are useful when you need perform a task without blocking the rest of the application.
+- **THREADS:** They are useful when you need perform a task without blocking the rest of the application.
 
 - **Gran Central Dispatch:** GCD is a low-level API for managing concurrent operations. It can help to improve the app’s responsiveness, allowing concurrency in tasks. GCD is in charge of administrate queues.
 
@@ -320,8 +319,7 @@ For this App, we need to consume an API where we add orders, get orders and remo
     * Serial: This is a way to do tasks. They are in line, excecuting one by one, once tha last task is completed.
     * Concurrent: They run without an order, runs at the same time and they are administrated by Grand Central Dispatch.
     
-- **QoS: Quality of Service:**
-    * This is a class property that indicates the task’s importance and guides the GCD in the priority to give.
+- **QoS: Quality of Service:** This is a class property that indicates the task’s importance and guides the GCD in the priority to give.
 
     1. User interactive: Animations or events handling.
     2. User initiated: Work that the user kicks off and should yield immediate results. This work must be completed for the user to continue.
