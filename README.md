@@ -9,7 +9,7 @@ Algunos codigos de ejemplos son ligeramente cambiados a sus videos originales pa
 
 - [Youtube: ComponentesSwiftUI](#ComponentesSwiftUI)
 - [Youtube: Pruebas-UIKit](#Pruebas-UIKit)
-- [Youtube: Inventor Inventory Managment](#InventoryManagment)
+- [Youtube: Inventory Managment](#InventoryManagment)
 - [Libro: MasteringSwiftUI](#MasteringSwiftUI)
 - [Udemy: LevelUpInAutoLayout](#LevelUpInAutoLayout-UdemyCourse)
 - [Udemy: RxSwift](#RxSwift)

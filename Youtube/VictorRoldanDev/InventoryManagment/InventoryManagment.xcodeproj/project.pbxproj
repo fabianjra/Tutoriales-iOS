@@ -11,6 +11,8 @@
 		409E7D4C29B5690B00641D33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E7D4B29B5690B00641D33 /* ContentView.swift */; };
 		409E7D4E29B5690D00641D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409E7D4D29B5690D00641D33 /* Assets.xcassets */; };
 		409E7D5129B5690D00641D33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409E7D5029B5690D00641D33 /* Preview Assets.xcassets */; };
+		409E7D5829B56BD500641D33 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E7D5729B56BD500641D33 /* Constants.swift */; };
+		409E7D5A29B56F1E00641D33 /* CustomRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E7D5929B56F1E00641D33 /* CustomRectangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		409E7D4B29B5690B00641D33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		409E7D4D29B5690D00641D33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		409E7D5029B5690D00641D33 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		409E7D5729B56BD500641D33 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		409E7D5929B56F1E00641D33 /* CustomRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRectangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 				409E7D4B29B5690B00641D33 /* ContentView.swift */,
 				409E7D4D29B5690D00641D33 /* Assets.xcassets */,
 				409E7D4F29B5690D00641D33 /* Preview Content */,
+				409E7D5729B56BD500641D33 /* Constants.swift */,
+				409E7D5929B56F1E00641D33 /* CustomRectangle.swift */,
 			);
 			path = InventoryManagment;
 			sourceTree = "<group>";
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				409E7D5A29B56F1E00641D33 /* CustomRectangle.swift in Sources */,
 				409E7D4C29B5690B00641D33 /* ContentView.swift in Sources */,
 				409E7D4A29B5690B00641D33 /* InventoryManagmentApp.swift in Sources */,
+				409E7D5829B56BD500641D33 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
