@@ -10,13 +10,42 @@ import SwiftUI
 struct ContentView: View {
     
     private var arrayItemNavbar: [ItemNavbar.Model]
+    private var arrayCards: [Card.Model]
     
     init() {
         arrayItemNavbar = [
-            ItemNavbar.Model(value: 421, description: "Overdue"),
+            ItemNavbar.Model(value: 77, description: "Overdue"),
             ItemNavbar.Model(value: 81, description: "to do"),
             ItemNavbar.Model(value: 72, description: "open"),
             ItemNavbar.Model(value: 51, description: "due today")
+        ]
+        
+        arrayCards = [
+            Card.Model(type: .asset,
+                       status: .open,
+                       title: "Request for a new Apple Macbook Pro",
+                       owner: "Fabian Rodriguez",
+                       time: "2m"),
+            Card.Model(type: .asset,
+                       status: .accepted,
+                       title: "Request for new table",
+                       owner: "Josue Alvarez",
+                       time: "16m"),
+            Card.Model(type: .troubleshoot,
+                       status: .onHold,
+                       title: "Pago de planillas",
+                       owner: "Fabio Alvarado",
+                       time: "50m"),
+            Card.Model(type: .asset,
+                       status: .inProgress,
+                       title: "Chair for users",
+                       owner: "Fabian Rodriguez",
+                       time: "40m"),
+            Card.Model(type: .troubleshoot,
+                       status: .solved,
+                       title: "Request for laptop",
+                       owner: "Josue Alvarez",
+                       time: "6d")
         ]
     }
     
@@ -37,8 +66,21 @@ struct ContentView: View {
                 cardStatus
                 
                 sectionTitle
+                
+                List(arrayCards) { item in
+                    Card(model: item)
+                }
+                .padding(.horizontal, 0)
+                .listStyle(.plain)
             }
         }
+        
+        /*
+         //Otra manera de cargar la pantalla, haciendole un onAppear al ZStack
+         .onAppear{
+         arrayCards = Mode.getItems() //Funcion para cargar el modelo de datos
+         }
+         */
     }
     
     var headerBackground: some View {
