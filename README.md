@@ -9,6 +9,7 @@ Algunos codigos de ejemplos son ligeramente cambiados a sus videos originales pa
 
 - [Youtube: ComponentesSwiftUI](#ComponentesSwiftUI)
 - [Youtube: Pruebas-UIKit](#Pruebas-UIKit)
+- [Youtube: Inventor Inventory Managment](#InventoryManagment)
 - [Libro: MasteringSwiftUI](#MasteringSwiftUI)
 - [Udemy: LevelUpInAutoLayout](#LevelUpInAutoLayout-UdemyCourse)
 - [Udemy: RxSwift](#RxSwift)
@@ -46,6 +47,14 @@ Ejemplos de codigo para UIKit y generalidades como
 - Fases de los view en un ViewController
 
 Se agregó un Playground para codigo de ejemplo sobre `Grand Central Dispatch`.
+
+
+<p>&nbsp;</p>
+
+
+## InventoryManagment
+
+App maqueatada con diseño hecha en SwiftUI.
 
 
 <p>&nbsp;</p>
