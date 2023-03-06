@@ -13,6 +13,7 @@
 		409E7D5129B5690D00641D33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409E7D5029B5690D00641D33 /* Preview Assets.xcassets */; };
 		409E7D5829B56BD500641D33 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E7D5729B56BD500641D33 /* Constants.swift */; };
 		409E7D5A29B56F1E00641D33 /* CustomRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E7D5929B56F1E00641D33 /* CustomRectangle.swift */; };
+		409E7D5D29B577DA00641D33 /* ItemNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E7D5C29B577DA00641D33 /* ItemNavbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		409E7D5029B5690D00641D33 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		409E7D5729B56BD500641D33 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		409E7D5929B56F1E00641D33 /* CustomRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRectangle.swift; sourceTree = "<group>"; };
+		409E7D5C29B577DA00641D33 /* ItemNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNavbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		409E7D4829B5690B00641D33 /* InventoryManagment */ = {
 			isa = PBXGroup;
 			children = (
+				409E7D5B29B577CA00641D33 /* Header */,
 				409E7D4929B5690B00641D33 /* InventoryManagmentApp.swift */,
 				409E7D4B29B5690B00641D33 /* ContentView.swift */,
 				409E7D4D29B5690D00641D33 /* Assets.xcassets */,
@@ -71,6 +74,22 @@
 				409E7D5029B5690D00641D33 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		409E7D5B29B577CA00641D33 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				409E7D5E29B5786E00641D33 /* ItemNavbar */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		409E7D5E29B5786E00641D33 /* ItemNavbar */ = {
+			isa = PBXGroup;
+			children = (
+				409E7D5C29B577DA00641D33 /* ItemNavbar.swift */,
+			);
+			path = ItemNavbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +165,7 @@
 				409E7D5A29B56F1E00641D33 /* CustomRectangle.swift in Sources */,
 				409E7D4C29B5690B00641D33 /* ContentView.swift in Sources */,
 				409E7D4A29B5690B00641D33 /* InventoryManagmentApp.swift in Sources */,
+				409E7D5D29B577DA00641D33 /* ItemNavbar.swift in Sources */,
 				409E7D5829B56BD500641D33 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
