@@ -9,12 +9,15 @@ import SwiftUI
 
 struct Constants {
     
-    static let colorBlueGradiant: Array = [
-        Color(red:82/255, green: 133/255, blue: 246/255),
-        Color(red:40/255, green: 92/255, blue: 255/255),
-        Color(red:40/255, green: 92/255, blue: 255/255)
-    ]
+    // MARK: - Colors
+    struct Colors {
+        static let lightBlueGradiant: Array = [Color.lightBlue, Color.lightBlue, Color.lighterBlue]
+    }
     
-    static let imageHamburger = Image(systemName: "line.3.horizontal")
-    static let imageAdd = Image(systemName: "plus")
+    // MARK: - Images
+    struct Images {
+        static let hamburger = Image(systemName: "line.3.horizontal")
+        static let add = Image(systemName: "plus")
+        static let sort = Image(systemName: "slider.vertical.3")
+    }
 }

@@ -32,18 +32,20 @@ struct ContentView: View {
             
             VStack {
                 Spacer()
-                    .frame(height: 60)
+                    .frame(height: 60) //Espacio entre el TopView y la barra de cardStatus
                 
                 cardStatus
+                
+                sectionTitle
             }
         }
     }
     
     var headerBackground: some View {
         Rectangle()
-            .fill(LinearGradient(colors: Constants.colorBlueGradiant,
-                                 startPoint: .bottom,
-                                 endPoint: .top))
+            .fill(LinearGradient(colors: Constants.Colors.lightBlueGradiant,
+                                 startPoint: .top,
+                                 endPoint: .bottom))
             .frame(maxWidth: .infinity)
             .frame(height: 150)
             .mask({
@@ -58,7 +60,7 @@ struct ContentView: View {
                 Button {
                     print("Accion Boton 1")
                 } label: {
-                    Constants.imageHamburger
+                    Constants.Images.hamburger
                         .font(.system(size: 25, weight: .bold))
                 }
                 .padding(.horizontal, 20)
@@ -74,7 +76,7 @@ struct ContentView: View {
                 Button {
                     print("Accion Boton 2")
                 } label: {
-                    Constants.imageAdd
+                    Constants.Images.add
                         .font(.system(size: 25, weight: .bold))
                 }
                 .padding(.horizontal, 20)
@@ -102,7 +104,29 @@ struct ContentView: View {
         .shadow(color: .gray.opacity(0.5), radius: 15, x: 0, y: 0)
         .padding(.horizontal, 20)
     }
-}
+    
+    var sectionTitle: some View {
+        HStack {
+            Text("Due today")
+            
+            Spacer()
+            
+            HStack {
+                Text("Sort by")
+                
+                Button {
+                    print("Sort by presionado")
+                } label: {
+                    Constants.Images.sort
+                }
+            }
+        }
+        .padding(.top, 20)
+        .foregroundColor(Color.black.opacity(0.5))
+        .padding(.horizontal, 20)
+    }
+    
+}//End: ContentView
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
