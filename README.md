@@ -54,7 +54,13 @@ Se agregó un Playground para codigo de ejemplo sobre `Grand Central Dispatch`.
 
 ## InventoryManagment
 
-App maqueatada con diseño hecha en SwiftUI.
+- **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Youtube/VictorRoldanDev/InventoryManagment)
+- **Description:** App maquetada con diseño hecha en SwiftUI. Es un video tutorial de Yotuube por Victor Roldan DEV.
+    * A los elementos se les agregó su modelo para cargar la vista con datos dinamicamente.
+    * Hay varios `TODO` para finalizar por cuenta propia.
+    * Link del tutorial en Youtube: [Aprende a maquetar con SwfitUI](https://youtu.be/TdO5lCcGA4U)
+- **Screenshot:** 
+<img src="https://github.com/fabianjra/Tutoriales-iOS/tree/main/Youtube/VictorRoldanDev/InventoryManagment/InventoryManagment/Assets.xcassets/InventoryManagmentScreenshot.imageset/InventoryManagmentScreenshot.png" width="200">
 
 
 <p>&nbsp;</p>

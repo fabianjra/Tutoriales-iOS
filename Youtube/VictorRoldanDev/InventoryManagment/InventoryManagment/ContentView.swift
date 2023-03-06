@@ -49,6 +49,8 @@ struct ContentView: View {
         ]
     }
     
+    //TODO: General -> Pasar valores a archivo de constantes.
+    
     var body: some View {
         ZStack (alignment: .top){
             
@@ -78,7 +80,10 @@ struct ContentView: View {
         /*
          //Otra manera de cargar la pantalla, haciendole un onAppear al ZStack
          .onAppear{
-         arrayCards = Mode.getItems() //Funcion para cargar el modelo de datos
+         arrayCards = Model.getItems() //Funcion para cargar el modelo de datos
+         
+         //Repetir el array para tener mas items para la vista:
+         arrayCards = Array(repeating: model.getItems(), count 10).flatMap{ $0 }
          }
          */
     }
@@ -117,6 +122,7 @@ struct ContentView: View {
                 
                 Button {
                     print("Accion Boton 2")
+                    //TODO: Agregar accion para agregar una Card.
                 } label: {
                     Constants.Images.add
                         .font(.system(size: 25, weight: .bold))
@@ -129,6 +135,9 @@ struct ContentView: View {
     }
     
     var cardStatus: some View {
+        
+        //TODO: Ajustar el espacer o frame, para igualar los tamaños y no depender del contenido de cada ItemNavbar.
+        //TODO: Agregar accion de filtrado a las cards.
         HStack {
             ForEach(arrayItemNavbar.indices, id: \.self) { index in
                 ItemNavbar(model: arrayItemNavbar[index])
@@ -158,6 +167,7 @@ struct ContentView: View {
                 
                 Button {
                     print("Sort by presionado")
+                    //TODO: Agregar la accion de ordenamiento
                 } label: {
                     Constants.Images.sort
                 }
