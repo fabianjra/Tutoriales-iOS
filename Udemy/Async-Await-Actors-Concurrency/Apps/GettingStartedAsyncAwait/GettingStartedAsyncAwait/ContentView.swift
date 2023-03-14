@@ -14,6 +14,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
+            
+            //Se usa \.id property, porque es un array de Dates View Model
             List(currentDateListVM.currentDates, id: \.id) { currentDate in
                 Text("\(currentDate.date)")
             }.listStyle(.plain)

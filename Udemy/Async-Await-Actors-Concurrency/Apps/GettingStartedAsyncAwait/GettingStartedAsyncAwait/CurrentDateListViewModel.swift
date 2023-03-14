@@ -7,7 +7,7 @@
 
 import Foundation
 
-//Main actor means, that everything iside this calss (properties, functions, etc), Will be call inside the Main Thread
+//Main actor means, that everything inside this class (properties, functions, etc), Will be call inside the Main Thread
 @MainActor
 class CurrentDateListViewModel: ObservableObject {
     
