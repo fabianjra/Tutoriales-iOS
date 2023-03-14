@@ -375,6 +375,10 @@ DispatchQueue.global().async {
     * [Cocoacasts: Threads, Queues, and Concurrency](https://cocoacasts.com/swift-and-cocoa-fundamentals-threads-queues-and-concurrency)
 
 
+- **Continuation:**
+    * This is for export our existing functions which are using Callbacks, to use async.
+
+
 ### GettingStartedAsyncAwait App:
 
 - **Project:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Udemy/Async-Await-Actors-Concurrency/Apps/GettingStartedAsyncAwait)
