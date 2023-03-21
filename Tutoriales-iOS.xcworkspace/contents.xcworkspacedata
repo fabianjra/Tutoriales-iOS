@@ -86,6 +86,9 @@
             <FileRef
                location = "group:GettingStartedAsyncAwait/GettingStartedAsyncAwait.xcodeproj">
             </FileRef>
+            <FileRef
+               location = "group:NewsApp/NewsApp.xcodeproj">
+            </FileRef>
          </Group>
       </Group>
    </Group>
