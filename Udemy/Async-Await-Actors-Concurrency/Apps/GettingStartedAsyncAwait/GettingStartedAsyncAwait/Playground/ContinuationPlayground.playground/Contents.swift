@@ -50,3 +50,37 @@ getPost { result in
         print(error)
     }
 }
+
+//Continuation:
+func getPosts() async throws -> [Post] {
+    
+    //"withCheckedThrowingContinuation": Este es un Callback que llama a otro Callback.
+    return try await withCheckedThrowingContinuation { continuation in
+        
+        getPost { result in
+            switch result {
+            case .success(let posts):
+                //print(posts)
+                continuation.resume(returning: posts) //Continuation logic:
+                
+            case .failure(let error):
+                //print(error)
+                continuation.resume(throwing: error) //Continuation logic:
+            }
+        }
+    }
+}
+
+Task {
+    do {
+        let posts = try await getPosts()
+        
+        var num = 0
+        for post in posts {
+            num += 1
+            print("\(num): \(post.title)")
+        }
+    }catch {
+        print(error)
+    }
+}
