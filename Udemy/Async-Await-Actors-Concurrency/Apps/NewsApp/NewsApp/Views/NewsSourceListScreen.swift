@@ -21,8 +21,12 @@ struct NewsSourceListScreen: View {
             }
         }
         .listStyle(.plain)
-        .onAppear {
-            newsSourceListViewModel.getSources()
+            //Ahora se necesita task, porque el metodo getSources responde un async.
+//        .onAppear {
+//            newsSourceListViewModel.getSources()
+//        }
+        .task {
+            await newsSourceListViewModel.getSources()
         }
         .navigationTitle("News Sources")
         .navigationBarItems(trailing: Button(action: {

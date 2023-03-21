@@ -11,21 +11,33 @@ class NewsSourceListViewModel: ObservableObject {
     
     @Published var newsSources: [NewsSourceViewModel] = []
     
-    func getSources() {
+    func getSources() async {
         
-        Webservice().fetchSources(url: Constants.Urls.sources) { result in
-            switch result {
-                case .success(let newsSources):
-                    DispatchQueue.main.async {
-                        self.newsSources = newsSources.map(NewsSourceViewModel.init)
-                    }
-                case .failure(let error):
-                    print(error)
+        do {
+            //Usar el nuevo metodo con Callback
+            let resNewSources = try await Webservice().fetchSources(url: Constants.Urls.sources)
+            
+            DispatchQueue.main.async {
+                
+                //Se utiliza map, para convertir el resultado al tipo de modelo que se necesita en la respuesta.
+                self.newsSources = resNewSources.map(NewsSourceViewModel.init)
             }
+            
+        } catch {
+            print("Error catch: \(error)")
         }
         
+//        Webservice().fetchSources(url: Constants.Urls.sources) { result in
+//            switch result {
+//                case .success(let newsSources):
+//                    DispatchQueue.main.async {
+//                        self.newsSources = newsSources.map(NewsSourceViewModel.init)
+//                    }
+//                case .failure(let error):
+//                    print(error)
+//            }
+//        }
     }
-    
 }
 
 struct NewsSourceViewModel {
