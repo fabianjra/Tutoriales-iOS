@@ -7,6 +7,9 @@
 
 import Foundation
 
+//Property wrapper: Se utiliza el "decorator" en la clase.
+//MainActor indica que todas las propiedades y todas las funciones de esta clase, va a correr sobre el Main Thread.
+@MainActor
 class NewsArticleListViewModel: ObservableObject {
     
     @Published var newsArticles = [NewsArticleViewModel]()
@@ -17,9 +20,16 @@ class NewsArticleListViewModel: ObservableObject {
         do{
             let newsArticles = try await Webservice().fetchNewsAsync(sourceId: sourceId, url: Constants.Urls.topHeadlines(by: sourceId))
             
+            /*
+            //Se llama en el Main Thread.
+            //Si se utiliza el Property Wrapper "@MainActor", no hace falta el "DispatchQueue.main", porque ya lo MainActor se encarga de correr sobre el MainThread.
             DispatchQueue.main.async {
                 self.newsArticles = newsArticles.map(NewsArticleViewModel.init)
             }
+             */
+            
+            //Se llama sin el Dispatch.main, porque ya se está utilizando MainActor.
+            self.newsArticles = newsArticles.map(NewsArticleViewModel.init)
             
         } catch {
             debugPrint(error)
