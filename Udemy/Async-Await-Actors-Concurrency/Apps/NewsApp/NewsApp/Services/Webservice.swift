@@ -55,7 +55,25 @@ class Webservice {
     }
      */
     
-    func fetchNews(by sourceId: String, url: URL?, completion: @escaping (Result<[NewsArticle], NetworkError>) -> Void) {
+    //Utilizar "Continuation" para usar async y no llamar directamente a la funcion que utiliza "completionHandler". Asi se evita el uso de Completion.
+    func fetchNewsAsync(sourceId: String, url: URL?) async throws -> [NewsArticle] {
+        
+        //iOS16:
+        try await withCheckedThrowingContinuation { continuation in
+            fetchNews(by: sourceId, url: url) { result in
+                
+                switch result {
+                case .success(let newsArticles):
+                    continuation.resume(returning: newsArticles)
+                    
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+    
+    private func fetchNews(by sourceId: String, url: URL?, completion: @escaping (Result<[NewsArticle], NetworkError>) -> Void) {
         
         guard let url = url else {
             completion(.failure(.badUrl))

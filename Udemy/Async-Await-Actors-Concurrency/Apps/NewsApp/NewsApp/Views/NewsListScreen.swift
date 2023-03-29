@@ -14,17 +14,18 @@ struct NewsListScreen: View {
     
     var body: some View {
         
-        NavigationView {
-        
         List(newsArticleListViewModel.newsArticles, id: \.id) { newsArticle in
-                NewsArticleCell(newsArticle: newsArticle)
+            NewsArticleCell(newsArticle: newsArticle)
         }
         .listStyle(.plain)
-        .onAppear {
-            newsArticleListViewModel.getNewsBy(sourceId: newsSource.id)
+        //Ahora se usa la funcion con async. Se tralada a task
+        //        .onAppear {
+        //            newsArticleListViewModel.getNewsBy(sourceId: newsSource.id)
+        //        }
+        .task {
+            await newsArticleListViewModel.getNewsBy(sourceId: newsSource.id)
         }
         .navigationTitle(newsSource.name)
-        }
     }
 }
 
