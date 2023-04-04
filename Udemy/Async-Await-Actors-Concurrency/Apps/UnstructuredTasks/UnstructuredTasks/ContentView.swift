@@ -18,6 +18,11 @@ struct ContentView: View {
             
             Button {
                 
+                //Crea un closure:
+                Task{
+                    await getData()
+                }
+                
             } label: {
                 Text("Get data")
             }
