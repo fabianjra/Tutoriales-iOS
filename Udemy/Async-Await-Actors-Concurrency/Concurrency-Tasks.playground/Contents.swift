@@ -165,3 +165,31 @@ Task{
     let userAPRs = try await getAPRForAllUsers(ids: ids)
     print("usersAPRs: \(userAPRs)")
 }
+
+//*******************************************************************************//
+//  DETACHED TASKS:
+//*******************************************************************************//
+
+func fetchThumbnails() async -> [UIImage] {
+    return [UIImage()]
+}
+
+func updateUI() async {
+    
+    //get thumbnails
+    let thumbnails = await fetchThumbnails()
+    
+    //"Detached task" no deberia ser usado en lo posible.
+    //No hereda nada de su padre. Por ejemplo si se llama desde un Task con un priority = .background, en este caso no hereda su prioridad.
+    Task.detached(priority: .background) {
+        writeToCache(images: thumbnails)
+    }
+}
+
+private func writeToCache(images: [UIImage]) {
+    //Write to cache
+}
+
+Task {
+    await updateUI()
+}
