@@ -84,6 +84,9 @@
             location = "group:Apps"
             name = "Apps">
             <FileRef
+               location = "group:../Concurrency-Tasks.playground">
+            </FileRef>
+            <FileRef
                location = "group:GettingStartedAsyncAwait/GettingStartedAsyncAwait.xcodeproj">
             </FileRef>
             <FileRef
