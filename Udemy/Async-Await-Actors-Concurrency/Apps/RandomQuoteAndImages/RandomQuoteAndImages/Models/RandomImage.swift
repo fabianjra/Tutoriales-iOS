@@ -13,5 +13,5 @@ struct RandomImage: Decodable {
 }
 
 struct Quote: Decodable {
-    let conte: String
+    let contet: String
 }
