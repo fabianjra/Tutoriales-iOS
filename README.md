@@ -386,3 +386,9 @@ DispatchQueue.global().async {
 `{"date":"Wed Mar 01 2023 05:50:29 GMT+0000 (Coordinated Universal Time)"}`. This app fills a List based on the button, to get the current date an append to the list.
 - **Screenshot:** 
 <img src="" width="200">
+
+
+- **Tasks:**
+    * [Diference between task and detached task](https://www.hackingwithswift.com/quick-start/concurrency/whats-the-difference-between-a-task-and-a-detached-task)
+    * [async-let](https://github.com/apple/swift-evolution/blob/main/proposals/0317-async-let.md)
+    * [Strcutured concurrency](https://github.com/apple/swift-evolution/blob/main/proposals/0304-structured-concurrency.md)
