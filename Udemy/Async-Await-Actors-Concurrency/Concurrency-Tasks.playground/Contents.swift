@@ -57,3 +57,16 @@ Task {
     
     print(apr)
 }
+
+
+//Loop:
+
+let ids = [1, 2, 3, 4, 5]
+
+Task {
+    for id in ids {
+        let apr = try await getAPR(userId: id)
+        
+        print(apr)
+    }
+}
