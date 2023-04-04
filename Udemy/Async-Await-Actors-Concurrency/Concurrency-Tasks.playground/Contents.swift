@@ -35,6 +35,7 @@ func getAPR(userId: Int) async throws -> Double {
     async let (equifaxData, _) = URLSession.shared.data(from: equifaxUrl)
     async let (experianData, _) = URLSession.shared.data(from: experianUrl)
     
+    //Concurrent Tasks:
     //Se usa await en data, porque la variable es async.
     //A demas se usa try, porque "URLSession.shared.data" es throws
     //En este punto es en donde la aplicacion va a esperar el llamado, porque aqui es donde tiene el await.
