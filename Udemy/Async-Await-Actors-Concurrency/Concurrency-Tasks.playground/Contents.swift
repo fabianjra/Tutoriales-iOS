@@ -65,6 +65,8 @@ Task {
 }
 
 //*******************************************************************************//
+//  LOOP PARA RECORRER UN LLAMADO A UN API
+//*******************************************************************************//
 
 print("LOOP CALL STARTS:")
 
@@ -116,4 +118,50 @@ Task {
     
     //Array con los que contiene error:
     print(invalidIds)
+}
+
+
+//*******************************************************************************//
+//  TASK GROUPS:
+//*******************************************************************************//
+
+print("TASK GROUP:")
+
+func getAPRForAllUsers(ids: [Int]) async throws -> [Int: Double] {
+    
+    var userAPR: [Int: Double] = [:]
+
+    //of: que va a hacer return.
+    //body: logica de la funcion: lo que va a ejecutar.
+    try await withThrowingTaskGroup(of: (Int, Double).self, body: { group in
+        
+        for id in ids {
+            
+            //Va a acrear un "concurrent group" para ejecutar las funciones asincronas.
+            group.addTask {
+                
+                let apr = try await getAPR(userId: id)
+                
+                //No se puede cambiar una variable dentro de un ambiente asincrono. (concurrent)
+                //userAPR[id] = apr
+                
+                //se hace de la siguiente manera, ya que no podemos cambiar una variable:
+                return(id, try await getAPR(userId: id))
+            }
+        }
+        
+        //Async sequence (iOS 15):
+        //Va uno por uno, esperando la respuesta de "group".
+        for try await (id, apr) in group {
+            userAPR[id] = apr
+            print("apr added to the array [int: double]")
+        }
+    })
+    
+    return userAPR
+}
+
+Task{
+    let userAPRs = try await getAPRForAllUsers(ids: ids)
+    print("usersAPRs: \(userAPRs)")
 }
