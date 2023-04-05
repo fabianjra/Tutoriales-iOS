@@ -46,7 +46,8 @@ class WebService {
         return randomImages
     }
     
-    private func getRandomImage(id: Int) async throws -> RandomImage {
+    //Para que las imagenes puedan irse mostrando a conforme se van descargando, esta funcion no debe ser privada.
+    func getRandomImage(id: Int) async throws -> RandomImage {
         
         guard let url = Constants.Urls.getRandomImageUrl() else {
             throw NetworError.badUrl
