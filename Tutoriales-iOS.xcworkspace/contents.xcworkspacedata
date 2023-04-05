@@ -111,6 +111,9 @@
             <FileRef
                location = "group:Adapting-Async-Sequences.playground">
             </FileRef>
+            <FileRef
+               location = "group:BankAccount-Concurrency.playground">
+            </FileRef>
          </Group>
       </Group>
    </Group>
