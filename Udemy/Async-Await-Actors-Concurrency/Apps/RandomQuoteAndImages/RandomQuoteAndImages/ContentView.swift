@@ -8,14 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var randomImageListVM = RandomImageListViewModel()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            
+            //No hace falta pasarle un ID al List, porque ya el struct conforma "Identifiable" y contiene dentro una variable "id" UUID()
+            List(randomImageListVM.randomImages) { randomImage in
+                
+                HStack {
+                    randomImage.image.map {
+                        Image(uiImage: $0)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                    
+                    Text(randomImage.quote)
+                }
+            }
+            .task {
+                await randomImageListVM.getRandomIages(ids: Array(100...120))
+            }
         }
-        .padding()
     }
 }
 

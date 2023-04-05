@@ -26,7 +26,6 @@ class RandomImageListViewModel: ObservableObject {
         } catch {
             debugPrint(error)
         }
-        
     }
 }
 
@@ -40,6 +39,6 @@ struct RandomImageViewModel: Identifiable {
     }
     
     var quote: String {
-        randomImage.quote.contet
+        randomImage.quote.content
     }
 }

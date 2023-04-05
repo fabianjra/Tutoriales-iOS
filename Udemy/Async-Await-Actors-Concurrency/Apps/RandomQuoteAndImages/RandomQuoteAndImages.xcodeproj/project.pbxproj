@@ -27,6 +27,7 @@
 		4009472329DCCEB400ABF92F /* RandomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImage.swift; sourceTree = "<group>"; };
 		4009472629DCD32100ABF92F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4009472829DCDB5B00ABF92F /* RandomImageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageListViewModel.swift; sourceTree = "<group>"; };
+		4009472F29DD236E00ABF92F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +60,7 @@
 		4009470F29DCCD5C00ABF92F /* RandomQuoteAndImages */ = {
 			isa = PBXGroup;
 			children = (
+				4009472F29DD236E00ABF92F /* Info.plist */,
 				4009472529DCD31600ABF92F /* Utils */,
 				4009472029DCCE4F00ABF92F /* ViewModels */,
 				4009471F29DCCE4900ABF92F /* Models */,
@@ -318,6 +320,7 @@
 				DEVELOPMENT_TEAM = RJNWKKQ88P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RandomQuoteAndImages/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -350,6 +353,7 @@
 				DEVELOPMENT_TEAM = RJNWKKQ88P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RandomQuoteAndImages/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
