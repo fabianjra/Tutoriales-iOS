@@ -108,6 +108,9 @@
             <FileRef
                location = "group:Built-in-AsyncSequences.playground">
             </FileRef>
+            <FileRef
+               location = "group:Adapting-Async-Sequences.playground">
+            </FileRef>
          </Group>
       </Group>
    </Group>
