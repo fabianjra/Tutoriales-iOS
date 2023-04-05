@@ -14,7 +14,7 @@ class RandomImageListViewModel: ObservableObject {
     
     @Published var randomImages: [RandomImageViewModel] = []
     
-    func getRandomIages(ids: [Int]) async {
+    func getRandomImages(ids: [Int]) async {
         
         do {
             let randomImages = try await WebService().getRandomImages(ids: ids)
@@ -24,7 +24,7 @@ class RandomImageListViewModel: ObservableObject {
             self.randomImages = randomImages.map(RandomImageViewModel.init)
             
         } catch {
-            debugPrint(error)
+            debugPrint("ERROR CATCH getRandomImages: \(error)")
         }
     }
 }
