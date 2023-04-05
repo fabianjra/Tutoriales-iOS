@@ -84,19 +84,22 @@
             location = "group:Apps"
             name = "Apps">
             <FileRef
+               location = "group:GettingStartedAsyncAwait/GettingStartedAsyncAwait.xcodeproj">
+            </FileRef>
+            <FileRef
+               location = "group:NewsApp/NewsApp.xcodeproj">
+            </FileRef>
+            <FileRef
                location = "group:UnstructuredTasks/UnstructuredTasks.xcodeproj">
             </FileRef>
             <FileRef
                location = "group:../Concurrency-Tasks.playground">
             </FileRef>
             <FileRef
-               location = "group:NewsApp/NewsApp.xcodeproj">
-            </FileRef>
-            <FileRef
-               location = "group:GettingStartedAsyncAwait/GettingStartedAsyncAwait.xcodeproj">
-            </FileRef>
-            <FileRef
                location = "group:RandomQuoteAndImages/RandomQuoteAndImages.xcodeproj">
+            </FileRef>
+            <FileRef
+               location = "group:/Users/f.rodriguezalvarez/Sources/Personal/Tutoriales-iOS/Udemy/Async-Await-Actors-Concurrency/Apps/AsyncSequence.playground">
             </FileRef>
          </Group>
       </Group>
