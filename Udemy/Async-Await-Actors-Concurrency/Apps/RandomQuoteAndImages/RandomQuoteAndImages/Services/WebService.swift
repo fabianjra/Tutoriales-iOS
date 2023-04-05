@@ -19,10 +19,29 @@ class WebService {
         
         var randomImages: [RandomImage] = []
         
-        for id in ids {
-            let randomImage = try await getRandomImage(id: id)
-            randomImages.append(randomImage)
-        }
+        //Task Group:
+        //en el parametro "of:" se indica el objeto que va a hacer return.
+        //Se hace return de INT porque es un ID y luego la imagen.
+        try await withThrowingTaskGroup(of: (Int, RandomImage).self, body: { group in
+            
+            for id in ids {
+                
+                //Esto hace que se recorra el loop, creando una tarea concurrente, y ese grupo va a tener 2 taras concurrentes más.
+                group.addTask { [self] in
+                    //let randomImage = try await getRandomImage(id: id)
+                    //randomImages.append(randomImage)
+                    return (id, try await getRandomImage(id: id))
+                } 
+            }
+            
+            //Se crea la secuencia con await para obtener los resultados uno por uno, de forma concurrente
+            //El primer campo es el ID, pero no se necesita. El segundo es la imagen.
+            for try await (_, randomImage) in group {
+                
+                //Se va agregando uno a uno, a conforme se va obteniendo la respuesta, de manera concurrente.
+                randomImages.append(randomImage)
+            }
+        })
         
         return randomImages
     }
