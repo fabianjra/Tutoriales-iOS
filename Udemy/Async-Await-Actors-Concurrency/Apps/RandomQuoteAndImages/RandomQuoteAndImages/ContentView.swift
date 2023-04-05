@@ -12,7 +12,7 @@ struct ContentView: View {
     @StateObject private var randomImageListVM = RandomImageListViewModel()
     
     var body: some View {
-        VStack {
+        NavigationView {
             
             //No hace falta pasarle un ID al List, porque ya el struct conforma "Identifiable" y contiene dentro una variable "id" UUID()
             List(randomImageListVM.randomImages) { randomImage in
@@ -30,6 +30,17 @@ struct ContentView: View {
             .task {
                 await randomImageListVM.getRandomImages(ids: Array(100...120))
             }
+            .navigationTitle("Random images/quotes")
+            .navigationBarItems(trailing: Button(action: {
+                
+                //refresh
+                Task {
+                    await randomImageListVM.getRandomImages(ids: Array(100...120))
+                }
+                
+            }, label: {
+                Image(systemName: "arrow.clockwise.circle")
+            }))
         }
     }
 }

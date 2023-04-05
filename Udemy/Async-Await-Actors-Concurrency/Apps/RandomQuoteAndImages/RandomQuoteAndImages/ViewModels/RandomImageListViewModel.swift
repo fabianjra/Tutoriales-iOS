@@ -37,6 +37,9 @@ class RandomImageListViewModel: ObservableObject {
         
         let webservice = WebService()
         
+        //Inicializar el array de nuevo cuando se llama, permite que se realice un nuevo llenado y muestre diferentes items a la hora de volver a llamar a la funcion.
+        randomImages = []
+        
         do {
             try await withThrowingTaskGroup(of: (Int, RandomImage).self, body: { group in
                 
