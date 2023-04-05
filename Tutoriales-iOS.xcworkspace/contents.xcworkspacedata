@@ -80,12 +80,6 @@
       <Group
          location = "group:Async-Await-Actors-Concurrency"
          name = "Async-Await-Actors-Concurrency">
-         <FileRef
-            location = "group:AsyncSequence.playground">
-         </FileRef>
-         <FileRef
-            location = "group:/Users/f.rodriguezalvarez/Sources/Personal/Tutoriales-iOS/Udemy/Async-Await-Actors-Concurrency/Concurrency-Tasks.playground">
-         </FileRef>
          <Group
             location = "group:Apps"
             name = "Apps">
@@ -100,6 +94,16 @@
             </FileRef>
             <FileRef
                location = "group:RandomQuoteAndImages/RandomQuoteAndImages.xcodeproj">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Playgrounds"
+            name = "Playgrounds">
+            <FileRef
+               location = "group:Concurrency-Tasks.playground">
+            </FileRef>
+            <FileRef
+               location = "group:AsyncSequence.playground">
             </FileRef>
          </Group>
       </Group>
