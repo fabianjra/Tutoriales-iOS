@@ -16,7 +16,8 @@ Task {
 }
 
 //*************************************************
-// OBTENER DATOS DE UN ARCHIVO TXT
+// OBTENER DATOS DE UN ARCHIVO TXT:
+// Lee un archivo de texto para obtener sus datos "file.txt" y obtener uno por uno.
 //*************************************************
 
 Task {
