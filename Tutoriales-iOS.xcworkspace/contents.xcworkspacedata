@@ -95,6 +95,9 @@
             <FileRef
                location = "group:RandomQuoteAndImages/RandomQuoteAndImages.xcodeproj">
             </FileRef>
+            <FileRef
+               location = "group:foo/foo.xcodeproj">
+            </FileRef>
          </Group>
          <Group
             location = "group:Playgrounds"
