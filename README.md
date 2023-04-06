@@ -392,3 +392,6 @@ DispatchQueue.global().async {
     * [Diference between task and detached task](https://www.hackingwithswift.com/quick-start/concurrency/whats-the-difference-between-a-task-and-a-detached-task)
     * [async-let](https://github.com/apple/swift-evolution/blob/main/proposals/0317-async-let.md)
     * [Strcutured concurrency](https://github.com/apple/swift-evolution/blob/main/proposals/0304-structured-concurrency.md)
+
+- **Concurrencia en Tasks:**
+    * [Avoiding Race Conditions in Swift](https://medium.com/swiftcairo/avoiding-race-conditions-in-swift-9ccef0ec0b26)
