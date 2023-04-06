@@ -98,6 +98,9 @@
             <FileRef
                location = "group:foo/foo.xcodeproj">
             </FileRef>
+            <FileRef
+               location = "group:LearnActors/LearnActors.xcodeproj">
+            </FileRef>
          </Group>
          <Group
             location = "group:Playgrounds"
