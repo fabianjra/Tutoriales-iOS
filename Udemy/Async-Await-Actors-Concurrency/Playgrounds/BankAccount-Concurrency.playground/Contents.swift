@@ -8,11 +8,18 @@ class BankAccount {
     
     var balance: Double
     
+    //Permite bloquear una funcion para que no se ejecute. Sirve para Task concurrentes
+    //Cuando se utilice Lock, se debe tomar en cuenta el Thread en donde se llama.
+    //EJEM: Si se llama en el Main Thread, se debe desbloquear en el Main Thread igualmente. Lo mismo por ejemplo con Background Thread.
+    let lock = NSLock()
+    
     init(balance: Double) {
         self.balance = balance
     }
     
     func withDraw(_ amount: Double) {
+        
+        lock.lock() //Bloquea el scope para que no pueda ser accedido hasta que una tarea haya sido finalizada
         if balance >= amount {
             
             let proccesingTime = UInt32.random(in: 0...3)
@@ -27,6 +34,7 @@ class BankAccount {
         } else {
             debugPrint("No se pudo hacer el Withdrawing porque el balance es menor a lo que se requiere retirar.")
         }
+        lock.unlock() //Desbloquea el scope
     }
 }
 
@@ -46,7 +54,11 @@ bankAccount.withDraw(300)
 let queue = DispatchQueue(label: "ConcurrentQueue", attributes: .concurrent)
  */
 
-let queue = DispatchQueue(label: "SerialQueue")
+//Una tarea espera a que termine la anterior para continuar:
+//let queue = DispatchQueue(label: "SerialQueue")
+
+//las tareas se ejecutan al mismo tiempo:
+let queue = DispatchQueue(label: "ConcurrentQueue", attributes: .concurrent)
 
 queue.async {
     bankAccount.withDraw(300)
