@@ -21,6 +21,15 @@ actor BankAccountFoo {
         self.balance = balance
     }
     
+    //nonisolated: Se utiliza cuando se llama una funcion que no va a cambiar el estado de una clase o alguna de sus propiedades. Ademas permite que se llame a esta funcion sin async, porque no va a cambiar nada.
+    nonisolated func getCurrentAPR() -> Double {
+        
+        //al set noninsolated, no permite cambiar valores de la clase.
+        //balance += 10 //ERROR
+        
+        return 0.2
+    }
+    
     func deposit(_ amount: Double) {
         balance += amount
     }
@@ -50,6 +59,9 @@ struct FooView: View {
             
             let bankAccount = BankAccountFoo(accountNumber: 123, balance: 500)
             let otherAccount = BankAccountFoo(accountNumber: 456, balance: 100)
+            
+            //Ya no se necesita Task con await para llamar a esta funcion, porque es noninsolated
+            let _ = bankAccount.getCurrentAPR()
             
             DispatchQueue.concurrentPerform(iterations: 100) { _ in
                 
