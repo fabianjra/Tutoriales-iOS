@@ -11,7 +11,8 @@ import SwiftUI
 struct LearnActorsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView() //actor class 1
+            FooView()
         }
     }
 }

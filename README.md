@@ -396,7 +396,8 @@ DispatchQueue.global().async {
 - **Concurrencia en Tasks:**
     * [Avoiding Race Conditions in Swift](https://medium.com/swiftcairo/avoiding-race-conditions-in-swift-9ccef0ec0b26)
 
-- **Actors:**
+- **actor (class):**
     * Si se quiere utilizar "actor" en luegar de "class" para una clase, se debe tomar en cuenta que por defecto esa clase no se puede modificar desde afuera, pero se puede utilizar async para la modificacion de sus propiedades. En el proyecto "LearnActors" se puede ver el ejemplo.
-    Actos permite hacer concurrencia, pero ejecutando una sola accion a la vez si es que está validada.
-    _Error mostrado: `Actor-isolated instance method 'withDraw' can not be referenced from a non-isolated context` _
+    * Actos permite hacer concurrencia, pero ejecutando una sola accion a la vez si es que está validada.
+    * _Error mostrado: `Actor-isolated instance method 'withDraw' can not be referenced from a non-isolated context` _
+    * [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/Async-Await-Actors-Concurrency/Apps/LearnActors/LearnActors/ContentView.swift)
