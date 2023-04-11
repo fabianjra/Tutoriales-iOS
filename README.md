@@ -401,3 +401,14 @@ DispatchQueue.global().async {
     * Actos permite hacer concurrencia, pero ejecutando una sola accion a la vez si es que está validada.
     * _Error mostrado: `Actor-isolated instance method 'withDraw' can not be referenced from a non-isolated context` _
     * [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/Async-Await-Actors-Concurrency/Apps/LearnActors/LearnActors/ContentView.swift)
+
+- **Task:**
+    * Task.detached: Esta forma de llamar a una funcion asincrona, permite que no se ejecuta sobre el Main Thread.
+    * Con "await MainActor.run {" se puede realizar un llamado al Main Thread dentro de deteched.
+    * Ejemplo: [Source](https://github.com/fabianjra/Tutoriales-iOS/blob/main/Udemy/Async-Await-Actors-Concurrency/Apps/LearnMainActor/LearnMainActor/View%20Models/TodoListViewModel.swift)
+
+- **WWDC 2021 videos async/await:**
+    * [Meet async/await in Swift](https://developer.apple.com/videos/play/wwdc2021/10132/)
+    * [Explore structured concurrency in Swift](https://developer.apple.com/videos/play/wwdc2021/10134)
+    * [Meet AsyncSequence](https://developer.apple.com/videos/play/wwdc2021/10058)
+    * [Protect mutable state with Swift actors](https://developer.apple.com/videos/play/wwdc2021/10133)
