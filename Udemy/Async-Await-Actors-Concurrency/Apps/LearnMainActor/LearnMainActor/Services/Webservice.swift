@@ -25,6 +25,8 @@ class Webservice {
         
     }
     
+    //CompletionHandler: Forma antigua de hacer llamados asincronos. "Callback".
+    //Si se usa directamente y se hace un llamado a esta funcion, dentro de una clase con MainActor, va a dar problemas de Background Thread, porque MainActor va relacionado a async/await. 
     func getAllTodos(url: URL, completion: @escaping (Result<[Todo], NetworkError>) -> Void) {
         
         URLSession.shared.dataTask(with: url) { data, _, error in
