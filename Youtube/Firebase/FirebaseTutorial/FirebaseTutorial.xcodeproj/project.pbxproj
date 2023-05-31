@@ -18,6 +18,7 @@
 		1F871B182A27124E0066B0B4 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F871B172A27124E0066B0B4 /* ListView.swift */; };
 		1F871B1A2A2712920066B0B4 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F871B192A2712920066B0B4 /* Dog.swift */; };
 		1F871B1C2A2713B50066B0B4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F871B1B2A2713B50066B0B4 /* DataManager.swift */; };
+		1F871B1E2A271AAD0066B0B4 /* NewDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F871B1D2A271AAD0066B0B4 /* NewDogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1F871B172A27124E0066B0B4 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		1F871B192A2712920066B0B4 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		1F871B1B2A2713B50066B0B4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		1F871B1D2A271AAD0066B0B4 /* NewDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				1F871AFE2A26F6A80066B0B4 /* ContentView.swift */,
 				1F871B172A27124E0066B0B4 /* ListView.swift */,
 				1F871B192A2712920066B0B4 /* Dog.swift */,
+				1F871B1D2A271AAD0066B0B4 /* NewDogView.swift */,
 				1F871B1B2A2713B50066B0B4 /* DataManager.swift */,
 				1F871B002A26F6A90066B0B4 /* Assets.xcassets */,
 				1F871B022A26F6A90066B0B4 /* FirebaseTutorial.entitlements */,
@@ -178,6 +181,7 @@
 				1F871B1C2A2713B50066B0B4 /* DataManager.swift in Sources */,
 				1F871AFF2A26F6A80066B0B4 /* ContentView.swift in Sources */,
 				1F871B0D2A26FF7E0066B0B4 /* View+Extensions.swift in Sources */,
+				1F871B1E2A271AAD0066B0B4 /* NewDogView.swift in Sources */,
 				1F871B1A2A2712920066B0B4 /* Dog.swift in Sources */,
 				1F871AFD2A26F6A80066B0B4 /* FirebaseTutorialApp.swift in Sources */,
 			);

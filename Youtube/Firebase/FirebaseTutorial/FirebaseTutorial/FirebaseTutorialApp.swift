@@ -22,10 +22,7 @@ struct FirebaseTutorialApp: App {
     
     var body: some Scene {
         WindowGroup {
-            //ContentView()
-            
-            //TODO: Remove. Testing porpuses:
-            ListView()
+            ContentView()
                 .environmentObject(dataManager)
         }
     }

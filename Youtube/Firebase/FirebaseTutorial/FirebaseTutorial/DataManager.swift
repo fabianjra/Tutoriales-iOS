@@ -43,4 +43,16 @@ class DataManager: ObservableObject {
             }
         }
     }
+    
+    func addDog(_ breed: String) {
+        let db = Firestore.firestore()
+        let ref = db.collection("Dogs").document(breed)
+        
+        ref.setData(["breed": breed, "id": 10]) { error in
+            
+            if let error = error {
+                debugPrint(error.localizedDescription)
+            }
+        }
+    }
 }
