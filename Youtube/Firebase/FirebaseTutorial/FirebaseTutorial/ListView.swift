@@ -19,6 +19,9 @@ struct ListView: View {
             List(dataManager.dogs, id: \.id) { dog in
                 Text(dog.breed)
             }
+//            .onChange(of: dataManager) { _ in
+//                dataManager.fetchDogs()
+//            }
             .navigationTitle("Dogs")
             .navigationBarItems(trailing: Button(action: {
                 showPopup.toggle()
@@ -28,6 +31,9 @@ struct ListView: View {
             .sheet(isPresented: $showPopup) {
                 NewDogView()
                     .presentationDetents([.medium])
+            }
+            .onAppear() {
+                self.dataManager.fetchDogsPersistance()
             }
         }
     }

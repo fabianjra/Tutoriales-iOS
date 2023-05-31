@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Dog: Identifiable {
-    var id: String
+struct Dog: Identifiable, Equatable {
+    var id: Int
     var breed: String
 }

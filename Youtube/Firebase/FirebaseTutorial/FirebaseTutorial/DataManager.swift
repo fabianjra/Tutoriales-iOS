@@ -8,11 +8,16 @@
 import Foundation
 import Firebase
 
-class DataManager: ObservableObject {
+class DataManager: ObservableObject, Equatable {
+    
     @Published var dogs: [Dog] = []
     
     init() {
-        fetchDogs()
+        //fetchDogsPersistance()
+    }
+    
+    static func == (lhs: DataManager, rhs: DataManager) -> Bool {
+        return lhs.dogs == rhs.dogs
     }
     
     func fetchDogs() {
@@ -34,7 +39,7 @@ class DataManager: ObservableObject {
                     let data = document.data()
                     
                     //parsea las propiedades:
-                    let id = data["id"] as? String ?? ""
+                    let id = data["id"] as? Int ?? 0
                     let breed = data["breed"] as? String ?? ""
                     
                     let dog = Dog(id: id, breed: breed)
@@ -48,11 +53,43 @@ class DataManager: ObservableObject {
         let db = Firestore.firestore()
         let ref = db.collection("Dogs").document(breed)
         
-        ref.setData(["breed": breed, "id": 10]) { error in
+        ref.setData(["breed": breed, "id": Int.random(in: 10..<999999)]) { error in
             
             if let error = error {
                 debugPrint(error.localizedDescription)
             }
+        }
+    }
+    
+    func fetchDogsPersistance() {
+        dogs.removeAll()
+        
+        let db = Firestore.firestore()
+        let ref = db.collection("Dogs")
+        
+        ref.addSnapshotListener { snapshot, error in
+            
+            guard let dogs = snapshot?.documents else {
+                debugPrint(error?.localizedDescription ?? "NO DATA")
+                return
+            }
+            
+            var arreglo: [Dog] = []
+            
+            //Obtiene los datos de la coleccion "Dogs" y los recorre:
+            for dog in dogs {
+                let data = dog.data()
+                
+                //parsea las propiedades:
+                let id = data["id"] as? Int ?? 0
+                let breed = data["breed"] as? String ?? ""
+                
+                let dog = Dog(id: id, breed: breed)
+                arreglo.append(dog)
+            }
+            
+            self.dogs = arreglo
+            arreglo.removeAll()
         }
     }
 }
