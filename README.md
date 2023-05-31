@@ -15,7 +15,7 @@ Algunos codigos de ejemplos son ligeramente cambiados a sus videos originales pa
 - [Udemy: RxSwift](#RxSwift)
 - [Udemy: MVVM Design Pattern](#MVVM-DesignPattern-Udemy)
 - [Udemy: Async/Await-and-Actors-Concurrency](#Async-Await-and-Actors-Concurrency)
-
+- [Youtube: General videos](#Youtube-General-Videos)
 
 <p>&nbsp;</p>
 
@@ -418,3 +418,23 @@ DispatchQueue.global().async {
     * [Explore structured concurrency in Swift](https://developer.apple.com/videos/play/wwdc2021/10134)
     * [Meet AsyncSequence](https://developer.apple.com/videos/play/wwdc2021/10058)
     * [Protect mutable state with Swift actors](https://developer.apple.com/videos/play/wwdc2021/10133)
+
+
+<p>&nbsp;</p>
+
+
+## Youtube-General-Videos
+
+### Projects:
+
+- **SwiftUI MVVM Pattern:**
+    - **Title:** SwiftUI MVVM Pattern (Model View ViewModel) - Xcode 12, 2022, Weather App, iOS Development
+    - **Info:** In this video we will learn how to apply the MVVM architecture pattern to our swiftui app. We will build a real world weather app as an example - working with the latest versions of swift and xcode.
+    - **Link:** [Video](https://www.youtube.com/watch?v=ak8x-p-q8tU)
+    - **Code:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Youtube/MVVM/WeatherAppMVVM)
+
+- **SwiftUI with Firebase:**
+    - **Title:** Complete SwiftUI Firebase Tutorial: Auth, Sign Up Page, Cloud Firestore, Read & Write Data
+    - **Info:** This SwiftUI Firebase Tutorial walks you through how to use Firebase Auth (Authentication) and Firebase Cloud Firestore with SwiftUI to create a sign up page, read / fetch data, and write to a database using a swiftui list view. SwiftUI is one of the best ways for beginners to learn how to create their own app in iOS / Swift. You will need Xcode to complete this tutorial.
+    - **Link:** [Video](https://www.youtube.com/watch?v=6b2WAePdiqA)
+    - **Code:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Youtube/Firebase/FirebaseTutorial)
