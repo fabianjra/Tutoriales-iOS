@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 //Link Youtube: https://www.youtube.com/watch?v=6b2WAePdiqA
 
@@ -14,7 +15,18 @@ struct ContentView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     
+    @State private var userIsLoggedIn = false
+    
     var body: some View {
+        
+        if userIsLoggedIn {
+            //TODO: Add view for user logged.
+        } else {
+            content
+        }
+    }
+    
+    var content: some View {
         ZStack {
             Color.black
             
@@ -56,7 +68,9 @@ struct ContentView: View {
                 
                 VStack {
                     Button {
-                        //TODO: Sign Up
+                        
+                        register()
+                        
                     } label: {
                         Text("Sign up")
                             .bold()
@@ -70,7 +84,9 @@ struct ContentView: View {
                     .padding(.bottom)
                     
                     Button {
-                        //TODO: Login
+                        
+                        login()
+                        
                     } label: {
                         Text("Already have an account? Login")
                             .bold()
@@ -82,6 +98,15 @@ struct ContentView: View {
                 
             }
             .frame(width: 350)
+            .onAppear {
+                
+                //Handle session for navigation.
+                Auth.auth().addStateDidChangeListener { auth, user in
+                    if user != nil {
+                        userIsLoggedIn.toggle()
+                    }
+                }
+            }
         }
         .ignoresSafeArea()
     }
@@ -90,6 +115,20 @@ struct ContentView: View {
         Rectangle()
             .frame(width: 350, height: 1)
             .foregroundColor(.white)
+    }
+    
+    private func register() {
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if error != nil {
+                debugPrint(error?.localizedDescription ?? "ERROR AL REGISTRAR USER")
+            }
+        }
+    }
+    
+    private func login() {
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            debugPrint(error?.localizedDescription ?? "ERROR AL HACER LOGIN")
+        }
     }
 }
 
