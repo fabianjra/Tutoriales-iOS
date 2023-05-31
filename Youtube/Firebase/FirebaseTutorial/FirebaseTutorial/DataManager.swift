@@ -51,7 +51,7 @@ class DataManager: ObservableObject, Equatable {
     
     func addDog(_ breed: String) {
         let db = Firestore.firestore()
-        let ref = db.collection("Dogs").document(breed)
+        let ref = db.collection("Dogs").document()
         
         ref.setData(["breed": breed, "id": Int.random(in: 10..<999999)]) { error in
             
@@ -62,7 +62,7 @@ class DataManager: ObservableObject, Equatable {
     }
     
     func fetchDogsPersistance() {
-        dogs.removeAll()
+        //dogs.removeAll()
         
         let db = Firestore.firestore()
         let ref = db.collection("Dogs")
