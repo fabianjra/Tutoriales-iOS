@@ -21,6 +21,13 @@
             location = "group:WeatherAppMVVM/WeatherAppMVVM.xcodeproj">
          </FileRef>
       </Group>
+      <Group
+         location = "group:/Users/fabian/Sources/Tutoriales-iOS/Youtube/Firebase"
+         name = "Firebase">
+         <FileRef
+            location = "group:FirebaseTutorial/FirebaseTutorial.xcodeproj">
+         </FileRef>
+      </Group>
    </Group>
    <Group
       location = "group:Udemy"
