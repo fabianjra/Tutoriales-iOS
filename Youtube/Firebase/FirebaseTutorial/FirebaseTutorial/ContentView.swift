@@ -20,7 +20,7 @@ struct ContentView: View {
     var body: some View {
         
         if userIsLoggedIn {
-            //TODO: Add view for user logged.
+            ListView()
         } else {
             content
         }
