@@ -438,3 +438,8 @@ DispatchQueue.global().async {
     - **Info:** This SwiftUI Firebase Tutorial walks you through how to use Firebase Auth (Authentication) and Firebase Cloud Firestore with SwiftUI to create a sign up page, read / fetch data, and write to a database using a swiftui list view. SwiftUI is one of the best ways for beginners to learn how to create their own app in iOS / Swift. You will need Xcode to complete this tutorial.
     - **Link:** [Video](https://www.youtube.com/watch?v=6b2WAePdiqA)
     - **Code:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Youtube/Firebase/FirebaseTutorial)
+
+**Firebase:**
+    - Agregar la dependencia: [Link firebase dependency](https://github.com/firebase/firebase-ios-sdk.git)
+    - Aagregar las siguientes opciones: `FirebaseAuth`, `FireabaseFirestore`
+    - Descargar el archivo`GoogleService-Info.plist` de Firebase para agregarlo al proyecto. Esto al crear el proyecto en la consola de FB.
