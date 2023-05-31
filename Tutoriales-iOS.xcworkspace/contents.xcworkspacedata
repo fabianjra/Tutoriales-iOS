@@ -103,9 +103,6 @@
                location = "group:RandomQuoteAndImages/RandomQuoteAndImages.xcodeproj">
             </FileRef>
             <FileRef
-               location = "group:foo/foo.xcodeproj">
-            </FileRef>
-            <FileRef
                location = "group:LearnActors/LearnActors.xcodeproj">
             </FileRef>
             <FileRef
@@ -129,17 +126,6 @@
             </FileRef>
             <FileRef
                location = "group:BankAccount-Concurrency.playground">
-            </FileRef>
-         </Group>
-      </Group>
-      <Group
-         location = "group:MVVM-DesignPattern-SwiftUI-Udemy"
-         name = "MVVM-DesignPattern-SwiftUI-Udemy">
-         <Group
-            location = "group:Apps"
-            name = "Apps">
-            <FileRef
-               location = "group:MVVM Counter SwiftUI/MVVM Counter SwiftUI.xcodeproj">
             </FileRef>
          </Group>
       </Group>

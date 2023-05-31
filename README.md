@@ -15,7 +15,6 @@ Algunos codigos de ejemplos son ligeramente cambiados a sus videos originales pa
 - [Udemy: RxSwift](#RxSwift)
 - [Udemy: MVVM Design Pattern](#MVVM-DesignPattern-Udemy)
 - [Udemy: Async/Await-and-Actors-Concurrency](#Async-Await-and-Actors-Concurrency)
-- [Udemy: MVVM Design Pattern SwiftUI](#MVVM-Design-Pattern-SwiftUI)
 
 
 <p>&nbsp;</p>
@@ -222,6 +221,12 @@ Curso de Udemy sobre RxSwfit.
 ### Pattern: MVVM (Model-View-ViewModel):
 This pattern is similar to MVC, but this allows you to "decopling" between the view and the business logic.
 
+- **MVVM:** Model - View - ViewModel
+    * The `Model` notify to the `ViewModel`.
+    * The `ViewModel` bind the `View`: ViewModel: Valida la informacion que recibe del View (logica de negocio).
+    * The `View` talk to the `ViewModel`.
+    * The `ViewModel` update the `Model`.
+
 ### _Apps made up with MVVM:_
 
 ### GoodNews:
@@ -413,16 +418,3 @@ DispatchQueue.global().async {
     * [Explore structured concurrency in Swift](https://developer.apple.com/videos/play/wwdc2021/10134)
     * [Meet AsyncSequence](https://developer.apple.com/videos/play/wwdc2021/10058)
     * [Protect mutable state with Swift actors](https://developer.apple.com/videos/play/wwdc2021/10133)
-
-
-<p>&nbsp;</p>
-
-
-## MVVM-Design-Pattern-SwiftUI
-
-- **MVVM:** Model - View - ViewModel
-    * The `Model` notify to the `ViewModel`.
-    * The `ViewModel` bind the `View`: ViewModel: Valida la informacion que recibe del View (logica de negocio).
-    * The `View` talk to the `ViewModel`.
-    * The `ViewModel` update the `Model`.
-    
