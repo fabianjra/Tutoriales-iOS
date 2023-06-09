@@ -439,7 +439,12 @@ DispatchQueue.global().async {
     - **Link:** [Video](https://www.youtube.com/watch?v=6b2WAePdiqA)
     - **Code:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Youtube/Firebase/FirebaseTutorial)
 
-**Firebase:**
+**Firebase Tutorial:**
     - Agregar la dependencia: [Link firebase dependency](https://github.com/firebase/firebase-ios-sdk.git)
     - Aagregar las siguientes opciones: `FirebaseAuth`, `FireabaseFirestore`
+    - Descargar el archivo`GoogleService-Info.plist` de Firebase para agregarlo al proyecto. Esto al crear el proyecto en la consola de FB.
+
+**Firebase Demo Chris:**
+    - Agregar el paquete con Swift Package Manager (desde Swift 3 en adelante): https://github.com/firebase/firebase-ios-sdk
+    - Aagregar las siguientes opciones: `FireabaseFirestore`
     - Descargar el archivo`GoogleService-Info.plist` de Firebase para agregarlo al proyecto. Esto al crear el proyecto en la consola de FB.

@@ -25,6 +25,9 @@
          location = "group:/Users/fabian/Sources/Tutoriales-iOS/Youtube/Firebase"
          name = "Firebase">
          <FileRef
+            location = "group:Firebase Demo Chris/Firebase Demo Chris.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:FirebaseTutorial/FirebaseTutorial.xcodeproj">
          </FileRef>
       </Group>
