@@ -448,3 +448,9 @@ DispatchQueue.global().async {
     - Agregar el paquete con Swift Package Manager (desde Swift 3 en adelante): https://github.com/firebase/firebase-ios-sdk
     - Aagregar las siguientes opciones: `FireabaseFirestore`
     - Descargar el archivo`GoogleService-Info.plist` de Firebase para agregarlo al proyecto. Esto al crear el proyecto en la consola de FB.
+
+- **Core Animation Swift:**
+    - **Title:** Introduction to Core Animation (iOS/Swift)
+    - **Link:** [Video](https://youtu.be/93bfh3GK79s)
+    - **Info:** Core Animation is the library mostly in charge of every animation you see that happens in the iPhone. Normally it is used in UIKit. Core Animation works on the `CALayer`. This is under every `UIView` in the app. For example: `cornerRadius`, `shadows` or `animations` happens in the CALayer.
+    - **Example:** It is used to scale a `UIView`, rotate it by animation or shake a `textField` when the input is wrong.

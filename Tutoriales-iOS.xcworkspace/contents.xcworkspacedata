@@ -31,6 +31,13 @@
             location = "group:FirebaseTutorial/FirebaseTutorial.xcodeproj">
          </FileRef>
       </Group>
+      <Group
+         location = "group:Core Animation"
+         name = "Core Animation">
+         <FileRef
+            location = "group:AnimationFun/AnimationFun.xcodeproj">
+         </FileRef>
+      </Group>
    </Group>
    <Group
       location = "group:Udemy"
