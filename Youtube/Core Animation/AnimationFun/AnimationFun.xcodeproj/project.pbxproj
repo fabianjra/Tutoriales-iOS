@@ -13,6 +13,7 @@
 		1FBAFDD02A35267400F52309 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBAFDCE2A35267400F52309 /* Main.storyboard */; };
 		1FBAFDD22A35267500F52309 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBAFDD12A35267500F52309 /* Assets.xcassets */; };
 		1FBAFDD52A35267500F52309 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBAFDD32A35267500F52309 /* LaunchScreen.storyboard */; };
+		1FBAFDDD2A35331000F52309 /* ShakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBAFDDC2A35331000F52309 /* ShakeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1FBAFDD12A35267500F52309 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FBAFDD42A35267500F52309 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FBAFDD62A35267500F52309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FBAFDDC2A35331000F52309 /* ShakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				1FBAFDC82A35267400F52309 /* AppDelegate.swift */,
 				1FBAFDCA2A35267400F52309 /* SceneDelegate.swift */,
 				1FBAFDCC2A35267400F52309 /* ViewController.swift */,
+				1FBAFDDC2A35331000F52309 /* ShakeViewController.swift */,
 				1FBAFDCE2A35267400F52309 /* Main.storyboard */,
 				1FBAFDD12A35267500F52309 /* Assets.xcassets */,
 				1FBAFDD32A35267500F52309 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				1FBAFDCD2A35267400F52309 /* ViewController.swift in Sources */,
 				1FBAFDC92A35267400F52309 /* AppDelegate.swift in Sources */,
 				1FBAFDCB2A35267400F52309 /* SceneDelegate.swift in Sources */,
+				1FBAFDDD2A35331000F52309 /* ShakeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

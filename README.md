@@ -454,3 +454,7 @@ DispatchQueue.global().async {
     - **Link:** [Video](https://youtu.be/93bfh3GK79s)
     - **Info:** Core Animation is the library mostly in charge of every animation you see that happens in the iPhone. Normally it is used in UIKit. Core Animation works on the `CALayer`. This is under every `UIView` in the app. For example: `cornerRadius`, `shadows` or `animations` happens in the CALayer.
     - **Example:** It is used to scale a `UIView`, rotate it by animation or shake a `textField` when the input is wrong.
+    - **General:** In the function `viewDidAppear`, the View is layed out. So here we know what is the size of the screen. It can be used to center a view in the screen with no hard coded values.
+    - **Propiedaes:**
+        * Model layer: Track the configuration of the view (position, attributes, round corner, etc).
+        * Presentation layer: What the shape looks like while animating.
