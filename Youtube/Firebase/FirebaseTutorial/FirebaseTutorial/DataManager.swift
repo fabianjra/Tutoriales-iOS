@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import FirebaseCrashlytics
 
 class DataManager: ObservableObject, Equatable {
     
@@ -54,6 +55,12 @@ class DataManager: ObservableObject, Equatable {
         let ref = db.collection("Dogs").document()
         
         ref.setData(["breed": breed, "id": Int.random(in: 10..<999999)]) { error in
+            
+            Crashlytics.crashlytics().log("DOG ADDED: \(breed)")
+            
+            Crashlytics.crashlytics().setCustomValue("FABIAN VALOR", forKey: "LLAVE_ID")
+            
+            //fatalError("FATAL ERROR: A DORMIR")
             
             if let error = error {
                 debugPrint(error.localizedDescription)

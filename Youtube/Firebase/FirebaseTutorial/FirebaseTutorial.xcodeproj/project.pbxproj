@@ -19,6 +19,7 @@
 		1F871B1A2A2712920066B0B4 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F871B192A2712920066B0B4 /* Dog.swift */; };
 		1F871B1C2A2713B50066B0B4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F871B1B2A2713B50066B0B4 /* DataManager.swift */; };
 		1F871B1E2A271AAD0066B0B4 /* NewDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F871B1D2A271AAD0066B0B4 /* NewDogView.swift */; };
+		1FD4A0C22A39745C00B5E6C6 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1FD4A0C12A39745C00B5E6C6 /* FirebaseCrashlytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FD4A0C22A39745C00B5E6C6 /* FirebaseCrashlytics in Frameworks */,
 				1F871B102A2707F50066B0B4 /* FirebaseAuth in Frameworks */,
 				1F871B122A2707F50066B0B4 /* FirebaseFirestore in Frameworks */,
 			);
@@ -54,6 +56,7 @@
 			children = (
 				1F871AFB2A26F6A80066B0B4 /* FirebaseTutorial */,
 				1F871AFA2A26F6A80066B0B4 /* Products */,
+				1FD4A0C02A39745C00B5E6C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +102,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1FD4A0C02A39745C00B5E6C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +119,7 @@
 				1F871AF52A26F6A80066B0B4 /* Sources */,
 				1F871AF62A26F6A80066B0B4 /* Frameworks */,
 				1F871AF72A26F6A80066B0B4 /* Resources */,
+				1FD4A0C52A39768700B5E6C6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -118,6 +129,7 @@
 			packageProductDependencies = (
 				1F871B0F2A2707F50066B0B4 /* FirebaseAuth */,
 				1F871B112A2707F50066B0B4 /* FirebaseFirestore */,
+				1FD4A0C12A39745C00B5E6C6 /* FirebaseCrashlytics */,
 			);
 			productName = FirebaseTutorial;
 			productReference = 1F871AF92A26F6A80066B0B4 /* FirebaseTutorial.app */;
@@ -171,6 +183,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FD4A0C52A39768700B5E6C6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F871AF52A26F6A80066B0B4 /* Sources */ = {
@@ -307,6 +341,7 @@
 				CODE_SIGN_ENTITLEMENTS = FirebaseTutorial/FirebaseTutorial.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"FirebaseTutorial/Preview Content\"";
 				DEVELOPMENT_TEAM = RJNWKKQ88P;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -419,6 +454,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1F871B0E2A2707F50066B0B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		1FD4A0C12A39745C00B5E6C6 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F871B0E2A2707F50066B0B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
