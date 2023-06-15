@@ -127,7 +127,7 @@ private func higherOrder_Reduce() -> String{
     
     let result = sumArrayElements.reduce("") { partialResult, item in
         
-        print(partialResult)
+        //print(partialResult)
         //print(item)
         
         return partialResult + "\(item)"
@@ -137,7 +137,7 @@ private func higherOrder_Reduce() -> String{
     //You can use both String or description to get the string value.
     return sumArrayElements.reduce("") { $0 + String($1)  }
 }
-//print(higherOrder_Reduce())
+print(higherOrder_Reduce())
 //higherOrder_Reduce()
 
 // ------------------------------------------------------------------------------------------ //

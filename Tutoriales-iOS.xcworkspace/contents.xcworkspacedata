@@ -159,6 +159,9 @@
       <FileRef
          location = "group:Generics.playground">
       </FileRef>
+      <FileRef
+         location = "group:InterviewDXC.playground">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:Pruebas-UIKit/Pruebas-UIKit.xcodeproj">
