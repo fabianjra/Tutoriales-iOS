@@ -163,6 +163,16 @@
          location = "group:PracticesForJobs.playground">
       </FileRef>
    </Group>
+   <Group
+      location = "group:UnitTest"
+      name = "UnitTest">
+      <FileRef
+         location = "group:SwiftChallenges/SwiftChallenges.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:/Users/fabian/Sources/Tutoriales-iOS/UnitTest/SwiftChallengesStrings.swift">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Pruebas-UIKit/Pruebas-UIKit.xcodeproj">
    </FileRef>
