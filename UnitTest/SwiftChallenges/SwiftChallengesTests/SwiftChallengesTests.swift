@@ -62,4 +62,26 @@ final class SwiftChallengesTests: XCTestCase {
         
         XCTAssertEqual(challenge.isStringPolindrome(text: "Hello, world"), false)
     }
+    
+    /*
+     3: Do two strings contain the same characters?
+     
+     Write a function that accepts two String parameters, and returns true if they contain the same
+     characters in any order taking into account letter case.
+     */
+    func test_twoStringSameCharacters_OK() {
+        XCTAssertEqual(challenge.twoStringSameCharacters(text1: "abca", text2: "abca"), true)
+        
+        XCTAssertEqual(challenge.twoStringSameCharacters(text1: "abc", text2: "cba"), true)
+        
+        XCTAssertEqual(challenge.twoStringSameCharacters(text1: " a1 b2 ", text2: " b1 a2"), true)
+        
+        XCTAssertEqual(challenge.twoStringSameCharacters(text1: "abc", text2: "abca"), false)
+        
+        XCTAssertEqual(challenge.twoStringSameCharacters(text1: "abc", text2: "Abc"), false)
+        
+        XCTAssertEqual(challenge.twoStringSameCharacters(text1: "abc", text2: "cbAa"), false)
+        
+        XCTAssertEqual(challenge.twoStringSameCharacters(text1: "abcc", text2: "abca"), false)
+    }
 }
