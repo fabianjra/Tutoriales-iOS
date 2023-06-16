@@ -32,11 +32,17 @@ final class SwiftChallengesTests: XCTestCase {
      Write a function that accepts a String as its only parameter, and returns true if the string has
      only unique letters, taking letter case into account.
      */
-    func test_uniqueLetters() {
+    func test_uniqueLetters_OK() {
         
-        let result = challenge.uniqueLetters(text: "Fabian")
+        XCTAssertEqual(challenge.uniqueLetters(text: "No duplicates"), true)
         
-        XCTAssertEqual(result, true)
+        XCTAssertEqual(challenge.uniqueLetters(text: "AaBbCc"), true)
+        
+        XCTAssertEqual(challenge.uniqueLetters(text: "Fabian"), false)
+        
+        XCTAssertEqual(challenge.uniqueLetters(text: "Hello, world"), false)
+        
+        XCTAssertEqual(challenge.uniqueLetters(text: "Helo, wrd"), true)
     }
     
 }

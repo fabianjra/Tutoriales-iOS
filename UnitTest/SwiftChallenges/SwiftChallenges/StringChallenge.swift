@@ -15,6 +15,22 @@ public class StringChallenge {
      */
     func uniqueLetters(text: String) -> Bool {
         
-        return false
+        var isUnique: Bool = true
+        
+        var checked: [Character] = []
+        
+        for item in text {
+            
+            for char in checked {
+                
+                if item == char {
+                    isUnique = false
+                }
+            }
+            
+            checked.append(item)
+        }
+        
+        return isUnique
     }
 }
