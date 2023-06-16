@@ -45,4 +45,21 @@ final class SwiftChallengesTests: XCTestCase {
         XCTAssertEqual(challenge.uniqueLetters(text: "Helo, wrd"), true)
     }
     
+    /*
+     2: Is a string a palindrome?
+     
+     Write a function that accepts a String as its only parameter, and returns true if the string reads
+     the same when reversed, ignoring case.
+     */
+    func test_isStringPolindrome_OK() {
+     
+        XCTAssertEqual(challenge.isStringPolindrome(text: "rotator"), true)
+        
+        XCTAssertEqual(challenge.isStringPolindrome(text: "Rats live on no evil star"), true)
+        
+        //false: even though the letters are the same in reverse the spaces are in different places.
+        XCTAssertEqual(challenge.isStringPolindrome(text: "Never odd or even"), false)
+        
+        XCTAssertEqual(challenge.isStringPolindrome(text: "Hello, world"), false)
+    }
 }

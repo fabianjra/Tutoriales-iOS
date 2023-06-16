@@ -33,4 +33,21 @@ public class StringChallenge {
         
         return isUnique
     }
+    
+    /*
+     2: Is a string a palindrome?
+     
+     Write a function that accepts a String as its only parameter, and returns true if the string reads
+     the same when reversed, ignoring case.
+     */
+    func isStringPolindrome(text: String) -> Bool {
+        
+        var reversedText: String = ""
+        
+        for item in text {
+            reversedText = "\(item)" + reversedText.lowercased()
+        }
+
+        return text.lowercased() == reversedText
+    }
 }
