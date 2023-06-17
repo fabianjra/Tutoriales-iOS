@@ -84,4 +84,36 @@ final class SwiftChallengesTests: XCTestCase {
         
         XCTAssertEqual(challenge.twoStringSameCharacters(text1: "abcc", text2: "abca"), false)
     }
+    
+    /*
+     4: Does one string contain another?
+     
+     Write your own version of the contains() method on String that ignores letter case, and
+     without using the existing contains() method.
+     */
+    func test_fuzzyContains_OK() {
+        //TODO: Finish the method.
+        //XCTAssertEqual("Hello, world".fuzzyContains(text: "Hello"), true)
+        
+        //XCTAssertEqual("Hello, world".fuzzyContains(text: "WORLD"), true)
+        
+        //XCTAssertEqual("Hello, world".fuzzyContains(text: "Goodbye"), false)
+    }
+    
+    /*
+     5: Count the characters
+     
+     Write a function that accepts a string, and returns how many times a specific character appears,
+     taking case into account.
+     */
+    func test_countCharacters_OK() {
+        
+        XCTAssertEqual(challenge.countCharacters(text: "The rain in Spain", character: "a"), 2)
+        
+        XCTAssertEqual(challenge.countCharacters(text: "Mississippi", character: "i"), 4)
+        
+        XCTAssertEqual(challenge.countCharacters(text: "Hacking with Swift", character: "i"), 3)
+        
+        XCTAssertEqual(challenge.countCharacters(text: "Rosa Angelica", character: "a"), 2)
+    }
 }

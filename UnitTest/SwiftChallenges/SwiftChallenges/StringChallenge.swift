@@ -78,4 +78,54 @@ public class StringChallenge {
         //This ends up involving much less code:
         //return text1.sorted() == text2.sorted()
     }
+    
+    
+}
+
+/*
+ 4: Does one string contain another?
+ 
+ Write your own version of the contains() method on String that ignores letter case, and
+ without using the existing contains() method.
+ */
+extension String {
+    
+    func fuzzyContains(text: String) -> Bool {
+        
+        var contains = false
+        
+//        if self.isEmpty {
+//            return false
+//        }
+        
+        //TODO: Use range to finish it.
+        
+        let range = self.range(of: text)
+        
+        
+        return contains
+    }
+}
+
+extension StringChallenge {
+    
+    /*
+     5: Count the characters
+     
+     Write a function that accepts a string, and returns how many times a specific character appears,
+     taking case into account.
+     */
+    func countCharacters(text: String, character: Character) -> Int {
+        
+        var count = 0
+        
+        for item in text {
+            
+            if item == character {
+                count += 1
+            }
+        }
+        
+        return count
+    }
 }
