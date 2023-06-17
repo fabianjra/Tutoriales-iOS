@@ -65,7 +65,7 @@ public class StringChallenge {
         
         for letter in text1 {
             
-            //First index ins basically: INDEX
+            //First index is basically: INDEX
             if let index = checked.firstIndex(of: letter) {
                 checked.remove(at: index)
             }
@@ -135,5 +135,26 @@ extension StringChallenge {
         let count = text.reduce(0) { $1 == character ? $0 + 1 : $0 }
         
         return count
+    }
+    
+    
+    /*
+     6: Remove duplicate letters from a string
+     
+     Write a function that accepts a string as its input, and returns the same string just with
+     duplicate letters removed.
+     */
+    func removeDuplicatedLetters(text: String) -> String {
+        
+        var newText = ""
+        
+        for letter in text {
+            
+            if newText.contains(letter) == false {
+                newText.append(letter)
+            }
+        }
+        
+        return newText
     }
 }

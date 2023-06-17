@@ -120,4 +120,21 @@ final class SwiftChallengesTests: XCTestCase {
         XCTAssertEqual(challenge.countCharacters(text: "Hacking with Swift", character: "i"), 3)
         XCTAssertEqual(challenge.countCharacterReduce(text: "Rosa Angelica", character: "a"), 2)
     }
+    
+    /*
+     6: Remove duplicate letters from a string
+     
+     Write a function that accepts a string as its input, and returns the same string just with
+     duplicate letters removed.
+     */
+    func test_removeDuplicatedLetters_OK() {
+        
+        XCTAssertEqual(challenge.removeDuplicatedLetters(text: "wombat"), "wombat")
+        
+        XCTAssertEqual(challenge.removeDuplicatedLetters(text: "hello"), "helo")
+        
+        XCTAssertEqual(challenge.removeDuplicatedLetters(text: "Mississippi"), "Misp")
+        
+        XCTAssertEqual(challenge.removeDuplicatedLetters(text: "Fabian"), "Fabin")
+    }
 }
