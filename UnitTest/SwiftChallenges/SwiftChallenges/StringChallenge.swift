@@ -92,7 +92,7 @@ extension String {
     
     func fuzzyContains(text: String) -> Bool {
         
-        var contains = false
+        //var contains = false
         
 //        if self.isEmpty {
 //            return false
@@ -100,10 +100,10 @@ extension String {
         
         //TODO: Use range to finish it.
         
-        let range = self.range(of: text)
+       // let range = self.range(of: text)
         
         
-        return contains
+        return false
     }
 }
 
@@ -125,6 +125,14 @@ extension StringChallenge {
                 count += 1
             }
         }
+        
+        return count
+    }
+    
+    //5: Count the characters: Using reduce
+    func countCharacterReduce(text: String, character: Character) -> Int {
+        
+        let count = text.reduce(0) { $1 == character ? $0 + 1 : $0 }
         
         return count
     }

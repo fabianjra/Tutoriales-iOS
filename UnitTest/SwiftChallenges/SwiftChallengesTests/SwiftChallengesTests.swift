@@ -115,5 +115,9 @@ final class SwiftChallengesTests: XCTestCase {
         XCTAssertEqual(challenge.countCharacters(text: "Hacking with Swift", character: "i"), 3)
         
         XCTAssertEqual(challenge.countCharacters(text: "Rosa Angelica", character: "a"), 2)
+        
+        //USING REDUCE:
+        XCTAssertEqual(challenge.countCharacters(text: "Hacking with Swift", character: "i"), 3)
+        XCTAssertEqual(challenge.countCharacterReduce(text: "Rosa Angelica", character: "a"), 2)
     }
 }
