@@ -152,4 +152,14 @@ final class SwiftChallengesTests: XCTestCase {
         XCTAssertEqual(challenge.codenseWhitespace(text: "abc"), "abc")
     }
     
+    /*
+     8: String is rotated
+     
+     Write a function that accepts two strings, and returns true if one string is rotation of the other,
+     taking letter case into account.
+     */
+    func test_stringIsRotated_OK() {
+        
+        //XCTAssertEqual(challenge.stringIsRotated(textOriginal: "abcde", textRotated: "abcde"), true)
+    }
 }

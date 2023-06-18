@@ -162,7 +162,6 @@ extension StringChallenge {
      
      Write a function that returns a string with any consecutive spaces replaced with a single space.
      */
-    //TODO: Use range to finish it.
     func codenseWhitespace(text: String) -> String {
         
         var seenSpace = false
@@ -186,5 +185,18 @@ extension StringChallenge {
         }
         
         return removedSpaces
+    }
+    
+    /*
+     8: String is rotated
+     
+     Write a function that accepts two strings, and returns true if one string is rotation of the other,
+     taking letter case into account.
+     */
+    func stringIsRotated(textOriginal: String, textRotated:String) -> Bool {
+        
+        //TODO: No se entiende.
+        
+        return true
     }
 }
