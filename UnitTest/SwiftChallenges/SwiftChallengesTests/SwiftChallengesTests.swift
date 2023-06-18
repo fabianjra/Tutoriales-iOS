@@ -162,4 +162,28 @@ final class SwiftChallengesTests: XCTestCase {
         
         //XCTAssertEqual(challenge.stringIsRotated(textOriginal: "abcde", textRotated: "abcde"), true)
     }
+    
+    /*
+     9: Find pangrams
+     
+     Write a function that returns true if it is given a string that is an English pangram, ignoring
+     letter case.
+     A pangram is a string that contains every letter of the alphabet at least once.
+     */
+    func test_findPangrams_OK() {
+        
+        XCTAssertEqual(challenge.findPangrams(text: "The quick brown fox jumps over the lazy dog"), true)
+        
+        XCTAssertEqual(challenge.findPangrams(text: "The quick brown fox jumped over the lazy dog"), false)
+        
+        XCTAssertEqual(challenge.findPangrams(text: "abcdefghijklmnopqrstuvwxyz- SI CONTIENE TODAS"), true)
+        
+        XCTAssertEqual(challenge.findPangrams(text: "abcdefghijklmnopqrstu..()^$"), false)
+        
+        //USING FILTER:
+        XCTAssertEqual(challenge.findPangramsUsingFilter(text: "The quick brown fox jumps over the lazy dog"), true)
+        XCTAssertEqual(challenge.findPangramsUsingFilter(text: "The quick brown fox jumped over the lazy dog"), false)
+        XCTAssertEqual(challenge.findPangramsUsingFilter(text: "abcdefghijklmnopqrstuvwxyz- SI CONTIENE TODAS"), true)
+        XCTAssertEqual(challenge.findPangramsUsingFilter(text: "abcdefghijklmnopqrstu..()^$"), false)
+    }
 }

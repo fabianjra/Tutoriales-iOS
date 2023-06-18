@@ -199,4 +199,42 @@ extension StringChallenge {
         
         return true
     }
+    
+    /*
+     9: Find pangrams
+     
+     Write a function that returns true if it is given a string that is an English pangram, ignoring
+     letter case.
+     A pangram is a string that contains every letter of the alphabet at least once.
+     */
+    func findPangrams(text: String) -> Bool {
+        
+        let abc = "abcdefghijklmnopqrstuvwxyz"
+        var containLetter = true
+        
+        for abeLetter in abc {
+            
+            if !text.lowercased().contains(abeLetter) {
+                containLetter = false
+            }
+        }
+        
+        return containLetter
+    }
+    
+    //9: Find pangrams: Using filter
+    func findPangramsUsingFilter(text: String) -> Bool {
+     
+        var isPangrams = false
+        let set = Set(text.lowercased()) //Set: It is an array, but removed duplicates
+        
+        let filtered = set.filter { $0 >= "a" && $0 <= "z" }
+        
+        //NOTE: All characters in the abecedary are in total 26 letters.
+        if filtered.count == 26 {
+            isPangrams = true
+        }
+        
+        return isPangrams
+    }
 }
