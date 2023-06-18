@@ -88,6 +88,7 @@ public class StringChallenge {
  Write your own version of the contains() method on String that ignores letter case, and
  without using the existing contains() method.
  */
+//TODO: Use range to finish it.
 extension String {
     
     func fuzzyContains(text: String) -> Bool {
@@ -97,8 +98,6 @@ extension String {
 //        if self.isEmpty {
 //            return false
 //        }
-        
-        //TODO: Use range to finish it.
         
        // let range = self.range(of: text)
         
@@ -156,5 +155,36 @@ extension StringChallenge {
         }
         
         return newText
+    }
+    
+    /*
+     7: Condense whitespace
+     
+     Write a function that returns a string with any consecutive spaces replaced with a single space.
+     */
+    //TODO: Use range to finish it.
+    func codenseWhitespace(text: String) -> String {
+        
+        var seenSpace = false
+        var removedSpaces = ""
+        
+        for letter in text {
+            
+            if letter == " " {
+                
+                if seenSpace {
+                    continue //Continue with the next iteration.
+                }
+                
+                seenSpace = true
+                
+            } else {
+                seenSpace = false
+            }
+            
+            removedSpaces.append(letter)
+        }
+        
+        return removedSpaces
     }
 }

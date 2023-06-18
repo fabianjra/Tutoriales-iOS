@@ -137,4 +137,19 @@ final class SwiftChallengesTests: XCTestCase {
         
         XCTAssertEqual(challenge.removeDuplicatedLetters(text: "Fabian"), "Fabin")
     }
+    
+    /*
+     7: Condense whitespace
+     
+     Write a function that returns a string with any consecutive spaces replaced with a single space.
+     */
+    func test_codenseWhitespace_OK() {
+        
+        XCTAssertEqual(challenge.codenseWhitespace(text: "a   b   c"), "a b c")
+        
+        XCTAssertEqual(challenge.codenseWhitespace(text: "    a"), " a")
+        
+        XCTAssertEqual(challenge.codenseWhitespace(text: "abc"), "abc")
+    }
+    
 }
