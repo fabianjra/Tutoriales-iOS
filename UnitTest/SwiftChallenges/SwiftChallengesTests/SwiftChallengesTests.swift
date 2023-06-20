@@ -186,4 +186,20 @@ final class SwiftChallengesTests: XCTestCase {
         XCTAssertEqual(challenge.findPangramsUsingFilter(text: "abcdefghijklmnopqrstuvwxyz- SI CONTIENE TODAS"), true)
         XCTAssertEqual(challenge.findPangramsUsingFilter(text: "abcdefghijklmnopqrstu..()^$"), false)
     }
+    
+    /*
+     10: Vowels and consonants
+     
+     Given a string in English, return a tuple containing the number of vowels and consonants.
+     Tip: Vowels are the letters, A, E, I, O, and U.
+     consonants are the letters B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Y, Z.
+     */
+    func test_vowelsAndConsonants_OK() {
+
+        let response1 = StringChallenge.VowelsConsonants(vowels: 6, consonants: 15)
+        XCTAssertEqual(challenge.vowelsAndConsonants(text: "Swift Coding Challenges"), response1)
+        
+        let response2 = StringChallenge.VowelsConsonants(vowels: 4, consonants: 7)
+        XCTAssertEqual(challenge.vowelsAndConsonants(text: "Mississippi"), response2)
+    }
 }

@@ -237,4 +237,41 @@ extension StringChallenge {
         
         return isPangrams
     }
+    
+    /*
+     10: Vowels and consonants
+     
+     Given a string in English, return a tuple containing the number of vowels and consonants.
+     Tip: Vowels are the letters, A, E, I, O, and U.
+     consonants are the letters B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Y, Z.
+     */
+    func vowelsAndConsonants(text: String) -> VowelsConsonants {
+        
+        var response = VowelsConsonants(vowels: 0, consonants: 0)
+        
+        let vowels = "AEIOU"
+        let consonants = "BCDFGHJKLMNPQRSTVWXYZ"
+        
+        for letter in text.lowercased() {
+            
+            for vowel in vowels.lowercased() {
+                if vowel == letter {
+                    response.vowels += 1
+                }
+            }
+            
+            for consonant in consonants.lowercased() {
+                if consonant == letter {
+                    response.consonants += 1
+                }
+            }
+        }
+        
+        return response
+    }
+    
+    public struct VowelsConsonants: Equatable {
+        var vowels: Int
+        var consonants: Int
+    }
 }
