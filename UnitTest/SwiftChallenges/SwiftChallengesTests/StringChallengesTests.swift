@@ -1,6 +1,6 @@
 //
-//  SwiftChallengesTests.swift
-//  SwiftChallengesTests
+//  StringChallengesTests.swift
+//  StringChallengesTests
 //
 //  Created by Fabian Rodriguez on 15/6/23.
 //
@@ -8,7 +8,7 @@
 import XCTest
 @testable import SwiftChallenges
 
-final class SwiftChallengesTests: XCTestCase {
+final class StringChallengesTests: XCTestCase {
     
     let challenge: StringChallenge = StringChallenge()
 
@@ -201,5 +201,27 @@ final class SwiftChallengesTests: XCTestCase {
         
         let response2 = StringChallenge.VowelsConsonants(vowels: 4, consonants: 7)
         XCTAssertEqual(challenge.vowelsAndConsonants(text: "Mississippi"), response2)
+    }
+    
+    /*
+     11: Three different letters
+     
+     Write a function that accepts two strings, and returns true if they are identical in length but
+     have no more than three different letters, taking case and string order into account.
+     */
+    func test_threeDifferentsLetters_OK() {
+        
+        XCTAssertEqual(challenge.threeDifferentsLetters(text1: "Clamp", text2: "Cramp"), true) //true, because there is one letter difference.
+        
+        XCTAssertEqual(challenge.threeDifferentsLetters(text1: "Clamp", text2: "Crams"), true) //true, because there are two letter differences.
+        
+        XCTAssertEqual(challenge.threeDifferentsLetters(text1: "Clamp", text2: "Grams"), true) //true, because there are three letter differences.
+        
+        XCTAssertEqual(challenge.threeDifferentsLetters(text1: "Clamp", text2: "Grans"), false) //false, because there are four letter differences.
+        
+        XCTAssertEqual(challenge.threeDifferentsLetters(text1: "Clamp", text2: "Clam"), false) //false, because they are different lengths.
+        
+        //false. Although they differ by only one letter, the letters that match are in different positions.
+        XCTAssertEqual(challenge.threeDifferentsLetters(text1: "clamp", text2: "maple"), false)
     }
 }

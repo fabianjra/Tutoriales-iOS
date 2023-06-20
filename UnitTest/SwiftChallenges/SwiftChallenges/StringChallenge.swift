@@ -274,4 +274,23 @@ extension StringChallenge {
         var vowels: Int
         var consonants: Int
     }
+    
+    /*
+     11: Three different letters
+     
+     Write a function that accepts two strings, and returns true if they are identical in length but
+     have no more than three different letters, taking case and string order into account.
+     */
+    func threeDifferentsLetters(text1: String, text2: String) -> Bool {
+        
+        let res = false
+        
+        if text1.count == text2.count {
+            
+            //TODO: Complete de logic
+            
+        }
+        
+        return res
+    }
 }
