@@ -283,14 +283,26 @@ extension StringChallenge {
      */
     func threeDifferentsLetters(text1: String, text2: String) -> Bool {
         
-        let res = false
+        var countDiferences = 0
+        let array2 = Array(text2)
         
-        if text1.count == text2.count {
+        //First: Validate if string are same count.
+        guard text1.count == text2.count else { return false }
+        
+        //Second: Compare characters
+        for (i, letter1) in text1.enumerated() {
             
-            //TODO: Complete de logic
-            
+            if letter1 != array2[i] {
+                
+                countDiferences += 1
+            }
         }
         
-        return res
+        //Third: Differences cannot be higher than 3.
+        if countDiferences > 3 {
+            return false
+        }
+        
+        return true
     }
 }

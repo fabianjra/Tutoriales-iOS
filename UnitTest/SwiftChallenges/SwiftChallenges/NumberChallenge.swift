@@ -20,4 +20,10 @@ public class NumberChallenge {
         return [""]
     }
     
+    /*
+     17: Generate a random number in a range
+     
+     Write a function that accepts positive minimum and maximum integers, and returns a random
+     number between those two bounds, inclusive.
+     */
 }

@@ -93,13 +93,27 @@ private func sleeping(){
  -utility
  -background.
  
- User-interactive: This represents tasks that must complete immediately to provide a nice user experience. Use it for UI updates, event handling and small workloads that require low latency. The total amount of work done in this class during the execution of your app should be small. This should run on the main thread.
+ User-interactive:
+ This represents tasks that must complete immediately to provide a nice user experience.
+ Use it for UI updates, event handling and small workloads that require low latency.
+ The total amount of work done in this class during the execution of your app should be small.
+ This should run on the main thread.
  
- User-initiated: The user initiates these asynchronous tasks from the UI. Use them when the user is waiting for immediate results and for tasks required to continue user interaction. They execute in the high-priority global queue.
+ User-initiated:
+ The user initiates these asynchronous tasks from the UI.
+ Use them when the user is waiting for immediate results and for tasks required to continue user interaction.
+ They execute in the high-priority global queue.
  
- Utility: This represents long-running tasks, typically with a user-visible progress indicator. Use it for computations, I/O, networking, continuous data feeds and similar tasks. This class is designed to be energy efficient. This gets mapped into the low-priority global queue.
+ Utility:
+ This represents long-running tasks, typically with a user-visible progress indicator.
+ Use it for computations, I/O, networking, continuous data feeds and similar tasks.
+ This class is designed to be energy efficient.
+ This gets mapped into the low-priority global queue.
  
- Background: This represents tasks the user isn’t directly aware of. Use it for prefetching, maintenance and other tasks that don’t require user interaction and aren’t time-sensitive. This gets mapped into the background priority global queue.
+ Background:
+ This represents tasks the user isn’t directly aware of.
+ Use it for prefetching, maintenance and other tasks that don’t require user interaction and aren’t time-sensitive.
+ This gets mapped into the background priority global queue.
  */
 private func GlobalQueue(){
     
@@ -122,8 +136,12 @@ private func GlobalQueue(){
     DispatchQueue.global(qos: .background).async {
         print("Background: termina 4")
     }
+    
+    DispatchQueue.global().async {
+        print("final")
+    }
 }
-//GlobalQueue()
+GlobalQueue()
 
 /*
  3: Custom queues.
