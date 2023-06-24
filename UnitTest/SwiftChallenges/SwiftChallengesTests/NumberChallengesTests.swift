@@ -71,4 +71,21 @@ final class NumberChallengesTests: XCTestCase {
         XCTAssertNotEqual(challenge.generateRandomNumberInRange(min: 10, Max: 11), 9)
     }
     
+    /*
+     18: Recreate the pow() function
+     
+     Create a function that accepts positive two integers, and raises the first to the power of the
+     second.
+     
+     Tip: If you name your function myPow() or challenge18(), you’ll be able to use the built-in
+     pow() for your tests. The built-in pow() uses doubles, so you’ll need to typecast.
+     */
+    func test_recreatePow_OK() {
+        
+        XCTAssertEqual(challenge.recreatePow(number: -1, times: 0), 0)
+        
+        XCTAssertEqual(challenge.recreatePow(number: 4, times: 3), 64)
+        
+        XCTAssertEqual(challenge.recreatePow(number: 2, times: 8), 256)
+    }
 }

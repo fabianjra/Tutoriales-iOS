@@ -49,4 +49,29 @@ public class NumberChallenge {
         
         return randomInRange
     }
+    
+    /*
+     18: Recreate the pow() function
+     
+     Create a function that accepts positive two integers, and raises the first to the power of the
+     second.
+     
+     Tip: If you name your function myPow() or challenge18(), you’ll be able to use the built-in
+     pow() for your tests. The built-in pow() uses doubles, so you’ll need to typecast.
+     */
+    func recreatePow(number: Int, times: Int) -> Int {
+        
+        //precondition(number > 0 && times > 0, "Should be higher than zero")
+        
+        guard number > 0, times > 0 else { return 0 }
+        
+        var result = 1
+        
+        for _ in 0..<times {
+            
+            result *= number
+        }
+        
+        return result
+    }
 }
