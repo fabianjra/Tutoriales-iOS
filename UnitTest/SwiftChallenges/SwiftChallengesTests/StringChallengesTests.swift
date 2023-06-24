@@ -278,4 +278,26 @@ final class StringChallengesTests: XCTestCase {
         
         XCTAssertNotNil(challenge.stringPermutations(text: "wombat"))
     }
+    
+    /*
+     15: Reverse the words in a string
+     
+     Write a function that returns a string with each of its words reversed but in the original order,
+     without using a loop.
+     */
+    func test_reverseWordsReduce_OK() {
+
+        XCTAssertEqual(challenge.reverseWords(text: "Swift Coding Challenges"), "tfiwS gnidoC segnellahC")
+
+        XCTAssertEqual(challenge.reverseWords(text: "The quick brown fox"), "ehT kciuq nworb xof")
+
+        XCTAssertEqual(challenge.reverseWords(text: "Fabian Rodriguez"), "naibaF zeugirdoR")
+        
+        //USING REVERSED()
+        XCTAssertEqual(challenge.reverseWordsReversed(text: "Swift Coding Challenges"), "tfiwS gnidoC segnellahC")
+        
+        XCTAssertEqual(challenge.reverseWordsReversed(text: "The quick brown fox"), "ehT kciuq nworb xof")
+        
+        XCTAssertEqual(challenge.reverseWordsReversed(text: "Fabian Rodriguez"), "naibaF zeugirdoR")
+    }
 }

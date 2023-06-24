@@ -424,4 +424,32 @@ extension StringChallenge {
             }
         }
     }
+    
+    /*
+     15: Reverse the words in a string
+     
+     Write a function that returns a string with each of its words reversed but in the original order,
+     without using a loop.
+     */
+    func reverseWords(text: String) -> String {
+     
+        let textArray = text.components(separatedBy: " ")
+        
+        let reversedString = textArray.map { word in
+            
+            return word.description.reduce("") { String($1) + $0 }
+            
+        }.joined(separator: " ")
+        
+        return reversedString
+    }
+    
+    func reverseWordsReversed(text: String) -> String {
+        
+        let textArray = text.components(separatedBy: " ")
+        
+        let reversedString = textArray.map { String($0.reversed()) }.joined(separator: " ")
+        
+        return reversedString
+    }
 }
