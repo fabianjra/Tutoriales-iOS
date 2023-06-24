@@ -305,4 +305,85 @@ extension StringChallenge {
         
         return true
     }
+    
+    /*
+     12: Find longest prefix
+     
+     Write a function that accepts a string of words with a similar prefix, separated by spaces, and
+     returns the longest substring that prefixes all words.
+     */
+    func findLongestPrefix(text: String) -> String {
+        
+        let parts = text.components(separatedBy: " ")
+        
+        guard let first = parts.first else { return "" }
+        
+        var currentPrefix = ""
+        var bestPrefix = ""
+        
+        for letter in first {
+            
+            currentPrefix.append(letter)
+            
+            for word in parts {
+                
+                if !word.hasPrefix(currentPrefix) {
+                    return bestPrefix
+                }
+            }
+            
+            bestPrefix = currentPrefix
+        }
+        
+        return bestPrefix
+    }
+    
+    /*
+     13: Run-length encoding
+     
+     Write a function that accepts a string as input, then returns how often each letter is repeated in
+     a single run, taking case into account.
+     
+     Tip: This approach is used in a simple lossless compression technique called run-length encoding.
+     */
+    func runLenghtEncoding(text: String) -> String {
+        
+        var counter = 0
+        var newString = ""
+        var pastLetter = ""
+        
+        //Enumerated: Para saber cuando es el ultimo caracter y solamente hacerle append al texto final.
+        for (i, letter) in text.enumerated() {
+            
+            if pastLetter != String(letter) {
+                
+                //Si la letra es diferente y ya se tenia el contador mayor a 1: Es hora de hacer el append al texto final, junto a su contador.
+                //Luego de esto, se reinicia el contador y se lleva 1 de la letra actual.
+                //Sino: solamente se aumenta 1 y se asigna la letra anterior a la actual.
+                if counter >= 1 {
+                    
+                    newString.append(pastLetter + "\(counter)")
+                    
+                    //Reset counter to the new letter:
+                    counter = 1
+                    
+                } else {
+                    counter += 1
+                }
+                
+                pastLetter = String(letter)
+
+                //Si la letra es la misma a la pasada, solamente aumenta 1 al contador.
+            } else {
+                counter += 1
+                
+                if i == (text.count - 1) {
+                    
+                    newString.append(pastLetter + "\(counter)")
+                }
+            }
+        }
+        
+        return newString
+    }
 }

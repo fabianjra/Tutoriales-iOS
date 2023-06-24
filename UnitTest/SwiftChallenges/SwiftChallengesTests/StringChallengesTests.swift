@@ -224,4 +224,40 @@ final class StringChallengesTests: XCTestCase {
         //false. Although they differ by only one letter, the letters that match are in different positions.
         XCTAssertEqual(challenge.threeDifferentsLetters(text1: "clamp", text2: "maple"), false)
     }
+    
+    /*
+     12: Find longest prefix
+     
+     Write a function that accepts a string of words with a similar prefix, separated by spaces, and
+     returns the longest substring that prefixes all words.
+     */
+    func test_findLongestPrefix_OK() {
+        
+        XCTAssertEqual(challenge.findLongestPrefix(text: "swift switch swill swim"), "swi")
+        
+        XCTAssertEqual(challenge.findLongestPrefix(text: "flip flap flop"), "fl")
+        
+        XCTAssertEqual(challenge.findLongestPrefix(text: "fabian fabion favin fabiann"), "fa")
+    }
+    
+    /*
+     13: Run-length encoding
+     
+     Write a function that accepts a string as input, then returns how often each letter is repeated in
+     a single run, taking case into account.
+     
+     Tip: This approach is used in a simple lossless compression technique called run-length encoding.
+     */
+    func test_runLenghtEncoding_OK() {
+        
+        XCTAssertEqual(challenge.runLenghtEncoding(text: "bcc"), "b1c2")
+        
+        XCTAssertEqual(challenge.runLenghtEncoding(text: "aabbcc"), "a2b2c2")
+        
+        XCTAssertEqual(challenge.runLenghtEncoding(text: "aaabaaabaaa"), "a3b1a3b1a3")
+        
+        XCTAssertEqual(challenge.runLenghtEncoding(text: "aaAAaa"), "a2A2a2")
+        
+        XCTAssertEqual(challenge.runLenghtEncoding(text: "lllTTttTOpppp"), "l3T2t2T1O1p4")
+    }
 }
