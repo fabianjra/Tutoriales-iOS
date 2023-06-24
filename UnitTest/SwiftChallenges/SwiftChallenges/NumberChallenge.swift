@@ -43,4 +43,10 @@ public class NumberChallenge {
      Write a function that accepts positive minimum and maximum integers, and returns a random
      number between those two bounds, inclusive.
      */
+    func generateRandomNumberInRange(min: Int, Max: Int) -> Int {
+        
+        let randomInRange = Int.random(in: min...Max)
+        
+        return randomInRange
+    }
 }

@@ -47,4 +47,28 @@ final class NumberChallengesTests: XCTestCase {
         XCTAssertNotNil(challenge.fizzBuzz())
     }
     
+    /*
+     17: Generate a random number in a range
+     
+     Write a function that accepts positive minimum and maximum integers, and returns a random
+     number between those two bounds, inclusive.
+     */
+    func test_generateRandomNumberInRange_OK() {
+        
+        XCTAssertLessThanOrEqual(challenge.generateRandomNumberInRange(min: 1, Max: 5), 5)
+        XCTAssertGreaterThanOrEqual(challenge.generateRandomNumberInRange(min: 1, Max: 5), 1)
+        
+        XCTAssertLessThanOrEqual(challenge.generateRandomNumberInRange(min: 8, Max: 10), 10)
+        XCTAssertGreaterThanOrEqual(challenge.generateRandomNumberInRange(min: 8, Max: 10), 8)
+        
+        XCTAssertLessThanOrEqual(challenge.generateRandomNumberInRange(min: 12, Max: 12), 12)
+        XCTAssertGreaterThanOrEqual(challenge.generateRandomNumberInRange(min: 12, Max: 12), 12)
+        
+        XCTAssertNotEqual(challenge.generateRandomNumberInRange(min: 1, Max: 2), 3)
+        
+        XCTAssertNotEqual(challenge.generateRandomNumberInRange(min: 5, Max: 10), 1)
+        
+        XCTAssertNotEqual(challenge.generateRandomNumberInRange(min: 10, Max: 11), 9)
+    }
+    
 }
