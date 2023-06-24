@@ -105,10 +105,9 @@ print("ArrayLarger 1. Original: \(arrayNumbersLarger1)")
 print(secondLarger1(numbers: arrayNumbersLarger1))
 
 //----------------------------------------------------------------------------
-//----------------------------------------------------------------------------
-
 print("*************************************")
 print("")
+//----------------------------------------------------------------------------
 
 func secondLarger2(numbers: Array<Int>) -> String {
     
@@ -133,3 +132,16 @@ func secondLarger2(numbers: Array<Int>) -> String {
 let arrayNumbersLarger2: Array = [10, 20, 30, 5, 11, 54, 90, 44, 34, 35]
 print("ArrayLarger 2. Original: \(arrayNumbersLarger2)")
 print(secondLarger2(numbers: arrayNumbersLarger2))
+
+
+//----------------------------------------------------------------------------
+print("*************************************")
+print("")
+//----------------------------------------------------------------------------
+
+
+let texto = "Fabian Rodriguez"
+
+print(texto.reversed())
+
+print(String(texto.reversed()))

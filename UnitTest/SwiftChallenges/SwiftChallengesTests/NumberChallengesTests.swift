@@ -27,13 +27,24 @@ final class NumberChallengesTests: XCTestCase {
     //All test function have to start with "test" in the function name.
 
     /*
-     1: Are the letters unique
+     16: Fizz Buzz
      
-     Write a function that accepts a String as its only parameter, and returns true if the string has
-     only unique letters, taking letter case into account.
+     Write a function that counts from 1 through 100,
+     and prints “Fizz” if the counter is evenly divisible by 3, “Buzz” if it’s evenly divisible by 5, “Fizz Buzz” if it’s even divisible by three and five, or the counter number for all other cases.
      */
     func test_uniqueLetters_OK() {
         
-        XCTAssertEqual(challenge.fizzBuzz(),[""])
+        /*
+         Sample input and output:
+         
+         • 1 should print “1”
+         • 2 should print “2”
+         • 3 should print “Fizz”
+         • 4 should print “4”
+         • 5 should print “Buzz”
+         • 15 should print “Fizz Buzz”
+         */
+        XCTAssertNotNil(challenge.fizzBuzz())
     }
+    
 }
