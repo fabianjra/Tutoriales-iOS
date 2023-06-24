@@ -377,6 +377,7 @@ extension StringChallenge {
             } else {
                 counter += 1
                 
+                //Si es el ultimo caracter, se debe hacer append a lo que se lleva arrastrando del contador actual.
                 if i == (text.count - 1) {
                     
                     newString.append(pastLetter + "\(counter)")
@@ -385,5 +386,42 @@ extension StringChallenge {
         }
         
         return newString
+    }
+    
+    /*
+     14: String permutations
+     
+     Write a function that prints all possible permutations of a given input string.
+     
+     Tip: A string permutation is any given rearrangement of its letters, for example “boamtw” is a permutation of “wombat”.
+     */
+    func stringPermutations(text: String, current: String = "") {
+        
+        let length = text.count
+        let strArray = Array(text)
+        
+        if (length == 0) {
+            
+            // there's nothing left to re-arrange; print the result
+            print(current)
+            print("******")
+            
+        } else {
+            
+            print(current)
+            
+            // loop through every character
+            for i in 0 ..< length {
+                
+                // get the letters before me
+                let left = String(strArray[0 ..< i])
+                
+                // get the letters after me
+                let right = String(strArray[i+1 ..< length])
+                
+                // put those two together and carry on
+                stringPermutations(text: left + right, current: current + String(strArray[i]))
+            }
+        }
     }
 }

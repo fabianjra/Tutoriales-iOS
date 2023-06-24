@@ -260,4 +260,22 @@ final class StringChallengesTests: XCTestCase {
         
         XCTAssertEqual(challenge.runLenghtEncoding(text: "lllTTttTOpppp"), "l3T2t2T1O1p4")
     }
+    
+    /*
+     14: String permutations
+     
+     Write a function that prints all possible permutations of a given input string.
+     
+     Tip: A string permutation is any given rearrangement of its letters, for example “boamtw” is a permutation of “wombat”.
+     */
+    func test_stringPermutations_OK() {
+        
+        XCTAssertNotNil(challenge.stringPermutations(text: "a"))
+        
+        XCTAssertNotNil(challenge.stringPermutations(text: "ab"))
+        
+        XCTAssertNotNil(challenge.stringPermutations(text: "abc"))
+        
+        XCTAssertNotNil(challenge.stringPermutations(text: "wombat"))
+    }
 }
