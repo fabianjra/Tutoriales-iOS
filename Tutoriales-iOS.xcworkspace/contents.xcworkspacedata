@@ -22,7 +22,7 @@
          </FileRef>
       </Group>
       <Group
-         location = "group:/Users/fabian/Sources/Tutoriales-iOS/Youtube/Firebase"
+         location = "group:Firebase"
          name = "Firebase">
          <FileRef
             location = "group:Firebase Demo Chris/Firebase Demo Chris.xcodeproj">
