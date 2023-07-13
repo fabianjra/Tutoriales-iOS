@@ -8,6 +8,13 @@
       location = "group:Youtube"
       name = "Youtube">
       <Group
+         location = "group:ComponentsSwiftUI"
+         name = "ComponentsSwiftUI">
+         <FileRef
+            location = "group:SwiftUIBootcamps/SwiftUIBootcamps.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
          location = "group:VictorRoldanDev"
          name = "VictorRoldanDev">
          <FileRef
