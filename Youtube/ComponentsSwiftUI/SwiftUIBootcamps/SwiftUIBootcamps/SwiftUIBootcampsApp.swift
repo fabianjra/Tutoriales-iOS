@@ -11,7 +11,8 @@ import SwiftUI
 struct SwiftUIBootcampsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            NavigationStackBootcamp()
         }
     }
 }
