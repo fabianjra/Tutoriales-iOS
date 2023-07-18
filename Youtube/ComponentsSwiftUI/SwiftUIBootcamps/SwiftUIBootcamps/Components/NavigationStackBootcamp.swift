@@ -57,7 +57,23 @@ struct NavigationStackBootcamp: View {
                 }
             }
             
-            .navigationTitle("Nav Bootcamp ")
+            //.navigationTitle("Nav Bootcamp")
+            //.navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitle("Nav bootcamp", displayMode: .inline)
+            
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Go back") {
+                        print("Pressed")
+                    }
+                }
+
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Settings") {
+                        print("Pressed")
+                    }
+                }
+            }
             
             //Hashable: Es del tipo donde se indica en el "for". En este caso, hashable es de tipo Int.
             .navigationDestination(for: Int.self) { hashable in
