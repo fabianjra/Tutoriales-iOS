@@ -90,6 +90,7 @@ private func sleeping(){
  que determina esas prioridades que acabamos de mencionar:
  -userInteractive
  -userInitiated
+ -(default)
  -utility
  -background.
  
@@ -141,7 +142,7 @@ private func GlobalQueue(){
         print("final")
     }
 }
-GlobalQueue()
+//GlobalQueue()
 
 /*
  3: Custom queues.
