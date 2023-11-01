@@ -463,3 +463,10 @@ DispatchQueue.global().async {
     - **Link video:** [Video](https://youtu.be/GZ-hQWMjT0s)
     - **Code:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Youtube/ComponentsSwiftUI/SwiftUIBootcamps)
     - **Description:** A.
+
+
+- **Firebase SwiftUI: Complete Login/register with Models:**
+    - **Title:** COMPLETE User Login / Sign Up App | Swift UI + Firebase | Async / Await
+    - **Link video:** [Video](https://youtu.be/QJHmhLGv-_0?si=iywXzn_jHts0rFJ6)
+    - **Code:** [Source]()
+    - **Description:** A.
