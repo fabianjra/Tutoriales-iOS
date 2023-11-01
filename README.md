@@ -470,3 +470,5 @@ DispatchQueue.global().async {
     - **Link video:** [Video](https://youtu.be/QJHmhLGv-_0?si=iywXzn_jHts0rFJ6)
     - **Code:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Youtube/Firebase/FirebaseAppStuff)
     - **Description:** A.
+    - **Notes:**
+        * Firebase Storage: For images.
