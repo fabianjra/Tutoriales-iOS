@@ -9,6 +9,9 @@ import SwiftUI
 
 struct LoginView: View {
     
+    //Un EnvironmentObject no se puede inicializar. Ya fue inicializado 1 sola vez al inicio del App.
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     @State var email: String = ""
     @State var password: String = ""
     
@@ -37,7 +40,14 @@ struct LoginView: View {
                 .padding()
                 
                 Button(action: {
-                    print("")
+                    
+                    Task {
+                        do {
+                            try await viewModel.signIn(withEmail: email, password: password)
+                        } catch {
+                            print("error catch: \(error)")
+                        }
+                    }
                     
                 }, label: {
                     HStack {

@@ -11,6 +11,9 @@ struct RegistrationView: View {
     
     @Environment(\.dismiss) var dismiss
     
+    //Un EnvironmentObject no se puede inicializar. Ya fue inicializado 1 sola vez al inicio del App.
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     @State var fullName: String = ""
     @State var email: String = ""
     @State var password: String = ""
@@ -48,7 +51,13 @@ struct RegistrationView: View {
             .padding()
             
             Button(action: {
-                //Sign uo
+                Task {
+                    do {
+                        try await viewModel.createUser(withEmail: email, password: password, fullname: fullName)
+                    } catch {
+                        print("error catch: \(error)")
+                    }
+                }
                 
             }, label: {
                 Text("Sign up")

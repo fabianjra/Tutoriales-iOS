@@ -25,7 +25,7 @@ struct ProfileView: View {
                     .clipShape(Circle())
                     
                     VStack(alignment: .leading) {
-                        Text(user.fullName)
+                        Text(user.fullname)
                             .fontWeight(.semibold)
                             .font(.title2)
                         
