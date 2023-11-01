@@ -429,40 +429,34 @@ DispatchQueue.global().async {
 
 - **SwiftUI MVVM Pattern:**
     - **Title:** SwiftUI MVVM Pattern (Model View ViewModel) - Xcode 12, 2022, Weather App, iOS Development
-    - **Info:** In this video we will learn how to apply the MVVM architecture pattern to our swiftui app. We will build a real world weather app as an example - working with the latest versions of swift and xcode.
+    - **Description:** In this video we will learn how to apply the MVVM architecture pattern to our swiftui app. We will build a real world weather app as an example - working with the latest versions of swift and xcode.
     - **Link:** [Video](https://www.youtube.com/watch?v=ak8x-p-q8tU)
     - **Code:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Youtube/MVVM/WeatherAppMVVM)
 
 - **SwiftUI with Firebase:**
     - **Title:** Complete SwiftUI Firebase Tutorial: Auth, Sign Up Page, Cloud Firestore, Read & Write Data
-    - **Info:** This SwiftUI Firebase Tutorial walks you through how to use Firebase Auth (Authentication) and Firebase Cloud Firestore with SwiftUI to create a sign up page, read / fetch data, and write to a database using a swiftui list view. SwiftUI is one of the best ways for beginners to learn how to create their own app in iOS / Swift. You will need Xcode to complete this tutorial.
+    - **Description:** This SwiftUI Firebase Tutorial walks you through how to use Firebase Auth (Authentication) and Firebase Cloud Firestore with SwiftUI to create a sign up page, read / fetch data, and write to a database using a swiftui list view. SwiftUI is one of the best ways for beginners to learn how to create their own app in iOS / Swift. You will need Xcode to complete this tutorial.
     - **Link:** [Video](https://www.youtube.com/watch?v=6b2WAePdiqA)
     - **Code:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Youtube/Firebase/FirebaseTutorial)
-
-**Firebase Tutorial:**
-    - Agregar la dependencia: [Link firebase dependency](https://github.com/firebase/firebase-ios-sdk.git)
-    - Aagregar las siguientes opciones: `FirebaseAuth`, `FireabaseFirestore`
-    - Descargar el archivo`GoogleService-Info.plist` de Firebase para agregarlo al proyecto. Esto al crear el proyecto en la consola de FB.
-
-**Firebase Demo Chris:**
-    - Agregar el paquete con Swift Package Manager (desde Swift 3 en adelante): https://github.com/firebase/firebase-ios-sdk
-    - Aagregar las siguientes opciones: `FireabaseFirestore`
-    - Descargar el archivo`GoogleService-Info.plist` de Firebase para agregarlo al proyecto. Esto al crear el proyecto en la consola de FB.
+    - **Notes:**
+        * Agregar la dependencia: [Link firebase dependency](https://github.com/firebase/firebase-ios-sdk.git)
+        * Aagregar las siguientes opciones: `FirebaseAuth`, `FireabaseFirestore`
+        * Descargar el archivo`GoogleService-Info.plist` de Firebase para agregarlo al proyecto. Esto al crear el proyecto en la consola de FB.
 
 - **Core Animation Swift:**
     - **Title:** Introduction to Core Animation (iOS/Swift)
     - **Link:** [Video](https://youtu.be/93bfh3GK79s)
     - **Swift Arcade github repository:** [Source](https://github.com/jrasmusson/swift-arcade)
-    - **Info:** Core Animation is the library mostly in charge of every animation you see that happens in the iPhone. Normally it is used in UIKit. Core Animation works on the `CALayer`. This is under every `UIView` in the app. For example: `cornerRadius`, `shadows` or `animations` happens in the CALayer.
+    - **Description:** Core Animation is the library mostly in charge of every animation you see that happens in the iPhone. Normally it is used in UIKit. Core Animation works on the `CALayer`. This is under every `UIView` in the app. For example: `cornerRadius`, `shadows` or `animations` happens in the CALayer.
     - **Example:** It is used to scale a `UIView`, rotate it by animation or shake a `textField` when the input is wrong.
     - **General:** In the function `viewDidAppear`, the View is layed out. So here we know what is the size of the screen. It can be used to center a view in the screen with no hard coded values.
     - **Propiedaes:**
         * Model layer: Track the configuration of the view (position, attributes, round corner, etc).
         * Presentation layer: What the shape looks like while animating.
 
-**Firebase Tutorial:**
+**Navigation Stack SwiftUI:**
     - **Title:** How to use NavigationStack in SwiftUI | Bootcamp #62
     - **Link youtube:** [Video](https://youtu.be/GZ-hQWMjT0s)
     - **Code:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Youtube/ComponentsSwiftUI/SwiftUIBootcamps)
-    - **Info:** A.
+    - **Description:** A.
     
