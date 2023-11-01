@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    let user = User.MOCK_USER
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         
         List {
             Section {
                 HStack(spacing: 15) {
-                    Text(user.initials)
+                    Text(viewModel.currentUser?.initials ?? "")
                         .font(.title)
                         .fontWeight(.semibold)
                         .foregroundStyle(.white)
@@ -25,11 +25,11 @@ struct ProfileView: View {
                     .clipShape(Circle())
                     
                     VStack(alignment: .leading) {
-                        Text(user.fullname)
+                        Text(viewModel.currentUser?.fullname ?? "")
                             .fontWeight(.semibold)
                             .font(.title2)
-                        
-                        Text(user.email)
+                         
+                        Text(viewModel.currentUser?.email ?? "")
                             .foregroundStyle(.secondary)
                     }
                 }

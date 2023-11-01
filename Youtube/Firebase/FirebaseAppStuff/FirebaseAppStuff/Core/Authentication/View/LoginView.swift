@@ -45,7 +45,7 @@ struct LoginView: View {
                         do {
                             try await viewModel.signIn(withEmail: email, password: password)
                         } catch {
-                            print("error catch: \(error)")
+                            print("error catch: \(error.localizedDescription)")
                         }
                     }
                     

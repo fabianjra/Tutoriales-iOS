@@ -55,7 +55,7 @@ struct RegistrationView: View {
                     do {
                         try await viewModel.createUser(withEmail: email, password: password, fullname: fullName)
                     } catch {
-                        print("error catch: \(error)")
+                        print("error catch: \(error.localizedDescription)")
                     }
                 }
                 
