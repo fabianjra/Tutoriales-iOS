@@ -16,6 +16,7 @@
 		1F1AAFF92AF1ED0F00841AF9 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1AAFF82AF1ED0F00841AF9 /* RegistrationView.swift */; };
 		1F1AAFFB2AF1EF9F00841AF9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1AAFFA2AF1EF9F00841AF9 /* ProfileView.swift */; };
 		1F1AAFFD2AF1F12600841AF9 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1AAFFC2AF1F12600841AF9 /* SettingsRowView.swift */; };
+		1F1AAFFF2AF1F5D100841AF9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1AAFFE2AF1F5D100841AF9 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		1F1AAFF82AF1ED0F00841AF9 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		1F1AAFFA2AF1EF9F00841AF9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1F1AAFFC2AF1F12600841AF9 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		1F1AAFFE2AF1F5D100841AF9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		1F1AAFF02AF1E1AB00841AF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F1AAFFE2AF1F5D100841AF9 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				1F1AAFF72AF1E4B700841AF9 /* inputView.swift in Sources */,
 				1F1AAFE22AF1E07C00841AF9 /* ContentView.swift in Sources */,
 				1F1AAFE02AF1E07C00841AF9 /* FirebaseAppStuffApp.swift in Sources */,
+				1F1AAFFF2AF1F5D100841AF9 /* User.swift in Sources */,
 				1F1AAFFB2AF1EF9F00841AF9 /* ProfileView.swift in Sources */,
 				1F1AAFF92AF1ED0F00841AF9 /* RegistrationView.swift in Sources */,
 				1F1AAFFD2AF1F12600841AF9 /* SettingsRowView.swift in Sources */,
