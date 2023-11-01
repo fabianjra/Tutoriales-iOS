@@ -32,6 +32,9 @@
          location = "group:Firebase"
          name = "Firebase">
          <FileRef
+            location = "group:FirebaseAppStuff/FirebaseAppStuff.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:FirebaseTutorial/FirebaseTutorial.xcodeproj">
          </FileRef>
       </Group>
