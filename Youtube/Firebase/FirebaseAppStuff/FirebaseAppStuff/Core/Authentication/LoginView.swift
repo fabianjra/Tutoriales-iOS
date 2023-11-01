@@ -14,8 +14,8 @@ struct LoginView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-
+            VStack(spacing: 20) {
+                
                 Image("firebase-logo")
                     .resizable()
                     .scaledToFit()
@@ -23,12 +23,12 @@ struct LoginView: View {
                     .padding()
                 
                 VStack {
-                    inputView(text: $email, 
+                    inputView(text: $email,
                               title: "Email",
                               placeholder: "user@example.com")
                     .textInputAutocapitalization(.none)
                     
-                    inputView(text: $password, 
+                    inputView(text: $password,
                               title: "Password",
                               placeholder: "password",
                               isSecureField: true)
@@ -59,7 +59,8 @@ struct LoginView: View {
                 //Register
                 
                 NavigationLink {
-                    
+                    RegistrationView()
+                        .navigationBarBackButtonHidden()
                 } label: {
                     HStack {
                         Text("Not have an account?")

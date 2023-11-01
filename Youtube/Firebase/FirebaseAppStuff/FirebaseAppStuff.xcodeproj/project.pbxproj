@@ -14,6 +14,8 @@
 		1F1AAFF52AF1E25A00841AF9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1AAFF42AF1E25A00841AF9 /* LoginView.swift */; };
 		1F1AAFF72AF1E4B700841AF9 /* inputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1AAFF62AF1E4B700841AF9 /* inputView.swift */; };
 		1F1AAFF92AF1ED0F00841AF9 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1AAFF82AF1ED0F00841AF9 /* RegistrationView.swift */; };
+		1F1AAFFB2AF1EF9F00841AF9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1AAFFA2AF1EF9F00841AF9 /* ProfileView.swift */; };
+		1F1AAFFD2AF1F12600841AF9 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1AAFFC2AF1F12600841AF9 /* SettingsRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		1F1AAFF42AF1E25A00841AF9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1F1AAFF62AF1E4B700841AF9 /* inputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputView.swift; sourceTree = "<group>"; };
 		1F1AAFF82AF1ED0F00841AF9 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		1F1AAFFA2AF1EF9F00841AF9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		1F1AAFFC2AF1F12600841AF9 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				1F1AAFF62AF1E4B700841AF9 /* inputView.swift */,
+				1F1AAFFC2AF1F12600841AF9 /* SettingsRowView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 		1F1AAFF32AF1E21000841AF9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				1F1AAFFA2AF1EF9F00841AF9 /* ProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -206,7 +212,9 @@
 				1F1AAFF72AF1E4B700841AF9 /* inputView.swift in Sources */,
 				1F1AAFE22AF1E07C00841AF9 /* ContentView.swift in Sources */,
 				1F1AAFE02AF1E07C00841AF9 /* FirebaseAppStuffApp.swift in Sources */,
+				1F1AAFFB2AF1EF9F00841AF9 /* ProfileView.swift in Sources */,
 				1F1AAFF92AF1ED0F00841AF9 /* RegistrationView.swift in Sources */,
+				1F1AAFFD2AF1F12600841AF9 /* SettingsRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

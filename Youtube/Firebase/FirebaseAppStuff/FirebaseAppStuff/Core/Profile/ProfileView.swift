@@ -9,7 +9,55 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        List {
+            Section {
+                HStack(spacing: 15) {
+                    Text("FR")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.white)
+                        .frame(width: 72, height: 72)
+                        .background(.secondary)
+                    .clipShape(Circle())
+                    
+                    VStack(alignment: .leading) {
+                        Text("Fabian Rodriguez")
+                            .fontWeight(.semibold)
+                            .font(.title2)
+                        
+                        Text("fabian@gmail.com")
+                            .tint(.secondary)
+                    }
+                }
+            }
+            
+            Section("General") {
+                HStack {
+                    SettingsRowView(imageName: "gear", title: "Version")
+                    
+                    Spacer()
+                    
+                    Text("1.0.0")
+                        .font(.subheadline)
+                        .foregroundStyle(.gray)
+                }
+            }
+            
+            Section("Account") {
+                Button(action: {
+                    // sign out
+                }, label: {
+                    SettingsRowView(imageName: "arrow.left.circle.fill", title: "Sign out", tintColor: .red)
+                })
+                
+                Button(action: {
+                    // Delte account
+                }, label: {
+                    SettingsRowView(imageName: "xmark.circle.fill", title: "Delete account", tintColor: .red)
+                })
+            }
+        }
     }
 }
 

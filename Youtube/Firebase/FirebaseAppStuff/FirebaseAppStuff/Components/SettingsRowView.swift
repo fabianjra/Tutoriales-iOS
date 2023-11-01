@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct SettingsRowView: View {
+    
+    let imageName: String
+    let title: String
+    var tintColor: Color = .gray
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(systemName: imageName)
+                .imageScale(.small)
+                .font(.title)
+                .foregroundStyle(tintColor)
+            
+            Text(title)
+                .font(.subheadline)
+                .foregroundStyle(.black)
+        }
     }
 }
 
 #Preview {
-    SettingsRowView()
+    SettingsRowView(imageName: "gear", title: "Version")
 }

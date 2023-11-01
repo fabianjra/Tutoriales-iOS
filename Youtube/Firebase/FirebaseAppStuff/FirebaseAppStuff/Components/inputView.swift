@@ -10,8 +10,8 @@ import SwiftUI
 struct inputView: View {
     
     @Binding var text: String
-    var title: String
-    var placeholder: String
+    let title: String
+    let placeholder: String
     var isSecureField: Bool = false
     
     var body: some View {
