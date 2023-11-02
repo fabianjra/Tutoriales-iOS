@@ -63,6 +63,8 @@ struct LoginView: View {
                 .background(.blue)
                 .clipShape(.buttonBorder)
                 .padding(.horizontal)
+                .disabled(!formIsValid)
+                .opacity(formIsValid ? 1.0 : 0.5)
                 
                 Spacer()
                 
@@ -83,6 +85,14 @@ struct LoginView: View {
                 .padding(.bottom)
             }
         }
+    }
+}
+
+extension LoginView: AuthenticationFormProtocol {
+    
+    var formIsValid: Bool {
+        return !email.isEmpty && email.contains("@") &&
+        !password.isEmpty && password.count > 5
     }
 }
 

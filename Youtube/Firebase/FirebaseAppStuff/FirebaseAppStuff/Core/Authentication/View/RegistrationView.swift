@@ -42,10 +42,27 @@ struct RegistrationView: View {
                           placeholder: "password",
                           isSecureField: true)
                 
-                inputView(text: $confirmPassword,
-                          title: "Confirm password",
-                          placeholder: "confirmed password",
-                          isSecureField: true)
+                ZStack(alignment: .trailing) {
+                    inputView(text: $confirmPassword,
+                              title: "Confirm password",
+                              placeholder: "confirmed password",
+                              isSecureField: true)
+                    
+                    if !password.isEmpty && !confirmPassword.isEmpty {
+                        if password == confirmPassword {
+                            
+                            Image(systemName: "checkmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundStyle(.green)
+                        } else {
+                            Image(systemName: "xmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundStyle(.red)
+                        }
+                    }
+                }
                 
             }
             .padding()
@@ -69,6 +86,8 @@ struct RegistrationView: View {
             .background(.blue)
             .clipShape(.buttonBorder)
             .padding(.horizontal)
+            .disabled(!formIsValid)
+            .opacity(formIsValid ? 1.0 : 0.5)
             
             Spacer()
             
@@ -85,6 +104,16 @@ struct RegistrationView: View {
             }
             .padding(.bottom)
         }
+    }
+}
+
+extension RegistrationView: AuthenticationFormProtocol {
+    
+    var formIsValid: Bool {
+        return !email.isEmpty && email.contains("@") &&
+        !password.isEmpty && password.count > 5 &&
+        !fullName.isEmpty &&
+        password == confirmPassword
     }
 }
 

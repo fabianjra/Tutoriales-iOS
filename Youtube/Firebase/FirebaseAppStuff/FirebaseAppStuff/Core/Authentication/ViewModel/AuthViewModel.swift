@@ -8,6 +8,11 @@
 import Firebase
 import FirebaseFirestoreSwift
 
+//Ut ilizado para validar si un formalario es valido o no
+protocol AuthenticationFormProtocol {
+    var formIsValid: Bool { get }
+}
+
 //El AuthViewModel es el encargado de toda las funciones de autenticar los usuarios.
 //Tambien de enviar notificaciones al UI, Newtwroking y demas.
 
