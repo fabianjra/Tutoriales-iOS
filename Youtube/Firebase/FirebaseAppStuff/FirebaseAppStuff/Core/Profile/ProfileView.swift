@@ -16,7 +16,7 @@ struct ProfileView: View {
         List {
             Section {
                 HStack(spacing: 15) {
-                    Text(viewModel.currentUser?.initials ?? "")
+                    Text(viewModel.currentUser?.initials ?? "null")
                         .font(.title)
                         .fontWeight(.semibold)
                         .foregroundStyle(.white)
@@ -25,11 +25,11 @@ struct ProfileView: View {
                     .clipShape(Circle())
                     
                     VStack(alignment: .leading) {
-                        Text(viewModel.currentUser?.fullname ?? "")
+                        Text(viewModel.currentUser?.fullname ?? "null")
                             .fontWeight(.semibold)
                             .font(.title2)
                          
-                        Text(viewModel.currentUser?.email ?? "")
+                        Text(viewModel.currentUser?.email ?? "null")
                             .foregroundStyle(.secondary)
                     }
                 }
@@ -49,7 +49,13 @@ struct ProfileView: View {
             
             Section("Account") {
                 Button(action: {
-                    // sign out
+                    
+                    do {
+                        try viewModel.signOut()
+                    } catch {
+                        print("error catch: \(error.localizedDescription)")
+                    }
+                    
                 }, label: {
                     SettingsRowView(imageName: "arrow.left.circle.fill", title: "Sign out", tintColor: .red)
                 })
@@ -66,4 +72,5 @@ struct ProfileView: View {
 
 #Preview {
     ProfileView()
+        .environmentObject(AuthViewModel())
 }

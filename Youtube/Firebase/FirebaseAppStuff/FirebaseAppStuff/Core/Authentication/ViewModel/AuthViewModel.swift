@@ -42,11 +42,19 @@ class AuthViewModel: ObservableObject {
         let user = User(id: result.user.uid, fullname: fullname, email: email)
         
         let encodedUser = try Firestore.Encoder().encode(user)
-        try await Firestore.firestore().collection("user").document(user.id).setData(encodedUser)
+        try await Firestore.firestore().collection(Const.USER_COLLECTION).document(user.id).setData(encodedUser)
+        
+        //Se asigna el usuario en Firebase al Publish que se esta manejando en local:
+        try await fetchUser()
+        
+        //Otra manera de asignar el CurrentUser sin tener que volver a ir a Firebase es la siguiente:
+//        self.currentUser = user
     }
     
-    func signOut() {
-        
+    func signOut() throws{
+        try Auth.auth().signOut()
+        self.currentUser = nil
+        self.userSession = nil
     }
     
     func deleteAccount() {
@@ -56,10 +64,15 @@ class AuthViewModel: ObservableObject {
     func fetchUser() async throws {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        let snapshot =  try await Firestore.firestore().collection("user").document(uid).getDocument()
+        let snapshot =  try await Firestore.firestore().collection(Const.USER_COLLECTION).document(uid).getDocument()
         
         self.currentUser = try snapshot.data(as: User.self)
         
         print("Current usuario es: \(self.currentUser ?? User(id: "", fullname: "", email: ""))")
     }
+}
+
+
+private struct Const {
+    public static let USER_COLLECTION: String = "user"
 }
