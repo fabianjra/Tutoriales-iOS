@@ -472,3 +472,15 @@ DispatchQueue.global().async {
     - **Description:** A.
     - **Notes:**
         * Firebase Storage: For images.
+
+
+- **Swift Data SwiftUI:**
+    - **Title:** Los fundamentos de SwiftData: Introducción con Xcode 15
+    - **Link video:** [Video](https://youtu.be/e0WorWOu2HY?si=h8ZimoF6Za8DEmnC)
+    - **Code:** [Source](https://github.com/fabianjra/Tutoriales-iOS/tree/main/Youtube/VictorRoldanDev/SwiftDataTutorial)
+    - **Notes:**
+        * Swift Data oficial documentation: [WebPage](https://developer.apple.com/documentation/swiftdata)
+        * Pasos para iniciar:
+            1. Creacion del Model
+            2. Configuracion Model Container
+            3. @Query y Context en la vista.
