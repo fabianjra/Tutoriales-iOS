@@ -36,6 +36,7 @@
 		1F361DB02B17A0DE001BB04E = {
 			isa = PBXGroup;
 			children = (
+				1F361DCA2B17A293001BB04E /* readme.md */,
 				1F361DBB2B17A0DE001BB04E /* SwiftDataTutorial */,
 				1F361DBA2B17A0DE001BB04E /* Products */,
 			);
@@ -56,7 +57,6 @@
 				1F361DBE2B17A0DE001BB04E /* ContentView.swift */,
 				1F361DC02B17A0DF001BB04E /* Assets.xcassets */,
 				1F361DC22B17A0DF001BB04E /* Preview Content */,
-				1F361DCA2B17A293001BB04E /* readme.md */,
 			);
 			path = SwiftDataTutorial;
 			sourceTree = "<group>";
