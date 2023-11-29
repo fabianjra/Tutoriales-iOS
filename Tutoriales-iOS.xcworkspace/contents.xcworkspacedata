@@ -18,6 +18,9 @@
          location = "group:VictorRoldanDev"
          name = "VictorRoldanDev">
          <FileRef
+            location = "group:SwiftDataTutorial/SwiftDataTutorial.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:InventoryManagment/InventoryManagment.xcodeproj">
          </FileRef>
       </Group>
