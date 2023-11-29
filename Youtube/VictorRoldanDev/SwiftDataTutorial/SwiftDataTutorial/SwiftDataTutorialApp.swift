@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct SwiftDataTutorialApp: App {
@@ -13,5 +14,9 @@ struct SwiftDataTutorialApp: App {
         WindowGroup {
             ContentView()
         }
+        
+        //Le indica a la vista que va a trabajar con CountryModel.
+        //Puede ser un array seprado por comas. EJEM: [CountryModel.self, UserModel.self, etc...]
+        .modelContainer(for: CountryModel.self)
     }
 }
