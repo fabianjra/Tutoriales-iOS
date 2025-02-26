@@ -484,3 +484,11 @@ DispatchQueue.global().async {
             1. Creacion del Model
             2. Configuracion Model Container
             3. @Query y Context en la vista.
+
+- **SwiftUI MVVM Pattern:**
+    - **Title:** Building TodoList App in SwiftUI Using Core Data
+    - **Link video:** [Video](https://www.youtube.com/watch?v=CZ79PpB7HIo&list=PLUtfZ6nWgIt0YagZuZS6NVdFw7R-lV7qb)
+    - **Code:** [Source]()
+    - **Description:** In this video, Mohammad Azam will demonstrate how to build a complete TodoList app using SwiftUI and Core Data.
+    - **NOTES:**
+
