@@ -485,10 +485,18 @@ DispatchQueue.global().async {
             2. Configuracion Model Container
             3. @Query y Context en la vista.
 
-- **SwiftUI MVVM Pattern:**
+
+- **Core Data Basics:**
     - **Title:** Building TodoList App in SwiftUI Using Core Data
     - **Link video:** [Video](https://www.youtube.com/watch?v=CZ79PpB7HIo&list=PLUtfZ6nWgIt0YagZuZS6NVdFw7R-lV7qb)
     - **Code:** [Source]()
     - **Description:** In this video, Mohammad Azam will demonstrate how to build a complete TodoList app using SwiftUI and Core Data.
+
+
+- **Core Data Relationships:**
+    - **Title:** Core Data relationships, predicates, and delete rules in Xcode | Continued Learning #16
+    - **Link video:** [Video](https://youtu.be/huRKU-TAD3g?si=5uxWMCWcc31twRp4)
+    - **Code:** [Source]()
+    - **Description:** In this video, we take a deep dive into Core Data and learn how to create and manage multiple Core Data entities that have relationships between them.
     - **NOTES:**
 

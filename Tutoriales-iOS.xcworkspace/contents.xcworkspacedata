@@ -11,6 +11,9 @@
          location = "group:Core Data"
          name = "Core Data">
          <FileRef
+            location = "group:CoreDataRelationshipsBootcamp/CoreDataRelationshipsBootcamp.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:CoreDataTutorialSwiftUI/CoreDataTutorialSwiftUI.xcodeproj">
          </FileRef>
       </Group>
