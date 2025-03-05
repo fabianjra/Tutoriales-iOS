@@ -73,11 +73,43 @@ class CoreDataRelationShipViewModel: ObservableObject {
         // Se debe agregar un context, asi que se pasa el de manager (la instancia Singleton)
         let newBusiness = BusinessEntity(context: manager.context)
         newBusiness.name = "Apple Inc."
+        
+        // agregar los departamentos nuevos al Business
+        //newBusiness.deparments = []
+        
+        // Agregar los empleados existentes al nuevo Business
+        //newBusiness.employees = []
+        
+        // Agregar el nuevo Business a un departamento existente
+        //newBusiness.addToDeparments(<#T##value: DepartmentEntity##DepartmentEntity#>)
+        
+        // Agregar el nuevo Business a un empleado existente
+        //newBusiness.addToEmployees(<#T##value: EmployeeEntity##EmployeeEntity#>)
+        
+        save()
+    }
+    
+    func addDeparment() {
+        
+        let newDeparment = DepartmentEntity(context: manager.context)
+        newDeparment.name = "Marketing"
+        
+        //El departamento esta relacionado a Business y Employee, ambos "to Many".
+        
+        // businesses es un NSset, debe ser casteado.
+        newDeparment.businesses = [businesses[0]]
+        
         save()
     }
     
     func save() {
-        manager.save()
+        
+        businesses.removeAll()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.manager.save()
+            self.getBusinesses()
+        }
     }
 }
 
@@ -94,6 +126,11 @@ struct ContentView: View {
                     
                     Button("Add business") {
                         vm.addBusiness()
+                    }
+                    .buttonStyle(.bordered)
+                    
+                    Button("Add deparment") {
+                        vm.addDeparment()
                     }
                     .buttonStyle(.bordered)
                     
