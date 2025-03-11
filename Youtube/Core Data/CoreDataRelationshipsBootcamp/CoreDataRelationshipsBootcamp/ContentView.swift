@@ -52,9 +52,13 @@ class CoreDataRelationShipViewModel: ObservableObject {
     let manager = CoreDataManager.instance
     
     @Published var businesses: [BusinessEntity] = []
+    @Published var deparments: [DepartmentEntity] = []
+    @Published var employees: [EmployeeEntity] = []
     
     init() {
         getBusinesses()
+        getDeparments()
+        getEmployees()
     }
     
     func getBusinesses() {
@@ -65,7 +69,26 @@ class CoreDataRelationShipViewModel: ObservableObject {
         } catch {
             print("Error fetching data: \(error.localizedDescription)")
         }
+    }
+    
+    func getDeparments() {
+        let request = NSFetchRequest<DepartmentEntity>(entityName: "DepartmentEntity") //Debe ser exactamente el mismo nombre de la entidad en el modelo.
         
+        do {
+            deparments = try manager.context.fetch(request)
+        } catch {
+            print("Error fetching data: \(error.localizedDescription)")
+        }
+    }
+    
+    func getEmployees() {
+        let request = NSFetchRequest<EmployeeEntity>(entityName: "EmployeeEntity") //Debe ser exactamente el mismo nombre de la entidad en el modelo.
+        
+        do {
+            employees = try manager.context.fetch(request)
+        } catch {
+            print("Error fetching data: \(error.localizedDescription)")
+        }
     }
     
     func addBusiness() {
@@ -102,13 +125,29 @@ class CoreDataRelationShipViewModel: ObservableObject {
         save()
     }
     
+    func addEmployee() {
+        let newEmployee = EmployeeEntity(context: manager.context)
+        newEmployee.age = 25
+        newEmployee.name = "Fabian RA"
+        newEmployee.dateJoined = .now
+        
+        newEmployee.business = businesses[0]
+        newEmployee.deparment = deparments[0]
+        
+        save()
+    }
+    
     func save() {
         
         businesses.removeAll()
+        deparments.removeAll()
+        employees.removeAll()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.manager.save()
             self.getBusinesses()
+            self.getDeparments()
+            self.getEmployees()
         }
     }
 }
@@ -134,10 +173,31 @@ struct ContentView: View {
                     }
                     .buttonStyle(.bordered)
                     
+                    Button("Add employee") {
+                        vm.addEmployee()
+                    }
+                    .buttonStyle(.bordered)
+                    
                     ScrollView(.horizontal, showsIndicators: true) {
                         HStack(alignment: .top) {
                             ForEach(vm.businesses) { business in
                                 BusinessView(entity: business)
+                            }
+                        }
+                    }
+                    
+                    ScrollView(.horizontal, showsIndicators: true) {
+                        HStack(alignment: .top) {
+                            ForEach(vm.deparments) { deparment in
+                                DeparmentView(entity: deparment)
+                            }
+                        }
+                    }
+
+                    ScrollView(.horizontal, showsIndicators: true) {
+                        HStack(alignment: .top) {
+                            ForEach(vm.employees) { employee in
+                                EmployeeView(entity: employee)
                             }
                         }
                     }
@@ -168,6 +228,8 @@ struct BusinessView: View {
             if let departments = entity.deparments?.allObjects as? [DepartmentEntity] {
                 
                 Text("Deparments:")
+                    .bold()
+                
                 ForEach(departments) { deparment in
                     Text(deparment.name ?? "NO DEPARMENT NAME")
                 }
@@ -176,11 +238,92 @@ struct BusinessView: View {
             if let employees = entity.employees?.allObjects as? [EmployeeEntity] {
                 
                 Text("Employees:")
+                    .bold()
+                
                 ForEach(employees) { employee in
                     Text(employee.name ?? "NO EMPLOYEE NAME")
                 }
             }
         }
         .padding()
+        .frame(maxWidth: 300, alignment: .leading)
+        .background(Color.gray.opacity(0.5))
+        .cornerRadius(10)
+        .shadow(radius: 10)
+    }
+}
+
+
+// DEPARMENT VIEW
+
+struct DeparmentView: View {
+    
+    let entity: DepartmentEntity
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Name: \(entity.name ?? "NO DEPARMENT NAME")")
+                .bold()
+            
+            // Deparments es un NSSet, por lo que debe castearse
+            if let businesses = entity.businesses?.allObjects as? [DepartmentEntity] {
+                
+                Text("Businesses:")
+                    .bold()
+                
+                ForEach(businesses) { business in
+                    Text(business.name ?? "NO BUSINESS NAME")
+                }
+            }
+            
+            if let employees = entity.employees?.allObjects as? [EmployeeEntity] {
+                
+                Text("Employees:")
+                    .bold()
+                
+                ForEach(employees) { employee in
+                    Text(employee.name ?? "NO EMPLOYEE NAME")
+                }
+            }
+        }
+        .padding()
+        .frame(maxWidth: 300, alignment: .leading)
+        .background(Color.green.opacity(0.5))
+        .cornerRadius(10)
+        .shadow(radius: 10)
+    }
+}
+
+
+// EMPLOYEE VIEW
+
+struct EmployeeView: View {
+    
+    let entity: EmployeeEntity
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Name: \(entity.name ?? "NO EMPLOYEE NAME")")
+                .bold()
+            
+            Text("Age: \(entity.age)")
+            Text("Date joined: \(entity.dateJoined ?? Date())")
+            
+            Text("Businesses:")
+                .bold()
+            
+            Text("\(entity.business?.name ?? "NO BUSSINES NAME")")
+            
+            
+            Text("Deparment:")
+                .bold()
+            
+            Text("\(entity.deparment?.name ?? "NO DEPARMENT NAME")")
+        }
+        .padding()
+        .frame(maxWidth: 300, alignment: .leading)
+        .background(Color.green.opacity(0.5))
+        .cornerRadius(10)
+        .shadow(radius: 10)
     }
 }
