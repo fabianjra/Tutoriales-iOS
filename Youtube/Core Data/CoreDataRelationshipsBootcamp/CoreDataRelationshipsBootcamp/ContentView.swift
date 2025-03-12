@@ -64,6 +64,14 @@ class CoreDataRelationShipViewModel: ObservableObject {
     func getBusinesses() {
         let request = NSFetchRequest<BusinessEntity>(entityName: "BusinessEntity") //Debe ser exactamente el mismo nombre de la entidad en el modelo.
         
+        // Ordenar el query request:
+        let sort = NSSortDescriptor(keyPath: \BusinessEntity.name, ascending: true)
+        request.sortDescriptors = [sort]
+        
+        //Filtro para la consulta:
+        request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", "Apple") //Filtra por contenido de texto.
+        //request.predicate = NSPredicate(format: "name == %@", "Microsoft") //Filtra por texto exacto.
+        
         do {
             businesses = try manager.context.fetch(request)
         } catch {
@@ -91,11 +99,26 @@ class CoreDataRelationShipViewModel: ObservableObject {
         }
     }
     
+    func getEmployees(forBusiness business: BusinessEntity) {
+        let request = NSFetchRequest<EmployeeEntity>(entityName: "EmployeeEntity") //Debe ser exactamente el mismo nombre de la entidad en el modelo.
+        
+        //Filtra por Business:
+        //Este filtro solamente aplica cuando la propiedad "Business" es "To One", y no a "To Many", porque debe buscar por nombre de Business exacto.
+        let filter = NSPredicate(format: "business == %@", business)
+        request.predicate = filter
+        
+        do {
+            employees = try manager.context.fetch(request)
+        } catch {
+            print("Error fetching data: \(error.localizedDescription)")
+        }
+    }
+    
     func addBusiness() {
         
         // Se debe agregar un context, asi que se pasa el de manager (la instancia Singleton)
         let newBusiness = BusinessEntity(context: manager.context)
-        newBusiness.name = "Apple Inc."
+        newBusiness.name = "Microsoft"
         
         // agregar los departamentos nuevos al Business
         //newBusiness.deparments = []
@@ -127,13 +150,24 @@ class CoreDataRelationShipViewModel: ObservableObject {
     
     func addEmployee() {
         let newEmployee = EmployeeEntity(context: manager.context)
-        newEmployee.age = 25
-        newEmployee.name = "Fabian RA"
+        newEmployee.age = 99
+        newEmployee.name = "Angelica PG"
         newEmployee.dateJoined = .now
         
         newEmployee.business = businesses[0]
         newEmployee.deparment = deparments[0]
         
+        save()
+    }
+    
+    // Para poder eliminar a todos los Deparments, debe tener el "Delete Rule" en el archivo de container a "Nullify".
+    
+    // Nullify: Permite que se elimine el departamento, pero no el Employee que esta dentro.
+    // Cascade: Cuando se elimina el departamento, tambien se eliminaran todos los Employee que esten dentro del departamento.
+    // Deny: No permite remover departamentos hasta que no hayan Employees asociados al departamento que se quiere eliminar.
+    func deleteDeparment() {
+        let deparment = deparments[0]
+        manager.context.delete(deparment)
         save()
     }
     
@@ -175,6 +209,11 @@ struct ContentView: View {
                     
                     Button("Add employee") {
                         vm.addEmployee()
+                    }
+                    .buttonStyle(.bordered)
+                    
+                    Button("Delete first Deparment") {
+                        vm.deleteDeparment()
                     }
                     .buttonStyle(.bordered)
                     
