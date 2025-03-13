@@ -508,4 +508,7 @@ DispatchQueue.global().async {
     - **Original creator source code:** [Source](https://github.com/lyndachiwetelu/ios-core-data-swiftui-starter)
     - **Description:** In this tutorial we will learn to save and read data in an iOS app, using the Core Data Framework and SwiftUI
     - **NOTES:**
+        * Los modelos en Core Data ya manejan para SwiftUI las propiedades y pueden llamarse directamente an base a las Entities agregadas, pero para este caso, se agrega el modelo manualmente para tener una mayor flexibilidad.
+        * Cuando se crea un Core Data Model y se crea un Persistence Container enlazado al modelo, se va a crear una propiedad llamada viewContext. Este viewContext es la propiedad con la que se va a interactuar en toda la aplicacion para usar para manejar datos.
+        * El ViewContext es lo unico a lo que se necesita acceder dentro de las pantallas de la aplicacion, para hacer uso de los datos con Core Data.
 
