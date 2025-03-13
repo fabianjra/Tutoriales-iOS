@@ -500,3 +500,12 @@ DispatchQueue.global().async {
     - **Description:** In this video, we take a deep dive into Core Data and learn how to create and manage multiple Core Data entities that have relationships between them.
     - **NOTES:**
 
+
+- **Core Data Most Complete App:**
+    - **Title:** How to save data in an iOS app - SwiftUI Core Data Tutorial
+    - **Link video:** [Video](https://youtu.be/zmb60k_m9OA?si=xdRRQZbok_IiwR3u)
+    - **Code:** [Source]()
+    - **Original creator source code:** [Source](https://github.com/lyndachiwetelu/ios-core-data-swiftui-starter)
+    - **Description:** In this tutorial we will learn to save and read data in an iOS app, using the Core Data Framework and SwiftUI
+    - **NOTES:**
+
