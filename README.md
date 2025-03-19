@@ -511,4 +511,11 @@ DispatchQueue.global().async {
         * Los modelos en Core Data ya manejan para SwiftUI las propiedades y pueden llamarse directamente an base a las Entities agregadas, pero para este caso, se agrega el modelo manualmente para tener una mayor flexibilidad.
         * Cuando se crea un Core Data Model y se crea un Persistence Container enlazado al modelo, se va a crear una propiedad llamada viewContext. Este viewContext es la propiedad con la que se va a interactuar en toda la aplicacion para usar para manejar datos.
         * El ViewContext es lo unico a lo que se necesita acceder dentro de las pantallas de la aplicacion, para hacer uso de los datos con Core Data.
+        * NSSortDescriptor: Es utilizado para dar un orden a los datos que se obtienen de Core Data.
+        * NSPredicate: Es utilizado para filtrar los datos obtenidos de Core Data.
 
+    - Eliminar datos de Core data:
+        * Para poder eliminar elementos de Core Data, se debe tener el "Delete Rule" en el archivo de Container Model.
+            1. **Nullify**: Permite que se elimine el item padre, pero no el hijo que esta adentro del padre.
+            2. **Cascade**: Cuando se elimina el hijo, tambien se eliminaran todos los Padres que estan realacionados a ese hijo a eliminar.
+            3. **Deny**: No permite remover padres hasta que no hayan hijos asociados a ese padre que se quiere eliminar.

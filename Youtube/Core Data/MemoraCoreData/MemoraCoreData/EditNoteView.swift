@@ -8,10 +8,13 @@ enum EditMode {
 }
 
 struct EditNoteView: View {
+    
     @Environment(\.dismiss) private var dismiss
     
+    var selectedNote: NoteModel?
+    
     var mode: EditMode {
-        .add
+        selectedNote != nil ? .edit : .add
     }
     
     @State var note: String = ""
@@ -21,6 +24,7 @@ struct EditNoteView: View {
     @State var selectedTag: String = "Personal"
     @State var personalTag = true
     @State var otherTag = false
+    
     let allTags = ["Personal", "Work", "Others", "Hobbies"]
     
     var body: some View {
@@ -56,7 +60,9 @@ struct EditNoteView: View {
             }
             
             Button(action: {
+                
                 guard note.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false else { return }
+                
                 Task {
                     if mode == .add {
                         await addNewNote()
@@ -84,7 +90,13 @@ struct EditNoteView: View {
     }
     
     func addNewNote() async -> Void {
-        // code to save a new note
+        
+        let noteModel = NoteModel(id: UUID(),
+                                  content: note,
+                                  date: date,
+                                  timestamp: .now)
+        
+        await MemoraManager.shared.saveNewNote(noteModel: noteModel)
     }
     
     func updateNote() async -> Void {
