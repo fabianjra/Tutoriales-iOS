@@ -96,6 +96,7 @@ struct ContentView: View {
                 .background(.teal.opacity(0.4))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             }
+            .onDelete(perform: delete)
         }
         .listStyle(PlainListStyle())
         .onChange(of: selectedNote?.content) { _, newValue in
@@ -106,10 +107,14 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $showEditScreen) {
-            EditNoteView(selectedNote: selectedNote)
-                .onDisappear() {
-                    //TODO: Perform action
-                }
+            EditNoteView(selectedNote: selectedNote).onDisappear() {
+                // Se actualiza los datos de Core Data en pantalla.
+                selectedNote = nil
+                
+                formatNotes()
+                
+                print("se actualizo la lista de notas en pantalla")
+            }
         }
         .onAppear {
             // Se mapean las notas de CoreData a la variable local:
@@ -119,11 +124,27 @@ struct ContentView: View {
         }
     }
     
+    // Permite mostrar los datos de CoreData ya casteados al modelo tipado que se creó para manejar los datos.
     private func formatNotes() {
         
-        guard notes.count > 0 else { return }
+        guard notes.count > 0 else {
+            print("No hay notas en CoreData")
+            return
+        }
         
         noteModels = NoteFormatter.notes(from: notes)
+    }
+    
+    // Por defecto el Swipe del Foreach envia un IndexSet. No es necesario enviarlo cuando se llama
+    private func delete(at offsets: IndexSet) {
+        
+        for index in offsets {
+            let noteToDelete = noteModels[index]
+            
+            Task {
+                await MemoraManager.shared.deleteNote(noteId: noteToDelete.id)
+            }
+        }
     }
     
     private func dayOfMonth(from date: Date) -> Int {

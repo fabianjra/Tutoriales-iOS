@@ -25,7 +25,7 @@ struct NoteModel {
     // Inicializa el Modelo con los valores de la Entidad.
     init(note: Note) {
         self.id = note.id!
-        self.content = note.content!
+        self.content = note.content ?? ""
         self.date = note.date!
         self.timestamp = note.timestamp!
     }

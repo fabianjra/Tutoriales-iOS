@@ -86,6 +86,11 @@ struct EditNoteView: View {
         }.padding(30)
             .onAppear() {
                 // update the view properties to use selected note if in edit mode
+                if selectedNote != nil {
+                    note = selectedNote?.content ?? ""
+                    date = selectedNote?.date ?? .now
+                    
+                }
             }
     }
     
@@ -100,7 +105,21 @@ struct EditNoteView: View {
     }
     
     func updateNote() async -> Void {
-        // code to update a note
+        
+        // Se verifica la nota sobre la que se esta trabajando (selectedNote):
+        guard selectedNote != nil else {
+        print("No se ha seleccionado una nota para editar.")
+            return
+        }
+        
+        let noteModel = NoteModel(id: selectedNote!.id,
+                                  content: note,
+                                  date: date,
+                                  timestamp: selectedNote!.timestamp)
+        
+        print("se va a actualizar la nota")
+        await MemoraManager.shared.updateNote(noteModel: noteModel)
+        print("se ha actualizado la nota")
     }
 }
 #Preview {

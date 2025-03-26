@@ -41,7 +41,54 @@ class MemoraManager {
         } catch {
             print("Error al guardar la nueva nota: \(error.localizedDescription)")
         }
+    }
+    
+    func updateNote(noteModel: NoteModel) async {
         
+        // Primero se necesita hacer el Fetch Request para saber cual nota se va a modificar.
+        let fetchRequest = Note.fetchRequest()
         
+        // NSPredicate permite buscar un valore de una entidad filtrando.
+        // NSPredicate solamente establece una configuracion de busqueda. Aun no se busca nada aqui.
+        // Format: formato de filtro (en este caso, busqueda por ID).
+        // argument: Reemplazo del %@ para igualarlo al valor a buscar.
+        fetchRequest.predicate = NSPredicate(format: "id == %@", noteModel.id.uuidString)
+        fetchRequest.fetchLimit = 1
+        
+        do {
+            //Se realiza la busqueda en base a la configuracion establecida con fetchRequest
+            let requestNote = try viewContext.fetch(fetchRequest)
+            
+            guard let existingNote = requestNote.first else {
+                print("No se encontró la nota con el ID proporcionado.")
+                return
+            }
+            
+            existingNote.content = noteModel.content
+            existingNote.date = noteModel.date
+            //existingNote.timestamp = noteModel.timestamp
+            
+            try viewContext.save()
+        } catch {
+            print("Error al realizar el Fetch Request o Guardar los datos: \(error)")
+        }
+    }
+    
+    func deleteNote(noteId: UUID) async {
+        
+        do {
+            let fetchRequest = Note.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", noteId.uuidString)
+            
+            if let noteToDelete = try viewContext.fetch(fetchRequest).first {
+                
+                viewContext.delete(noteToDelete)
+                
+                try viewContext.save()
+                print("Nota eliminada con éxito.")
+            }
+        } catch {
+            print("Error deleting note: \(error)")
+        }
     }
 }
