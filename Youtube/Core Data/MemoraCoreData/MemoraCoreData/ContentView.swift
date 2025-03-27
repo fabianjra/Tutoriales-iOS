@@ -75,12 +75,15 @@ struct ContentView: View {
                     }
                     
                     HStack {
-                        Text("Tag")
-                            .font(.system(size: 12))
-                            .foregroundStyle(.black)
-                            .padding(5)
-                            .background(.yellow)
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                        
+                        if let tag = item.tag {
+                            Text(tag.name)
+                                .font(.system(size: 12))
+                                .foregroundStyle(.black)
+                                .padding(5)
+                                .background(.yellow)
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                        }
                         
                         Spacer()
                         

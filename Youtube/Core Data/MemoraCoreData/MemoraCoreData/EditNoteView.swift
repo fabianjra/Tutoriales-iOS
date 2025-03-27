@@ -96,10 +96,14 @@ struct EditNoteView: View {
     
     func addNewNote() async -> Void {
         
+        //Se agrega el tag al NotaModel creado:
+        let tagModel = TagModel(name: selectedTag)
+        
         let noteModel = NoteModel(id: UUID(),
                                   content: note,
                                   date: date,
-                                  timestamp: .now)
+                                  timestamp: .now,
+                                  tag: tagModel)
         
         await MemoraManager.shared.saveNewNote(noteModel: noteModel)
     }

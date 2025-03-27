@@ -519,3 +519,18 @@ DispatchQueue.global().async {
             1. **Nullify**: Permite que se elimine el item padre, pero no el hijo que esta adentro del padre.
             2. **Cascade**: Cuando se elimina el hijo, tambien se eliminaran todos los Padres que estan realacionados a ese hijo a eliminar.
             3. **Deny**: No permite remover padres hasta que no hayan hijos asociados a ese padre que se quiere eliminar.
+            
+    - **Entity Relationships**: Conecta diferentes entities. Los tipos son:
+        * One-To-One.
+        * One-To-Many.
+        
+    - Para este ejemplo, los pasos para crear la relacion:
+        1. Se crea la entidad Nota con sus atributos.
+        2. Se crea le entidad tag, con sus atributs. Se crea la realcion con Note, sin inverse y es One-To-Many. Rule: Nullify (porque no quiero que se borren los tags cuando se borre alguna nota, debe seguir existiendo).
+        3. Se crea la relacion en la entidad Note con el Inverse y es One-To-One. Rule Nullify (Porque si se borra una nota, no debe borrarse el tag ya que puede ser reutilizado).
+        4. Esta creacion anterior en Note, automaticamente crea el Inverse en la entidad Tag.
+        
+    - Pasos extra despues de crear las relaciones en el Modelo de Core Data:
+        1. Se crea el TagModel para mapear la entidad y trabajar con ese modelo dentro de la aplicacion.
+        2. Se crea la propiedad "tag" de tipo TagModel (modelo tipado) en el Modelo de NoteModel, pero debe ser opcional, ya que podria no existir aunque siempre lo debe llevar. Es solamente una buena practica en caso de que ya existan datos en CoreData en la entidad Note y asi no provoque un error.
+        

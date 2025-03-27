@@ -13,12 +13,14 @@ struct NoteModel {
     let content: String
     let date: Date // Date that memory occurred
     let timestamp: Date //The entry date.
+    let tag: TagModel? 
     
-    init(id: UUID, content: String, date: Date, timestamp: Date) {
+    init(id: UUID, content: String, date: Date, timestamp: Date, tag: TagModel? = nil) {
         self.id = id
         self.content = content
         self.date = date
         self.timestamp = timestamp
+        self.tag = tag
     }
     
     // Va a tomar solamente una nota en base a la entidad creada en el Model de CoreData.
@@ -28,5 +30,6 @@ struct NoteModel {
         self.content = note.content ?? ""
         self.date = note.date!
         self.timestamp = note.timestamp!
+        self.tag = note.tag != nil ? TagModel(note.tag!) : nil
     }
 }
