@@ -13,6 +13,7 @@ struct ContentView: View {
     @State var showEditScreen = false
     
     @State var selectedNote: NoteModel? = nil
+    @State var selectedTag: String = ""
     
     @State var noteModels: [NoteModel] = []
     
@@ -83,6 +84,10 @@ struct ContentView: View {
                                 .padding(5)
                                 .background(.yellow)
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
+                                .onTapGesture {
+                                    // Filtrar por tag seleccionado.
+                                    filterTagNotes(by: tag.name)
+                                }
                         }
                         
                         Spacer()
@@ -110,7 +115,8 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $showEditScreen) {
-            EditNoteView(selectedNote: selectedNote).onDisappear() {
+            EditNoteView(selectedNote: selectedNote)
+                .onDisappear {
                 // Se actualiza los datos de Core Data en pantalla.
                 selectedNote = nil
                 
@@ -159,6 +165,33 @@ struct ContentView: View {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM"
         return dateFormatter.string(from: date)
+    }
+    
+    private func filterTagNotes(by tagName: String) {
+        
+        // Si se vuelve a seleccionar el mismo tag ya seleccionado, se debe quitar el filtro de seleccion.
+        // No se tiene acceso directo al modelo de Core Data desde aca, asi que cuando se selecciona un Tag,
+        // se debe formatear de nuevo para volver a llamar a la cara de datos en pantalla.
+        if selectedTag == tagName {
+            formatNotes()
+            selectedTag = ""
+            return
+        }
+        
+        //Filtra por un tag en especifico.
+        Task {
+            selectedTag = tagName
+            
+            if let fetchTag = await MemoraManager.shared.fetchTag(byName: tagName) {
+                
+                if (fetchTag.notes?.count ?? 0) > 0 {
+                    
+                    DispatchQueue.main.async {
+                        noteModels = NoteFormatter.notes(from: fetchTag.notes ?? []) //notes esta esperando por paraemtro un NSSet.
+                    }
+                }
+            }
+        }
     }
 }
 

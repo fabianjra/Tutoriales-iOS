@@ -89,7 +89,7 @@ struct EditNoteView: View {
                 if selectedNote != nil {
                     note = selectedNote?.content ?? ""
                     date = selectedNote?.date ?? .now
-                    
+                    selectedTag = selectedNote?.tag?.name ?? selectedTag
                 }
             }
     }
@@ -116,10 +116,13 @@ struct EditNoteView: View {
             return
         }
         
+        let tagModel = TagModel(name: selectedTag)
+        
         let noteModel = NoteModel(id: selectedNote!.id,
                                   content: note,
                                   date: date,
-                                  timestamp: selectedNote!.timestamp)
+                                  timestamp: selectedNote!.timestamp,
+                                  tag: tagModel)
         
         print("se va a actualizar la nota")
         await MemoraManager.shared.updateNote(noteModel: noteModel)

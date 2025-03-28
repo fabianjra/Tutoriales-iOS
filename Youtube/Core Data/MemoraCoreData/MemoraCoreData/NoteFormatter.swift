@@ -33,4 +33,30 @@ class NoteFormatter {
         
         return noteModels
     }
+    
+    static func notes(from items: NSSet) -> [NoteModel] {
+        let noteModels = items.map ({ item in
+            
+            if let note = item as? Note {
+                
+                var tagModel: TagModel? = nil
+                
+                if let tag = note.tag {
+                    tagModel = TagModel(tag)
+                }
+                
+                return NoteModel(id: note.id!,
+                                 content: note.content ?? "",
+                                 date: note.date!,
+                                 timestamp: note.timestamp!,
+                                 tag: tagModel)
+                
+            } else {
+                print("Error al convertir NSSet a [NoteModel]")
+                return NoteModel(id: UUID(), content: "", date: .now, timestamp: .now, tag: nil)
+            }
+        })
+        
+        return noteModels
+    }
 }

@@ -86,7 +86,22 @@ class MemoraManager {
             
             existingNote.content = noteModel.content
             existingNote.date = noteModel.date
-            //existingNote.timestamp = noteModel.timestamp
+
+            if let tagModel = noteModel.tag, let existingTag = await fetchTag(byName: tagModel.name) {
+                
+                existingTag.addToNotes(existingNote) // Esta funcion es propia de Core Data y lo que hace es crear la relacion del Tag con la Nota y asi amarrarla. Es una buena practica que permite relacionarlos correctamente uno con otro.
+                existingNote.tag = existingTag // Esta va a ser la relacion funcional y la que hace que la entidad Note tenga relacioando un Tag especifico.
+                
+            } else if let tagModel = noteModel.tag {
+                // Si no se da el caso de que sea valido el tag seleccionado, entonces se valida que no sea un Tag Nil (o sea, que si venga un objeto tag por parametro)
+                // Se crea el Tag en caso de que no exista en Core Data:
+                let tagEntity = Tag(context: viewContext)
+                tagEntity.name = tagModel.name
+                tagEntity.addToNotes(existingNote) //Al crearse el nuevo Tag, igualmente como en la primera validacion, debe relacionarse el Tag a la nota para amarrar la relacion entre ambos.
+                
+                existingNote.tag = tagEntity
+            }
+
             
             try viewContext.save()
         } catch {
